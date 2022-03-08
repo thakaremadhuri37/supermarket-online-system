@@ -66,7 +66,8 @@
 		<div id="subscribe-me-" class="modal animated" role="dialog"
 			data-keyboard="true" tabindex="-1">
 			<div class="newsletter-popup row align-items-center py-4  px-2">
-				<img src="images/newsbg.html" alt="offer"
+				<img src="<c:url value="/resources/images/newsbg.html" /> alt="
+					offer"
 					class="offer col d-none d-sm-block">
 				<div class="col-auto newsletter-popup-static newsletter-popup-top">
 					<div class="popup-text">
@@ -248,7 +249,8 @@
 					<div class="row">
 						<div class="navbar-header col-2 header-bottom-left">
 							<a class="navbar-brand" href="index-2.html"> <img
-								alt="Bigmarket" src="images/logo.png">
+								alt="Bigmarket"
+								src="<c:url value="/resources/images/logo.png"/>" />
 							</a>
 						</div>
 						<div class="col-10 header-bottom-right">
@@ -459,19 +461,20 @@
 								<div id="cart" class="btn-block mt-40 mb-30 ">
 									<button type="button" class="btn" data-target="#cart-dropdown"
 										data-toggle="collapse" aria-expanded="true">
-										<span id="shippingcart">My basket</span><span id="cart-total">Item
+										<span id="shippingcart">My basket</span><span id="cart-total">
 											0</span>
 									</button>
 									<a href="cart_page.html" class="cart_responsive btn"><span
-										id="cart-text">My basket</span><span id="cart-total-res">0</span>
+										id="cart-text">My basket</span><span id="cart-total-res">1</span>
 									</a>
 								</div>
 								<div id="cart-dropdown" class="cart-menu collapse">
 									<ul>
 										<li>
 											<table class="table table-striped">
-												<tbody>
-													<tr>
+												<tbody id="myItemCart">
+
+													<!-- 	<tr>
 														<td class="text-center"><a href="#"><img
 																src="images/pro/70x70_1.jpg" alt="iPod Classic"
 																title="iPod Classic"></a></td>
@@ -493,36 +496,52 @@
 														<td class="text-center"><a class="close-cart"><i
 																class="fa fa-times-circle"></i></a></td>
 													</tr>
+													<tr>
+														<td class="text-center"><a href="#"><img
+																src="images/pro/70x70_1.jpg" alt="iPod Classic"
+																title="iPod Classic"></a></td>
+														<td class="text-left product-name"><a href="#">MacBook
+																Pro</a> <span class="text-left price">$20.00</span> <input
+															class="cart-qty" name="product_quantity" min="1"
+															value="1" type="number"></td>
+														<td class="text-center"><a class="close-cart"><i
+																class="fa fa-times-circle"></i></a></td>
+													</tr> -->
 												</tbody>
 											</table>
 										</li>
 										<li>
 											<table class="table">
 												<tbody>
-													<tr>
+													<!-- <tr>
 														<td class="text-right"><strong>Sub-Total</strong></td>
-														<td class="text-right">$2,100.00</td>
+														<td class="text-right" id="subTotal">0.00</td>
 													</tr>
 													<tr>
 														<td class="text-right"><strong>Eco Tax
 																(-2.00)</strong></td>
-														<td class="text-right">$2.00</td>
+														<td class="text-right">₹2.00</td>
 													</tr>
 													<tr>
 														<td class="text-right"><strong>VAT (20%)</strong></td>
-														<td class="text-right">$20.00</td>
-													</tr>
+														<td class="text-right">₹20.00</td>
+													</tr> -->
 													<tr>
-														<td class="text-right"><strong>Total</strong></td>
-														<td class="text-right">$2,122.00</td>
+														<td class="text-right"><strong>Total Cart
+																Amount &nbsp;&nbsp;&nbsp; </strong></td>
+														<td class="text-right" id="totalCartAmt">₹0.00</td>
 													</tr>
 												</tbody>
 											</table>
 										</li>
 										<li>
-											<form
-												action="http://html.lionode.com/bigmarket/bm002/cart_page.html">
-												<input class="btn pull-left" value="View cart" type="submit">
+											<!-- 	<div >
+												<input class="btn pull-left" id="viewCartDetails" name="cartbean" value="View cart" type="button">
+											</div>  -->
+											<form action="viewCart" , method="POST">
+												<input type="hidden" id="viewCartDetails1" name="cartBean" value="">
+												<input class="btn pull-left" name="cartbean"
+													value="View cart" type="submit">
 											</form>
 											<form
 												action="http://html.lionode.com/bigmarket/bm002/checkout_page.html">
@@ -565,17 +584,21 @@
 			<div class="main-banner owl-carousel">
 				<div class="item">
 					<a href="#"><img
-						src="<c:url value="/resources/images/main_banner1.jpg"/>"
+						src="<c:url value="/resources/images/banner/banner1.jpg"/>"
 						alt="Main Banner" class="img-responsive" /></a>
 				</div>
 				<div class="item">
 					<a href="#"><img
-						src="<c:url value="/resources/images/main_banner2.jpg"/>"
+						src="<c:url value="/resources/images/banner/banner2.jpg"/>"
 						alt="Main Banner" class="img-responsive" /></a>
 				</div>
+				<%-- <div class="item">
+					<a href="#"><img
+						src="<c:url value="/resources/images/main_banner2.jpg"/>"
+						alt="Main Banner" class="img-responsive" /></a>
+				</div> --%>
 			</div>
 		</div>
-		<!-- =====  BANNER END  ===== -->
 
 		<!-- =====  CONTAINER START  ===== -->
 		<div class="container">
@@ -592,8 +615,8 @@
 							<div class="cms-text1">
 								Get <b>Chana Dal</b>
 							</div>
-							<div class="cms-text2">@ 20$</div>
-							<div class="cms-text3">Shop for $ 500</div>
+							<div class="cms-text2">@ ₹20</div>
+							<div class="cms-text3">Shop for ₹500</div>
 						</div>
 					</div>
 					<div class="home-subbanner">
@@ -606,21 +629,22 @@
 							<div class="cms-text1">
 								Get <b>California RED</b>
 							</div>
-							<div class="cms-text2">@ 12$</div>
-							<div class="cms-text3">Shop for $ 200</div>
+							<div class="cms-text2">@ ₹12</div>
+							<div class="cms-text3">Shop for ₹200</div>
 						</div>
 					</div>
 					<div class="home-subbanner">
 						<div class="home-img">
 							<a href="#"><img class="leftbanner"
-								src="<c:url value="/resources/images/sub-banner3.jpg"/>" alt="sub-banner1"></a>
+								src="<c:url value="/resources/images/sub-banner3.jpg"/>"
+								alt="sub-banner1"></a>
 						</div>
 						<div class="cms-desc">
 							<div class="cms-text1">
 								Get <b>Chana dal</b>
 							</div>
-							<div class="cms-text2">@ 20$</div>
-							<div class="cms-text3">Shop for $ 500</div>
+							<div class="cms-text2">@ ₹20</div>
+							<div class="cms-text3">Shop for ₹500</div>
 						</div>
 					</div>
 				</div>
@@ -873,301 +897,312 @@
 						<div class="section_title">Featured Products</div>
 					</div>
 					<div class="section-product grid section">
-					<!--start -->
-					<c:forEach var="product" items="${productlist}">
-						<div class=" product-items col-6 col-sm-4 col-md-4 col-lg-3">
-							<div class="product-thumb transition">
-								<div class="image">
-									<div class="first_image">
-										<a href="product_detail_page.html"> <img
-											src="<c:url value="/resources/images/pro/${product.imagename}"/>" alt="pure-spice-3"
-											title="pure-spice-3" class="img-responsive">
-										</a>
-									</div>
-									<div class="swap_image">
-										<a href="product_detail_page.html"> <img
-											src="<c:url value="/resources/images/pro/${product.imagename}"/>"
-											alt="pure-spice-3" title="pure-spice-3"
-											class="img-responsive">
-										</a>
-									</div>
-								</div>
-								<div class="product-details">
-									<div class="caption">
-										<h4>
-											<a href="product_detail_page.html">${product.name}</a>
-										</h4>
-										<p class="price">
-											${product.price}<span class="price-tax">Ex Tax: $7.25</span>
-										</p>
-										<div class="product_option">
-											<div class="form-group required ">
-												<select name="option[239]" id="input-option230"
-													class="form-control">
-													<option value="">--- Please Select ---</option>
-													<option value="45">1kg(+$0.07)</option>
-													<option value="46">5kg(+$0.22)</option>
-													<option value="47">10kg(+$0.44)</option>
-												</select>
+						<!--start -->
+						<c:forEach var="product" items="${productlist}">
+							<form method="post">
+								<div class=" product-items col-6 col-sm-4 col-md-4 col-lg-3">
+									<div class="product-thumb transition">
+										<div class="image">
+											<div class="first_image">
+												<a href="product_detail_page.html"> <img
+													src="<c:url value="/resources/images/pro/${product.imagename}"/>"
+													alt="pure-spice-3" title="pure-spice-3"
+													class="img-responsive">
+												</a>
 											</div>
-											<div class="input-group button-group">
-												<label class="control-label">Qty</label> <input
-													type="number" name="quantity" min="1" value="1" step="1"
-													class="qty form-control">
-												<button type="button" class="addtocart pull-right">Add</button>
+											<div class="swap_image">
+												<a href="product_detail_page.html"> <img
+													src="<c:url value="/resources/images/pro/${product.imagename}"/>"
+													alt="pure-spice-3" title="pure-spice-3"
+													class="img-responsive">
+												</a>
+											</div>
+										</div>
+										<div class="product-details">
+											<div class="caption">
+												<h4>
+													<a id="productName" href="product_detail_page.html">${product.name}</a>
+												</h4>
+												<p id="productPrice" class="price">₹ ${product.price}</p>
+												<div class="product_option">
+													<!-- 	<div class="form-group required ">
+													<select name="option[239]" id="input-option230"
+														class="form-control">
+														<option value="">--- Please Select ---</option>
+														<option value="45">1kg(+$0.07)</option>
+														<option value="46">5kg(+$0.22)</option>
+														<option value="47">10kg(+$0.44)</option>
+													</select>
+												</div>  -->
+													<br>
+													<div class="input-group button-group">
+														<label class="control-label">Qty</label> <input
+															id="totalQty" type="number" name="quantity" min="1"
+															value="1" step="1" class="qty form-control">
+														<%-- 													<button type="button" value="${product}" class="addtocart pull-right">Add</button>
+ --%>
+														<button type="button"
+															value='{"id":${product.id}, "name":"${product.name}", "price":${product.price}, "imagename":"${product.imagename}"}'
+															class="addtocart pull-right">Add</button>
+
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						</div>
+							</form>
 						</c:forEach>
 						<!-- End -->
-						
-							
-						</div>
-					</div>
 
+
+					</div>
 				</div>
+
 			</div>
-			<!-- =====  featured section end ===== -->
+		</div>
+		<!-- =====  featured section end ===== -->
 
 
-			<div class="category_product section category_product2 mt-30">
-				<div class="row">
-					<div class="col-12">
-						<div class="section_title">Grocery & Staples</div>
-					</div>
-					<div class="col-sm-9 left_block">
-						<div class="row">
-							
+		<div class="category_product section category_product2 mt-30">
+			<div class="row">
+				<div class="col-12">
+					<div class="section_title">Grocery & Staples</div>
+				</div>
+				<div class="col-sm-9 left_block">
+					<div class="row">
+						<c:forEach var="category" items="${categorylist}">
+
 							<div class="product-layout col-lg-4 col-md-4 col-sm-4 col-6">
+
 								<div class="product-thumb transition">
 									<p class="tag">
 										10<br> % <br> <i>off</i>
 									</p>
 									<h4>
-										<a href="category_page.html">Bladen</a>
+										<a href="category_page.html">${category.name}</a>
 									</h4>
 									<div class="image">
 										<a href="category_page.html"><img
-											src="<c:url value="/resources/images/01.jpg"/>" alt="Greps"
-											title="Greps" class="img-thumbnail"></a>
+											src="<c:url value="/resources/images/${category.imagename}"/>"
+											alt="Greps" title="Greps" class="img-thumbnail"></a>
 									</div>
 								</div>
-							</div>
-						</div>
-					</div>
-					<div
-						class="col-sm-3 productcategory_thumb right_block text-center mb-15">
-						<img src="<c:url value="/resources/images/13.jpg"/>" alt=""
-							title="" class="img-thumbnail">
-					</div>
 
-					<div class="col-sm-12 text-center">
-						<div class="btn btn-primary viewall">
-							<a href="category_page.html">View All</a>
-						</div>
+							</div>
+						</c:forEach>
+					</div>
+				</div>
+				<div
+					class="col-sm-3 productcategory_thumb right_block text-center mb-15">
+					<img src="<c:url value="/resources/images/13.jpg"/>" alt=""
+						title="" class="img-thumbnail">
+				</div>
+
+				<div class="col-sm-12 text-center">
+					<div class="btn btn-primary viewall">
+						<a href="category_page.html">View All</a>
 					</div>
 				</div>
 			</div>
-
-			<!-- =====  PRODUCT section  END ===== -->
-
-			<!-- =====  Brand start ===== -->
-			<div id="brand_carouse" class="section text-center mt-30 pb-15">
-				<div class="row">
-					<div class="col-12">
-						<div class="section_title">Our Popular Brands</div>
-					</div>
-					<div class="col-sm-12">
-						<div class="brand owl-carousel">
-							<div class="product-thumb">
-								<div class="item text-center">
-									<a href="#"><img
-										src="<c:url value="/resources/images/brand/brand1.png"/>"
-										alt="Disney" class="img-responsive" /></a>
-								</div>
-							</div>
-							<div class="product-thumb">
-								<div class="item text-center">
-									<a href="#"><img
-										src="<c:url value="/resources/images/brand/brand2.png"/>"
-										alt="Dell" class="img-responsive" /></a>
-								</div>
-							</div>
-							<div class="product-thumb">
-								<div class="item text-center">
-									<a href="#"><img
-										src="<c:url value="/resources/images/brand/brand3.png"/>"
-										alt="Harley" class="img-responsive" /></a>
-								</div>
-							</div>
-							<div class="product-thumb">
-								<div class="item text-center">
-									<a href="#"><img
-										src="<c:url value="/resources/images/brand/brand4.png"/>"
-										alt="Canon" class="img-responsive" /></a>
-								</div>
-							</div>
-							<div class="product-thumb">
-								<div class="item text-center">
-									<a href="#"><img
-										src="<c:url value="/resources/images/brand/brand5.png"/>"
-										alt="Canon" class="img-responsive" /></a>
-								</div>
-							</div>
-							<div class="product-thumb">
-								<div class="item text-center">
-									<a href="#"><img
-										src="<c:url value="/resources/images/brand/brand6.png"/>"
-										alt="Canon" class="img-responsive" /></a>
-								</div>
-							</div>
-							<div class="product-thumb">
-								<div class="item text-center">
-									<a href="#"><img
-										src="<c:url value="/resources/images/brand/brand7.png"/>"
-										alt="Canon" class="img-responsive" /></a>
-								</div>
-							</div>
-							<div class="product-thumb">
-								<div class="item text-center">
-									<a href="#"><img
-										src="<c:url value="/resources/images/brand/brand8.png"/>"
-										alt="Canon" class="img-responsive" /></a>
-								</div>
-							</div>
-							<div class="product-thumb">
-								<div class="item text-center">
-									<a href="#"><img
-										src="<c:url value="/resources/images/brand/brand9.png"/>"
-										alt="Canon" class="img-responsive" /></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- =====  Brand end ===== -->
-
-
-
 		</div>
-		<!-- =====  CONTAINER END  ===== -->
-		<!-- =====  FOOTER START  ===== -->
-		<div class="footer section pt-40">
+
+		<!-- =====  PRODUCT section  END ===== -->
+
+		<!-- =====  Brand start ===== -->
+		<div id="brand_carouse" class="section text-center mt-30 pb-15">
+			<div class="row">
+				<div class="col-12">
+					<div class="section_title">Our Popular Brands</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="brand owl-carousel">
+						<div class="product-thumb">
+							<div class="item text-center">
+								<a href="#"><img
+									src="<c:url value="/resources/images/brand/brand1.png"/>"
+									alt="Disney" class="img-responsive" /></a>
+							</div>
+						</div>
+						<div class="product-thumb">
+							<div class="item text-center">
+								<a href="#"><img
+									src="<c:url value="/resources/images/brand/brand2.png"/>"
+									alt="Dell" class="img-responsive" /></a>
+							</div>
+						</div>
+						<div class="product-thumb">
+							<div class="item text-center">
+								<a href="#"><img
+									src="<c:url value="/resources/images/brand/brand3.png"/>"
+									alt="Harley" class="img-responsive" /></a>
+							</div>
+						</div>
+						<div class="product-thumb">
+							<div class="item text-center">
+								<a href="#"><img
+									src="<c:url value="/resources/images/brand/brand4.png"/>"
+									alt="Canon" class="img-responsive" /></a>
+							</div>
+						</div>
+						<div class="product-thumb">
+							<div class="item text-center">
+								<a href="#"><img
+									src="<c:url value="/resources/images/brand/brand5.png"/>"
+									alt="Canon" class="img-responsive" /></a>
+							</div>
+						</div>
+						<div class="product-thumb">
+							<div class="item text-center">
+								<a href="#"><img
+									src="<c:url value="/resources/images/brand/brand6.png"/>"
+									alt="Canon" class="img-responsive" /></a>
+							</div>
+						</div>
+						<div class="product-thumb">
+							<div class="item text-center">
+								<a href="#"><img
+									src="<c:url value="/resources/images/brand/brand7.png"/>"
+									alt="Canon" class="img-responsive" /></a>
+							</div>
+						</div>
+						<div class="product-thumb">
+							<div class="item text-center">
+								<a href="#"><img
+									src="<c:url value="/resources/images/brand/brand8.png"/>"
+									alt="Canon" class="img-responsive" /></a>
+							</div>
+						</div>
+						<div class="product-thumb">
+							<div class="item text-center">
+								<a href="#"><img
+									src="<c:url value="/resources/images/brand/brand9.png"/>"
+									alt="Canon" class="img-responsive" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- =====  Brand end ===== -->
+
+
+
+	</div>
+	<!-- =====  CONTAINER END  ===== -->
+	<!-- =====  FOOTER START  ===== -->
+	<div class="footer section pt-40">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 footer-block">
+					<h4 class="footer-title py-2">Information</h4>
+					<ul>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Delivery Information</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Terms & Conditions</a></li>
+						<li><a href="about.html">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 footer-block">
+					<h4 class="footer-title py-2">Services</h4>
+					<ul>
+						<li><a href="#">Returns</a></li>
+						<li><a href="#">Site Map</a></li>
+						<li><a href="#">Wish List</a></li>
+						<li><a href="#">My Account</a></li>
+						<li><a href="#">Order History</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 footer-block">
+					<h4 class="footer-title py-2">Extras</h4>
+					<ul>
+						<li><a href="#">Brands</a></li>
+						<li><a href="#">Gift Certificates</a></li>
+						<li><a href="#">Affiliates</a></li>
+						<li><a href="#">Specials</a></li>
+						<li><a href="#">Newsletter</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 footer-block">
+					<h4 class="footer-title py-2">Contacts</h4>
+					<ul>
+						<li class="add">Warehouse & Offices, 12345 Street name,
+							California USA</li>
+						<li class="phone">(+123) 456 789 <br> (+024) 666 888
+						</li>
+						<li class="email">Contact@yourcompany.com</li>
+					</ul>
+				</div>
+			</div>
+			<!-- =====  Newslatter ===== -->
+			<div class="newsletters mt-30">
+				<div class="news-head pull-left">
+					<h2>Subscribe for our offer news</h2>
+				</div>
+				<div class="news-form pull-right">
+					<form onsubmit="return validatemail();" method="post">
+						<div class="form-group required">
+							<input name="email" id="email" placeholder="Enter Your Email"
+								class="form-control input-lg" required="" type="email">
+							<button type="submit" class="btn btn-default btn-lg">Subscribe</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- =====  Newslatter End ===== -->
+		</div>
+
+		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-3 footer-block">
-						<h4 class="footer-title py-2">Information</h4>
-						<ul>
-							<li><a href="#">About Us</a></li>
-							<li><a href="#">Delivery Information</a></li>
-							<li><a href="#">Privacy Policy</a></li>
-							<li><a href="#">Terms & Conditions</a></li>
-							<li><a href="about.html">Contact Us</a></li>
-						</ul>
+					<div class="col-12 col-lg-4 mt-20">
+						<div class="section_title">payment option</div>
+						<div class="payment-icon text-center">
+							<ul>
+								<li><i class="fab fa-cc-paypal"></i></li>
+								<li><i class="fab fa-cc-visa"></i></li>
+								<li><i class="fab fa-cc-discover"></i></li>
+								<li><i class="fab fa-cc-mastercard"></i></li>
+								<li><i class="fab fa-cc-amex"></i></li>
+							</ul>
+						</div>
 					</div>
-					<div class="col-lg-3 footer-block">
-						<h4 class="footer-title py-2">Services</h4>
-						<ul>
-							<li><a href="#">Returns</a></li>
-							<li><a href="#">Site Map</a></li>
-							<li><a href="#">Wish List</a></li>
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Order History</a></li>
-						</ul>
-					</div>
-					<div class="col-lg-3 footer-block">
-						<h4 class="footer-title py-2">Extras</h4>
-						<ul>
-							<li><a href="#">Brands</a></li>
-							<li><a href="#">Gift Certificates</a></li>
-							<li><a href="#">Affiliates</a></li>
-							<li><a href="#">Specials</a></li>
-							<li><a href="#">Newsletter</a></li>
-						</ul>
-					</div>
-					<div class="col-lg-3 footer-block">
-						<h4 class="footer-title py-2">Contacts</h4>
-						<ul>
-							<li class="add">Warehouse & Offices, 12345 Street name,
-								California USA</li>
-							<li class="phone">(+123) 456 789 <br> (+024) 666 888
-							</li>
-							<li class="email">Contact@yourcompany.com</li>
-						</ul>
-					</div>
-				</div>
-				<!-- =====  Newslatter ===== -->
-				<div class="newsletters mt-30">
-					<div class="news-head pull-left">
-						<h2>Subscribe for our offer news</h2>
-					</div>
-					<div class="news-form pull-right">
-						<form onsubmit="return validatemail();" method="post">
-							<div class="form-group required">
-								<input name="email" id="email" placeholder="Enter Your Email"
-									class="form-control input-lg" required="" type="email">
-								<button type="submit" class="btn btn-default btn-lg">Subscribe</button>
-							</div>
-						</form>
-					</div>
-				</div>
-				<!-- =====  Newslatter End ===== -->
-			</div>
 
-			<div class="footer-bottom">
-				<div class="container">
-					<div class="row">
-						<div class="col-12 col-lg-4 mt-20">
-							<div class="section_title">payment option</div>
-							<div class="payment-icon text-center">
-								<ul>
-									<li><i class="fab fa-cc-paypal"></i></li>
-									<li><i class="fab fa-cc-visa"></i></li>
-									<li><i class="fab fa-cc-discover"></i></li>
-									<li><i class="fab fa-cc-mastercard"></i></li>
-									<li><i class="fab fa-cc-amex"></i></li>
-								</ul>
-							</div>
+					<div class="col-12 col-lg-4 mt-20">
+						<div class="section_title">download app</div>
+						<div class="app-download text-center">
+							<ul class="app-icon">
+								<li><a href="#" title="playstore"><img
+										src="images/play-store.png" alt="playstore"
+										class="img-responsive"></a></li>
+								<li><a href="#" title="appstore"><img
+										src="images/app-store.png" alt="appstore"
+										class="img-responsive"></a></li>
+							</ul>
 						</div>
-
-						<div class="col-12 col-lg-4 mt-20">
-							<div class="section_title">download app</div>
-							<div class="app-download text-center">
-								<ul class="app-icon">
-									<li><a href="#" title="playstore"><img
-											src="images/play-store.png" alt="playstore"
-											class="img-responsive"></a></li>
-									<li><a href="#" title="appstore"><img
-											src="images/app-store.png" alt="appstore"
-											class="img-responsive"></a></li>
-								</ul>
-							</div>
+					</div>
+					<div class="col-12 col-lg-4 mt-20">
+						<div class="section_title">Social media</div>
+						<div class="social_icon text-center">
+							<ul>
+								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+								<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fas fa-rss"></i></a></li>
+							</ul>
 						</div>
-						<div class="col-12 col-lg-4 mt-20">
-							<div class="section_title">Social media</div>
-							<div class="social_icon text-center">
-								<ul>
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-									<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fas fa-rss"></i></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-12 ">
-							<div class="copyright-part text-center pt-10 pb-10 mt-30">@
-								2019 All Rights Reserved Bigmarket</div>
-						</div>
+					</div>
+					<div class="col-12 ">
+						<div class="copyright-part text-center pt-10 pb-10 mt-30">@
+							2019 All Rights Reserved Bigmarket</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- =====  FOOTER END  ===== -->
+	</div>
+	<!-- =====  FOOTER END  ===== -->
 	</div>
 	<a id="scrollup"></a>
 	<script src="<c:url value="/resources/js/modernizr.js"/>"></script>
@@ -1178,6 +1213,7 @@
 	<script src="<c:url value="/resources/js/jquery.magnific-popup.js"/>"></script>
 	<script src="<c:url value="/resources/js/jquery.firstVisitPopup.js"/>"></script>
 	<script src="<c:url value="/resources/js/custom.js"/>"></script>
+	<script src="<c:url value="/resources/js/main.js"/>"></script>
 
 
 

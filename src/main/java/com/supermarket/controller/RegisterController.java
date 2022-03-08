@@ -1,5 +1,6 @@
 package com.supermarket.controller;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.supermarket.db.DBConnection;
 
 @Controller
@@ -23,8 +26,9 @@ public class RegisterController {
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public ModelAndView register( RegisterBean registerBean) {
-
+	public ModelAndView register(@ModelAttribute RegisterBean registerBean) throws JsonProcessingException {
+		System.out.println("Inside Register method : "+registerBean.toString());
+		 printJson(registerBean);  
 		DBConnection db = new DBConnection();
 		Connection con=null;
 		try {
@@ -63,6 +67,19 @@ public class RegisterController {
 		mv.setViewName("register");
 		return mv;
 
+	}
+
+	private void printJson(RegisterBean registerBean) throws JsonProcessingException {
+		ObjectMapper Obj = new ObjectMapper();  
+         try {  
+             // Converting the Java object into a JSON string  
+             String jsonStr = Obj.writeValueAsString(registerBean);  
+             // Displaying Java object into a JSON string  
+             System.out.println(jsonStr);  
+         }  
+         catch (IOException e) {  
+             e.printStackTrace();  
+         }
 	}
 	@RequestMapping(value="/category",method = RequestMethod.GET)
 	public String categoryPage()

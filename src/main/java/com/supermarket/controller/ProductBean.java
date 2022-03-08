@@ -1,10 +1,14 @@
 package com.supermarket.controller;
 
+import java.util.List;
+
 public class ProductBean {
 	private int id;
 	private String name;
 	private double price;
 	private String imagename;
+	
+	
 	public int getId() {
 		return id;
 	}
