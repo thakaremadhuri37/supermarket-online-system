@@ -32,12 +32,17 @@ public class viewCartController {
 		}
 		System.out.println(cartBeanObj);
 		view.addObject("cartbean",cartBeanObj);
-		view.setViewName("viewCart");
+		view.addObject("CartBeanObj",new CartBean());
+		view.setViewName("viewCartNew");
 		return view;		
 		
 		
 	}
-
+	@RequestMapping(value = "orderConfirm", method = RequestMethod.GET)
+	public String showConfirmationPage()
+	{
+		return "orderConfirm";
+	}
 	/*
 	 * @RequestMapping(value = "/viewCart", method = RequestMethod.GET) public
 	 * ModelAndView finalPage(@RequestParam("name")String str) {

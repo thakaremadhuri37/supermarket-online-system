@@ -3,6 +3,11 @@ package com.supermarket.controller;
 import java.util.List;
 
 public class ProductBean {
+	
+	
+	public ProductBean() {
+		System.out.println("Default Constructor called..");
+	}
 	private int id;
 	private String name;
 	private double price;

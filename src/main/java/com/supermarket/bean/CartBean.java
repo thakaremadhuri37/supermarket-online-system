@@ -5,7 +5,7 @@ import java.util.List;
 import com.supermarket.controller.ProductBean;
 
 public class CartBean {
-	private List<ProductBean> productList;
+	private List<ProductBean> productList ;
 	private double totalCartAmount;
 
 	

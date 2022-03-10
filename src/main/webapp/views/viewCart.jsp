@@ -1077,21 +1077,21 @@
 									</tr>
 									<tr>
 										<td class="text-right"><strong>Total:</strong></td>
-										<td class="text-right">${cartbean.totalCartAmount}</td>
+										<td class="text-right" id="totalCartAmt">${cartbean.totalCartAmount}</td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
 					</div>
-					<form action="home">
+					<!-- <form action="home">
 						<input class="btn pull-left mt_30" type="submit"
 							value="Continue Shopping" />
-					</form>
+					</form> -->
 					<form
 						action="checkout_page" method="post">
-						<form type="hidden" name="productList" value=${cartbean.productList}/> 
-						<form type="hidden" name="totalCartAmount" value=${cartbean.totalCartAmount}/> 
-						<input class="btn pull-right mt_30" type="submit" value="Checkout" />
+						<input type="hidden" id="cartBeanObj" name="productList" value=${cartbean}/> 
+						<input type="hidden" name="totalCartAmount" value=${cartbean.totalCartAmount}/> 
+						<input class="btn pull-right mt_30" type="submit" value="Checkout" onclick="test()"/>
 					</form>
 				</div>
 			</div>

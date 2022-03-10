@@ -1307,40 +1307,42 @@ orders you have previously made.</p>
                         <thead>
                           <tr>
                             <td class="text-left">Product Name</td>
-                            <td class="text-left">Model</td>
-                            <td class="text-right">Quantity</td>
+<!--                             <td class="text-left">Model</td>
+ -->                            <td class="text-right">Quantity</td>
                             <td class="text-right">Unit Price</td>
                             <td class="text-right">Total</td>
                           </tr>
                         </thead>
                         <tbody>
+                        <c:forEach var="cartproduct" items="${cartbean.productList}">
                           <tr>
-                            <td class="text-left"><a href="http://localhost/opc001/index.php?route=product/product&amp;product_id=46">Sony VAIO</a></td>
-                            <td class="text-left">Product 19</td>
+                            <td class="text-left"><a href="#">${cartproduct.name}</a></td>
+                           <!--  <td class="text-left"></td> -->
                             <td class="text-right">1</td>
-                            <td class="text-right">$1,000.00</td>
-                            <td class="text-right">$1,000.00</td>
+                            <td class="text-right">${cartproduct.price}</td>
+                            <td class="text-right">${cartproduct.price}</td>
                           </tr>
+                          	</c:forEach> 
                         </tbody>
                         <tfoot>
                           <tr>
-                            <td class="text-right" colspan="4"><strong>Sub-Total:</strong></td>
-                            <td class="text-right">$1,000.00</td>
+                            <td class="text-right" colspan="3"><strong>Sub-Total:</strong></td>
+                            <td class="text-right">${cartbean.totalCartAmount}</td>
                           </tr>
                           <tr>
-                            <td class="text-right" colspan="4"><strong>Flat Shipping Rate:</strong></td>
-                            <td class="text-right">$5.00</td>
+                            <td class="text-right" colspan="3"><strong>Flat Shipping Rate:</strong></td>
+                            <td class="text-right">$00.00</td>
                           </tr>
                           <tr>
-                            <td class="text-right" colspan="4"><strong>Total:</strong></td>
-                            <td class="text-right">$1,005.00</td>
+                            <td class="text-right" colspan="3"><strong>Total:</strong></td>
+                            <td class="text-right">${cartbean.totalCartAmount}</td>
                           </tr>
                         </tfoot>
                       </table>
                     </div>
                     <div class="buttons">
                       <div class="pull-right">
-                        <input type="button" data-loading-text="Loading..." class="btn" id="button-confirm" value="Confirm Order">
+                       <a href="orderConfirm" ><input type="button" data-loading-text="Loading..." class="btn" id="button-confirm" value="Confirm Order"></a>
                       </div>
                     </div>
                   </div>

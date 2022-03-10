@@ -543,10 +543,12 @@
 												<input class="btn pull-left" name="cartbean"
 													value="View cart" type="submit">
 											</form>
-											<form
-												action="http://html.lionode.com/bigmarket/bm002/checkout_page.html">
-												<input class="btn pull-right" value="Checkout" type="submit">
+											<form action="checkoutFromCart" , method="POST">
+												<input type="hidden" id="cheackOutDetails" name="cartBean" value="">
+												<input class="btn pull-right" name="cartbean"
+													value="Checkout" type="submit">
 											</form>
+											
 										</li>
 									</ul>
 								</div>

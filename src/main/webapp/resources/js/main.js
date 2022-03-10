@@ -102,7 +102,15 @@ function cartNumbers(event) {
 	
 	console.log(cartBean);
 	document.getElementById("viewCartDetails1").value=JSON.stringify(cartBean);
+	document.getElementById("cheackOutDetails").value=JSON.stringify(cartBean);
 	//setItem();
+}
+
+function test()
+{
+	document.
+		alert(JSON.stringify(document.getElementById("cartBeanObj").value));
+	
 }
 /*function setItem()
 {
