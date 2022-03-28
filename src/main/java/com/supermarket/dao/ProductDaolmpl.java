@@ -54,5 +54,35 @@ public class ProductDaolmpl {
 		System.out.println(list);
 		return list;
 	}
+	
+	public List<ProductBean> getProductListByCategoryId(String categoryid) {
+		DBConnection dbconnection = new DBConnection();
+
+		List<ProductBean> productlist = new ArrayList<ProductBean>();
+
+		try {
+			Connection con = dbconnection.getConnection();
+			PreparedStatement ps = con
+					.prepareStatement("select name,price,image,id from products where categoryid=" + categoryid);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				ProductBean productBean = new ProductBean();
+
+				productBean.setName(rs.getString(1));
+				productBean.setPrice(rs.getDouble(2));
+				productBean.setImagename(rs.getString(3));
+				productBean.setId(rs.getInt(4));
+
+				productlist.add(productBean);
+				System.out.println("inside try block" + productBean.getName() + "  " + productBean.getPrice() + " "
+						+ productBean.getImagename());
+
+			}
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return productlist;
+	}
 
 }

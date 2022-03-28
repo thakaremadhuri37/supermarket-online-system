@@ -24,12 +24,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- =====  CSS  ===== -->
+  <link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
+  <link rel="stylesheet"
+	href="font-awesome.min.css"  />
  <link rel="stylesheet"
 	href="<c:url value="/resources/css/bootstrap.css" />" />
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/font-awesome.min.css" />" />
-<%--  <link rel="stylesheet" href="<c:url value="/resources/css/all.css"/> integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
- --%>
+
   <link rel="stylesheet"
 	href="<c:url value="/resources/css/all.css"/>
 	integrity="
@@ -56,7 +59,7 @@
 
 </head>
 
-<body>
+<body onload="homePageOnLoad()">
   <!-- =====  LODER  ===== -->
   <div class="loder" style="display: none;"></div>
   <div class="wrapper">
@@ -144,7 +147,8 @@
     <!-- =====  Nav END  ===== -->
 
     <!-- =====  HEADER START  ===== -->
-    <header id="header" class="section">
+    <%@ include file="comman.jsp" %>
+    <!-- <header id="header" class="section">
       <div class="container">
         <div class="header-top py-1">
           <div class="row align-items-center">
@@ -153,7 +157,7 @@
                 
                 
               <li class="currency dropdown pl-2"> <span class="dropdown-toggle" id="dropdownMenu12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Currency <span class="caret"></span> </span>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
+                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
                     <li><a href="#">â¬ Euro</a></li>
                     <li><a href="#">Â£ Pound Sterling</a></li>
                     <li><a href="#">$ US Dollar</a></li>
@@ -169,7 +173,7 @@
             <div class="col-md-6">
               <ul class="header-top-right pull-right">
                 <li class="telephone">
-                  <a href="#"><i class="fa fa-phone"></i> +91 987-654-321</a> 
+                  <a href="#"><i class="fa fa-phone"></i> +91 9673961258</a> 
                 </li>
                 <li class="login">
                   <a href="http://html.lionode.com/bigmarket/bm002/login.html"><i class="fa fa-user"></i>Login</a>
@@ -200,7 +204,7 @@
                           <div class="dropdown-inner">
                             <ul class="list-unstyled childs_1">
                               
-                              <!-- 2 Level Sub Categories START -->
+                              2 Level Sub Categories START
                               <li class="dropdown active"><a href="http://html.lionode.com/bigmarket/bm002/category_page.html">Daal &amp; Pulses</a>
                                 <div class="dropdown-menu">
                                   <div class="dropdown-inner">
@@ -215,11 +219,11 @@
                                 </div>
                               </li>
                               
-                              <!-- 2 Level Sub Categories END -->
+                              2 Level Sub Categories END
                             </ul>
                             <ul class="list-unstyled childs_1">
                               
-                              <!-- 2 Level Sub Categories START -->
+                              2 Level Sub Categories START
                               <li class="dropdown active"><a href="http://html.lionode.com/bigmarket/bm002/category_page.html">Dry Fruits &amp; Nuts</a>
                                 <div class="dropdown-menu">
                                   <div class="dropdown-inner">
@@ -233,11 +237,11 @@
                                 </div>
                               </li>
                               
-                              <!-- 2 Level Sub Categories END -->
+                              2 Level Sub Categories END
                             </ul>
                             <ul class="list-unstyled childs_1">
                               
-                              <!-- 2 Level Sub Categories START -->
+                              2 Level Sub Categories START
                               <li class="dropdown active"><a href="">Edible Oils</a>
                                 <div class="dropdown-menu">
                                   <div class="dropdown-inner">
@@ -252,11 +256,11 @@
                                 </div>
                               </li>
                               
-                              <!-- 2 Level Sub Categories END -->
+                              2 Level Sub Categories END
                             </ul>
                             <ul class="list-unstyled childs_1">
                               
-                              <!-- 2 Level Sub Categories START -->
+                              2 Level Sub Categories START
                               <li class="dropdown active"><a href="http://html.lionode.com/bigmarket/bm002/category_page.html">Riced cauliflower</a>
                                 <div class="dropdown-menu">
                                   <div class="dropdown-inner">
@@ -270,7 +274,7 @@
                                 </div>
                               </li>
                               
-                              <!-- 2 Level Sub Categories END -->
+                              2 Level Sub Categories END
                             </ul>
                             <div class="menu-image"> <img src="Bigmarket%20E-commerce%20Bootstrap%20Template_files/13.jpg" alt="" title="" class="img-thumbnail"> </div>
                           </div>
@@ -281,11 +285,11 @@
                           <div class="dropdown-inner">
                             <ul class="list-unstyled childs_1">
                               
-                              <!-- 2 Level Sub Categories START -->
+                              2 Level Sub Categories START
                               <li class="main_cat active"> <a href="http://html.lionode.com/bigmarket/bm002/category_page.html">Deos &amp; Perfumes</a> </li>
                               <li class="main_cat"> <a href="http://html.lionode.com/bigmarket/bm002/category_page.html">Hair Care</a> </li>
                               
-                              <!-- 2 Level Sub Categories END -->
+                              2 Level Sub Categories END
                             </ul>
                           </div>
                         </div>
@@ -295,11 +299,11 @@
                           <div class="dropdown-inner">
                             <ul class="list-unstyled childs_1">
                               
-                              <!-- 2 Level Sub Categories START -->
+                              2 Level Sub Categories START
                               <li class="main_cat active"> <a href="http://html.lionode.com/bigmarket/bm002/category_page.html">Biscuits &amp; Cookies</a> </li>
                               <li class="main_cat"> <a href="">Chips &amp; Crisps</a> </li>
                               
-                              <!-- 2 Level Sub Categories END -->
+                              2 Level Sub Categories END
                             </ul>
                           </div>
                         </div>
@@ -309,11 +313,11 @@
                           <div class="dropdown-inner">
                             <ul class="list-unstyled childs_1">
                               
-                              <!-- 2 Level Sub Categories START -->
+                              2 Level Sub Categories START
                               <li class="main_cat active"> <a href="http://html.lionode.com/bigmarket/bm002/category_page.html">Cleaning Tools &amp; Brushes</a> </li>
                               <li class="main_cat"> <a href="http://html.lionode.com/bigmarket/bm002/category_page.html">Home &amp; Car Fresheners</a> </li>
                               
-                              <!-- 2 Level Sub Categories END -->
+                              2 Level Sub Categories END
                             </ul>
                           </div>
                         </div>
@@ -323,11 +327,11 @@
                           <div class="dropdown-inner">
                             <ul class="list-unstyled childs_1">
                               
-                              <!-- 2 Level Sub Categories START -->
+                              2 Level Sub Categories START
                               <li class="main_cat active"> <a href="http://html.lionode.com/bigmarket/bm002/category_page.html">Breakfast Cereal &amp; Mixes</a> </li>
                               <li class="main_cat"> <a href="http://html.lionode.com/bigmarket/bm002/category_page.html">Paneer &amp; Curd</a> </li>
                               
-                              <!-- 2 Level Sub Categories END -->
+                              2 Level Sub Categories END
                             </ul>
                           </div>
                         </div>
@@ -448,7 +452,7 @@
           </div>
         </div>
       </div>
-    </header>
+    </header> -->
     <!-- =====  HEADER END  ===== -->
     <!-- =====  BREADCRUMB STRAT  ===== -->
     <div class="breadcrumb section pt-60 pb-60">

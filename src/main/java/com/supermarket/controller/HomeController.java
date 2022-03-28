@@ -29,5 +29,5 @@ public class HomeController {
 		mv.setViewName("home");
 		return mv;
 	}
-
+	
 }

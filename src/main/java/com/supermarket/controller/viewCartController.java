@@ -25,7 +25,7 @@ public class viewCartController {
 		ObjectMapper mapper = new ObjectMapper();
 		CartBean cartBeanObj = new CartBean();
 		try {
-			 cartBeanObj = mapper.readValue(cartBean, CartBean.class);
+			 cartBeanObj = mapper.readValue(cartBean, CartBean.class);//json to java obj
 		} catch (JsonProcessingException e) {
 			System.out.println("Exception occured while converting json to object");
 			e.printStackTrace();

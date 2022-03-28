@@ -55,7 +55,7 @@
 
 </head>
 
-<body>
+<body onload="homePageOnLoad()">
   <!-- =====  LODER  ===== -->
   <div class="loder"></div>
   <div class="wrapper">
@@ -142,9 +142,9 @@
       </div>
     </nav>
     <!-- =====  Nav END  ===== -->
-
-    <!-- =====  HEADER START  ===== -->
-    <header id="header" class="section">
+     		<%@ include file="comman.jsp"%>
+   
+  <!-- <header id="header" class="section">
       <div class="container">
         <div class="header-top py-1">
           <div class="row align-items-center">
@@ -159,8 +159,8 @@
                 </li>
                 <li class="currency dropdown pl-2"> <span class="dropdown-toggle" id="dropdownMenu12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Currency <span class="caret"></span> </span>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-                    <li><a href="#">€ Euro</a></li>
-                    <li><a href="#">£ Pound Sterling</a></li>
+                    <li><a href="#">â¬ Euro</a></li>
+                    <li><a href="#">Â£ Pound Sterling</a></li>
                     <li><a href="#">$ US Dollar</a></li>
                   </ul>
                 </li>
@@ -169,7 +169,7 @@
             <div class="col-md-6">
               <ul class="header-top-right pull-right">
                 <li class="telephone">
-                  <a href="#"><i class="fa fa-phone"></i> +91 987-654-321</a> 
+                  <a href="#"><i class="fa fa-phone"></i> +91 9673961258</a> 
                 </li>
                 <li class="login">
                   <a href="login.html"><i class="fa fa-user"></i>Login</a>
@@ -185,7 +185,9 @@
       <div class="header section pt-15 pb-15">
         <div class="container">
           <div class="row">
-            <div class="navbar-header col-2 header-bottom-left"> <a class="navbar-brand" href="index-2.html"> <img alt="Bigmarket" src="images/logo.png"> </a> </div>
+            <div class="navbar-header col-2 header-bottom-left"> <a class="navbar-brand" href="index-2.html"> <img
+								alt="Bigmarket" src="images/logo.png">
+							</a> </div>
             <div class="col-10 header-bottom-right">
               <div class="header-menu">
                 <div class="responsive-menubar-block">
@@ -200,7 +202,7 @@
                           <div class="dropdown-inner">
                             <ul class="list-unstyled childs_1">
                               
-                              <!-- 2 Level Sub Categories START -->
+                              2 Level Sub Categories START
                               <li class="dropdown active"><a href="category_page.html">Daal & Pulses</a>
                                 <div class="dropdown-menu">
                                   <div class="dropdown-inner">
@@ -215,11 +217,11 @@
                                 </div>
                               </li>
                               
-                              <!-- 2 Level Sub Categories END -->
+                              2 Level Sub Categories END
                             </ul>
                             <ul class="list-unstyled childs_1">
                               
-                              <!-- 2 Level Sub Categories START -->
+                              2 Level Sub Categories START
                               <li class="dropdown active"><a href="category_page.html">Dry Fruits & Nuts</a>
                                 <div class="dropdown-menu">
                                   <div class="dropdown-inner">
@@ -233,11 +235,11 @@
                                 </div>
                               </li>
                               
-                              <!-- 2 Level Sub Categories END -->
+                              2 Level Sub Categories END
                             </ul>
                             <ul class="list-unstyled childs_1">
                               
-                              <!-- 2 Level Sub Categories START -->
+                              2 Level Sub Categories START
                               <li class="dropdown active"><a href="#">Edible Oils</a>
                                 <div class="dropdown-menu">
                                   <div class="dropdown-inner">
@@ -252,11 +254,11 @@
                                 </div>
                               </li>
                               
-                              <!-- 2 Level Sub Categories END -->
+                              2 Level Sub Categories END
                             </ul>
                             <ul class="list-unstyled childs_1">
                               
-                              <!-- 2 Level Sub Categories START -->
+                              2 Level Sub Categories START
                               <li class="dropdown active"><a href="category_page.html">Riced cauliflower</a>
                                 <div class="dropdown-menu">
                                   <div class="dropdown-inner">
@@ -270,7 +272,7 @@
                                 </div>
                               </li>
                               
-                              <!-- 2 Level Sub Categories END -->
+                              2 Level Sub Categories END
                             </ul>
                             <div class="menu-image"> <img src="images/13.jpg" alt="" title="" class="img-thumbnail"> </div>
                           </div>
@@ -281,11 +283,9 @@
                           <div class="dropdown-inner">
                             <ul class="list-unstyled childs_1">
                               
-                              <!-- 2 Level Sub Categories START -->
                               <li class="main_cat active"> <a href="category_page.html">Deos & Perfumes</a> </li>
                               <li class="main_cat"> <a href="category_page.html">Hair Care</a> </li>
                               
-                              <!-- 2 Level Sub Categories END -->
                             </ul>
                           </div>
                         </div>
@@ -295,11 +295,9 @@
                           <div class="dropdown-inner">
                             <ul class="list-unstyled childs_1">
                               
-                              <!-- 2 Level Sub Categories START -->
                               <li class="main_cat active"> <a href="category_page.html">Biscuits & Cookies</a> </li>
                               <li class="main_cat"> <a href="#">Chips & Crisps</a> </li>
                               
-                              <!-- 2 Level Sub Categories END -->
                             </ul>
                           </div>
                         </div>
@@ -309,11 +307,10 @@
                           <div class="dropdown-inner">
                             <ul class="list-unstyled childs_1">
                               
-                              <!-- 2 Level Sub Categories START -->
                               <li class="main_cat active"> <a href="category_page.html">Cleaning Tools & Brushes</a> </li>
                               <li class="main_cat"> <a href="category_page.html">Home & Car Fresheners</a> </li>
                               
-                              <!-- 2 Level Sub Categories END -->
+                              2 Level Sub Categories END
                             </ul>
                           </div>
                         </div>
@@ -323,11 +320,10 @@
                           <div class="dropdown-inner">
                             <ul class="list-unstyled childs_1">
                               
-                              <!-- 2 Level Sub Categories START -->
+                           
                               <li class="main_cat active"> <a href="category_page.html">Breakfast Cereal & Mixes</a> </li>
                               <li class="main_cat"> <a href="category_page.html">Paneer & Curd</a> </li>
                               
-                              <!-- 2 Level Sub Categories END -->
                             </ul>
                           </div>
                         </div>
@@ -448,7 +444,7 @@
           </div>
         </div>
       </div>
-    </header>
+    </header>  -->
     <!-- =====  HEADER END  ===== -->
     <!-- =====  BREADCRUMB STRAT  ===== -->
     <div class="breadcrumb section pt-60 pb-60">
@@ -472,7 +468,7 @@
                 <h3 class="section_title">Top category</h3>
               </div>
               <ul>
-                <li><a href="#">Appliances</a></li>
+               <!--  <li><a href="#">Appliances</a></li>
                 <li><a href="#">Mobile Phones</a></li>
                 <li><a href="#">Tablet PC & Accessories</a></li>
                 <li><a href="#">Consumer Electronics</a></li>
@@ -484,7 +480,7 @@
                 <li><a href="#">Watches & Jewelry</a></li>
                 <li><a href="#">Home & Garden</a></li>
                 <li><a href="#">Health & Beauty</a></li>
-                <li><a href="#">Outdoors & Sports</a></li>
+                <li><a href="#">Outdoors & Sports</a></li> -->
               </ul>
             </div>
           </div>
@@ -520,27 +516,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="list-group-item mb-10">
-                  <label>Manufacturers</label>
-                  <div id="filter-group3">
-                    <div class="checkbox">
-                      <label>
-                        <input value="" type="checkbox"> Apple (5) </label>
-                    </div>
-                    <div class="checkbox">
-                      <label>
-                        <input value="" type="checkbox"> Canon (0) </label>
-                    </div>
-                    <div class="checkbox">
-                      <label>
-                        <input value="" type="checkbox"> Hewlett-Packard (0) </label>
-                    </div>
-                    <div class="checkbox">
-                      <label>
-                        <input value="" type="checkbox">  HTC (0) </label>
-                    </div>
-                  </div>
-                </div>
+               
               </div>
             </div>
           </div>
@@ -551,9 +527,9 @@
             <div class="row">
             <div class="col list-grid-wrapper Order-1">
               <div class="btn-group btn-list-grid">
-                <button type="button" id="grid-view" class="btn btn-default grid-view active"></button>
-                <button type="button" id="list-view" class="btn btn-default list-view"></button>
-              </div>
+<!--                 <button type="button" id="grid-view" class="btn btn-default grid-view active"></button>
+ --><!--                 <button type="button" id="list-view" class="btn btn-default list-view"></button>
+ -->              </div>
             </div>
             <div class="col-md-auto page-wrapper order-12">
               <label class="control-label" for="input-limit">Show :</label>
@@ -586,31 +562,32 @@
           </div>
           </div>
           <div class="row">
-            <div class="product-layout  product-grid col-lg-3 col-6 ">
+						<c:forEach var="category" items="${productlist}">
+          <div class="product-layout  product-grid col-lg-3 col-6 ">
               <div class="item">
                <div class="product-thumb transition">
                   <div class="image">
-                    <div class="first_image"> <a href="product_detail_page.html"> <img src="images/pro/014.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a> </div>
-                    <div class="swap_image"> <a href="product_detail_page.html"> <img src="images/pro/015.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a></div>
-                  </div>
+                    <div class="first_image"> <a href="product?id=${category.id}"> <img src="<c:url value="/resources/images/pro/${category.imagename}"/>"alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a> </div>
+<!--                     <div class="swap_image"> <a href="product_detail_page.html"> <img src="images/pro/015.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a></div>
+ -->                  </div>
                   <div class="product-details">
                     <div class="caption">
-                      <h4><a href="product_detail_page.html">pure-spice-3</a></h4>
-                      <p class="price">$7.25<span class="price-tax">Ex Tax: $7.25</span></p>
+                      <h4><a href="product?${category.id}"> ${category.name}</a></h4>
+                      <p class="price">&#x20B9 ${category.price}<span class="price-tax">Ex Tax: $7.25</span></p>
                       <p class="desc">freshly picked for you.Store them in a cool, dry place away from direct sunlight...</p>
                       <div class="product_option">
-                        <div class="form-group required ">
+                        <!-- <div class="form-group required ">
                           <select name="option[239]" id="input-option231" class="form-control">
                             <option value=""> --- Please Select --- </option>
                             <option value="45">1kg(+$0.07)</option>
                             <option value="46">5kg(+$0.22)</option>
                             <option value="47">10kg(+$0.44)</option>
                           </select>
-                        </div>
+                        </div> -->
                         <div class="input-group button-group">
                           <label class="control-label">Qty</label>
                           <input type="number" name="quantity" min="1" value="1"  step="1" class="qty form-control">
-                          <button type="button" class="addtocart pull-right">Add</button>
+                          <button type="button" value='{"id":${category.id}, "name":"${category.name}", "price":${category.price}, "imagename":"${category.imagename}"}' class="addtocart pull-right">Add</button>
                         </div>
                       </div>
                     </div>
@@ -618,359 +595,7 @@
               </div>
               </div>
             </div>
-            <div class="product-layout  product-grid col-lg-3 col-6 ">
-              <div class="item">
-               <div class="product-thumb transition">
-                  <div class="image">
-                    <div class="first_image"> <a href="product_detail_page.html"> <img src="images/pro/013.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a> </div>
-                    <div class="swap_image"> <a href="product_detail_page.html"> <img src="images/pro/015.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a></div>
-                  </div>
-                  <div class="product-details">
-                    <div class="caption">
-                      <h4><a href="product_detail_page.html">pure-spice-3</a></h4>
-                      <p class="price">$7.25<span class="price-tax">Ex Tax: $7.25</span></p>
-                      <p class="desc">freshly picked for you.Store them in a cool, dry place away from direct sunlight...</p>
-                      <div class="product_option">
-                        <div class="form-group required ">
-                          <select name="option[239]" id="input-option232" class="form-control">
-                            <option value=""> --- Please Select --- </option>
-                            <option value="45">1kg(+$0.07)</option>
-                            <option value="46">5kg(+$0.22)</option>
-                            <option value="47">10kg(+$0.44)</option>
-                          </select>
-                        </div>
-                        <div class="input-group button-group">
-                          <label class="control-label">Qty</label>
-                          <input type="number" name="quantity" min="1" value="1"  step="1" class="qty form-control">
-                          <button type="button" class="addtocart pull-right">Add</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-              </div>
-            </div>
-            <div class="product-layout  product-grid col-lg-3 col-6 ">
-              <div class="item">
-               <div class="product-thumb transition">
-                  <div class="image">
-                    <div class="first_image"> <a href="product_detail_page.html"> <img src="images/pro/012.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a> </div>
-                    <div class="swap_image"> <a href="product_detail_page.html"> <img src="images/pro/015.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a></div>
-                  </div>
-                  <div class="product-details">
-                    <div class="caption">
-                      <h4><a href="product_detail_page.html">pure-spice-3</a></h4>
-                      <p class="price">$7.25<span class="price-tax">Ex Tax: $7.25</span></p>
-                      <p class="desc">freshly picked for you.Store them in a cool, dry place away from direct sunlight...</p>
-
-                      <div class="product_option">
-                        <div class="form-group required ">
-                          <select name="option[239]" id="input-option233" class="form-control">
-                            <option value=""> --- Please Select --- </option>
-                            <option value="45">1kg(+$0.07)</option>
-                            <option value="46">5kg(+$0.22)</option>
-                            <option value="47">10kg(+$0.44)</option>
-                          </select>
-                        </div>
-                        <div class="input-group button-group">
-                          <label class="control-label">Qty</label>
-                          <input type="number" name="quantity" min="1" value="1"  step="1" class="qty form-control">
-                          <button type="button" class="addtocart pull-right">Add</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-              </div>
-            </div>
-            <div class="product-layout  product-grid col-lg-3 col-6 ">
-              <div class="item">
-               <div class="product-thumb transition">
-                  <div class="image">
-                    <div class="first_image"> <a href="product_detail_page.html"> <img src="images/pro/011.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a> </div>
-                    <div class="swap_image"> <a href="product_detail_page.html"> <img src="images/pro/015.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a></div>
-                  </div>
-                  <div class="product-details">
-                    <div class="caption">
-                      <h4><a href="product_detail_page.html">pure-spice-3</a></h4>
-                      <p class="price">$7.25<span class="price-tax">Ex Tax: $7.25</span></p>
-                      <p class="desc">freshly picked for you.Store them in a cool, dry place away from direct sunlight...</p>
-                      <div class="product_option">
-                        <div class="form-group required ">
-                          <select name="option[239]" id="input-option234" class="form-control">
-                            <option value=""> --- Please Select --- </option>
-                            <option value="45">1kg(+$0.07)</option>
-                            <option value="46">5kg(+$0.22)</option>
-                            <option value="47">10kg(+$0.44)</option>
-                          </select>
-                        </div>
-                        <div class="input-group button-group">
-                          <label class="control-label">Qty</label>
-                          <input type="number" name="quantity" min="1" value="1"  step="1" class="qty form-control">
-                          <button type="button" class="addtocart pull-right">Add</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-              </div>
-            </div>
-            <div class="product-layout  product-grid col-lg-3 col-6 ">
-              <div class="item">
-               <div class="product-thumb transition">
-                  <div class="image">
-                    <div class="first_image"> <a href="product_detail_page.html"> <img src="images/pro/016.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a> </div>
-                    <div class="swap_image"> <a href="product_detail_page.html"> <img src="images/pro/015.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a></div>
-                  </div>
-                  <div class="product-details">
-                    <div class="caption">
-                      <h4><a href="product_detail_page.html">pure-spice-3</a></h4>
-                      <p class="price">$7.25<span class="price-tax">Ex Tax: $7.25</span></p>
-                      <p class="desc">freshly picked for you.Store them in a cool, dry place away from direct sunlight...</p>
-                      <div class="product_option">
-                        <div class="form-group required ">
-                          <select name="option[239]" id="input-option235" class="form-control">
-                            <option value=""> --- Please Select --- </option>
-                            <option value="45">1kg(+$0.07)</option>
-                            <option value="46">5kg(+$0.22)</option>
-                            <option value="47">10kg(+$0.44)</option>
-                          </select>
-                        </div>
-                        <div class="input-group button-group">
-                          <label class="control-label">Qty</label>
-                          <input type="number" name="quantity" min="1" value="1"  step="1" class="qty form-control">
-                          <button type="button" class="addtocart pull-right">Add</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-              </div>
-            </div>
-            <div class="product-layout  product-grid col-lg-3 col-6 ">
-              <div class="item">
-               <div class="product-thumb transition">
-                  <div class="image">
-                    <div class="first_image"> <a href="product_detail_page.html"> <img src="images/pro/001.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a> </div>
-                    <div class="swap_image"> <a href="product_detail_page.html"> <img src="images/pro/003.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a></div>
-                  </div>
-                  <div class="product-details">
-                    <div class="caption">
-                      <h4><a href="product_detail_page.html">pure-spice-3</a></h4>
-                      <p class="price">$7.25<span class="price-tax">Ex Tax: $7.25</span></p>
-                      <p class="desc">freshly picked for you.Store them in a cool, dry place away from direct sunlight...</p>
-                      <div class="product_option">
-                        <div class="form-group required ">
-                          <select name="option[239]" id="input-option236" class="form-control">
-                            <option value=""> --- Please Select --- </option>
-                            <option value="45">1kg(+$0.07)</option>
-                            <option value="46">5kg(+$0.22)</option>
-                            <option value="47">10kg(+$0.44)</option>
-                          </select>
-                        </div>
-                        <div class="input-group button-group">
-                          <label class="control-label">Qty</label>
-                          <input type="number" name="quantity" min="1" value="1"  step="1" class="qty form-control">
-                          <button type="button" class="addtocart pull-right">Add</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-              </div>
-            </div>
-            <div class="product-layout  product-grid col-lg-3 col-6 ">
-              <div class="item">
-               <div class="product-thumb transition">
-                  <div class="image">
-                    <div class="first_image"> <a href="product_detail_page.html"> <img src="images/pro/006.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a> </div>
-                    <div class="swap_image"> <a href="product_detail_page.html"> <img src="images/pro/007.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a></div>
-                  </div>
-                  <div class="product-details">
-                    <div class="caption">
-                      <h4><a href="product_detail_page.html">pure-spice-3</a></h4>
-                      <p class="price">$7.25<span class="price-tax">Ex Tax: $7.25</span></p>
-                      <p class="desc">freshly picked for you.Store them in a cool, dry place away from direct sunlight...</p>
-                      <div class="product_option">
-                        <div class="form-group required ">
-                          <select name="option[239]" id="input-option237" class="form-control">
-                            <option value=""> --- Please Select --- </option>
-                            <option value="45">1kg(+$0.07)</option>
-                            <option value="46">5kg(+$0.22)</option>
-                            <option value="47">10kg(+$0.44)</option>
-                          </select>
-                        </div>
-                        <div class="input-group button-group">
-                          <label class="control-label">Qty</label>
-                          <input type="number" name="quantity" min="1" value="1"  step="1" class="qty form-control">
-                          <button type="button" class="addtocart pull-right">Add</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-              </div>
-            </div>
-            <div class="product-layout  product-grid col-lg-3 col-6 ">
-              <div class="item">
-               <div class="product-thumb transition">
-                  <div class="image">
-                    <div class="first_image"> <a href="product_detail_page.html"> <img src="images/pro/008.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a> </div>
-                    <div class="swap_image"> <a href="product_detail_page.html"> <img src="images/pro/009.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a></div>
-                  </div>
-                  <div class="product-details">
-                    <div class="caption">
-                      <h4><a href="product_detail_page.html">pure-spice-3</a></h4>
-                      <p class="price">$7.25<span class="price-tax">Ex Tax: $7.25</span></p>
-                      <p class="desc">freshly picked for you.Store them in a cool, dry place away from direct sunlight...</p>
-                      <div class="product_option">
-                        <div class="form-group required ">
-                          <select name="option[239]" id="input-option238" class="form-control">
-                            <option value=""> --- Please Select --- </option>
-                            <option value="45">1kg(+$0.07)</option>
-                            <option value="46">5kg(+$0.22)</option>
-                            <option value="47">10kg(+$0.44)</option>
-                          </select>
-                        </div>
-                        <div class="input-group button-group">
-                          <label class="control-label">Qty</label>
-                          <input type="number" name="quantity" min="1" value="1"  step="1" class="qty form-control">
-                          <button type="button" class="addtocart pull-right">Add</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-              </div>
-            </div>
-            <div class="product-layout  product-grid col-lg-3 col-6 ">
-              <div class="item">
-               <div class="product-thumb transition">
-                  <div class="image">
-                    <div class="first_image"> <a href="product_detail_page.html"> <img src="images/pro/009.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a> </div>
-                    <div class="swap_image"> <a href="product_detail_page.html"> <img src="images/pro/010.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a></div>
-                  </div>
-                  <div class="product-details">
-                    <div class="caption">
-                      <h4><a href="product_detail_page.html">pure-spice-3</a></h4>
-                      <p class="price">$7.25<span class="price-tax">Ex Tax: $7.25</span></p>
-                      <p class="desc">freshly picked for you.Store them in a cool, dry place away from direct sunlight...</p>
-                      <div class="product_option">
-                        <div class="form-group required ">
-                          <select name="option[239]" id="input-option239" class="form-control">
-                            <option value=""> --- Please Select --- </option>
-                            <option value="45">1kg(+$0.07)</option>
-                            <option value="46">5kg(+$0.22)</option>
-                            <option value="47">10kg(+$0.44)</option>
-                          </select>
-                        </div>
-                        <div class="input-group button-group">
-                          <label class="control-label">Qty</label>
-                          <input type="number" name="quantity" min="1" value="1"  step="1" class="qty form-control">
-                          <button type="button" class="addtocart pull-right">Add</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-              </div>
-            </div>
-            <div class="product-layout  product-grid col-lg-3 col-6 ">
-              <div class="item">
-               <div class="product-thumb transition">
-                  <div class="image">
-                    <div class="first_image"> <a href="product_detail_page.html"> <img src="images/pro/003.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a> </div>
-                    <div class="swap_image"> <a href="product_detail_page.html"> <img src="images/pro/001.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a></div>
-                  </div>
-                  <div class="product-details">
-                    <div class="caption">
-                      <h4><a href="product_detail_page.html">pure-spice-3</a></h4>
-                      <p class="price">$7.25<span class="price-tax">Ex Tax: $7.25</span></p>
-                      <p class="desc">freshly picked for you.Store them in a cool, dry place away from direct sunlight...</p>
-                      <div class="product_option">
-                        <div class="form-group required ">
-                          <select name="option[239]" id="input-option240" class="form-control">
-                            <option value=""> --- Please Select --- </option>
-                            <option value="45">1kg(+$0.07)</option>
-                            <option value="46">5kg(+$0.22)</option>
-                            <option value="47">10kg(+$0.44)</option>
-                          </select>
-                        </div>
-                        <div class="input-group button-group">
-                          <label class="control-label">Qty</label>
-                          <input type="number" name="quantity" min="1" value="1"  step="1" class="qty form-control">
-                          <button type="button" class="addtocart pull-right">Add</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-              </div>
-            </div>
-            <div class="product-layout  product-grid col-lg-3 col-6 ">
-              <div class="item">
-               <div class="product-thumb transition">
-                  <div class="image">
-                    <div class="first_image"> <a href="product_detail_page.html"> <img src="images/pro/006.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a> </div>
-                    <div class="swap_image"> <a href="product_detail_page.html"> <img src="images/pro/003.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a></div>
-                  </div>
-                  <div class="product-details">
-                    <div class="caption">
-                      <h4><a href="product_detail_page.html">pure-spice-3</a></h4>
-                      <p class="price">$7.25<span class="price-tax">Ex Tax: $7.25</span></p>
-                      <p class="desc">freshly picked for you.Store them in a cool, dry place away from direct sunlight...</p>
-                      <div class="product_option">
-                        <div class="form-group required ">
-                          <select name="option[239]" id="input-option241" class="form-control">
-                            <option value=""> --- Please Select --- </option>
-                            <option value="45">1kg(+$0.07)</option>
-                            <option value="46">5kg(+$0.22)</option>
-                            <option value="47">10kg(+$0.44)</option>
-                          </select>
-                        </div>
-                        <div class="input-group button-group">
-                          <label class="control-label">Qty</label>
-                          <input type="number" name="quantity" min="1" value="1"  step="1" class="qty form-control">
-                          <button type="button" class="addtocart pull-right">Add</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-              </div>
-            </div>
-            <div class="product-layout  product-grid col-lg-3 col-6 ">
-              <div class="item">
-               <div class="product-thumb transition">
-                  <div class="image">
-                    <div class="first_image"> <a href="product_detail_page.html"> <img src="images/pro/007.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a> </div>
-                    <div class="swap_image"> <a href="product_detail_page.html"> <img src="images/pro/008.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a></div>
-                  </div>
-                  <div class="product-details">
-                    <div class="caption">
-                      <h4><a href="product_detail_page.html">pure-spice-3</a></h4>
-                      <p class="price">$7.25<span class="price-tax">Ex Tax: $7.25</span></p>
-                      <p class="desc">freshly picked for you.Store them in a cool, dry place away from direct sunlight...</p>
-                      <div class="product_option">
-                        <div class="form-group required ">
-                          <select name="option[239]" id="input-option242" class="form-control">
-                            <option value=""> --- Please Select --- </option>
-                            <option value="45">1kg(+$0.07)</option>
-                            <option value="46">5kg(+$0.22)</option>
-                            <option value="47">10kg(+$0.44)</option>
-                          </select>
-                        </div>
-                        <div class="input-group button-group">
-                          <label class="control-label">Qty</label>
-                          <input type="number" name="quantity" min="1" value="1"  step="1" class="qty form-control">
-                          <button type="button" class="addtocart pull-right">Add</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-              </div>
-            </div>
+            </c:forEach>
 
           </div>
 
@@ -1118,6 +743,8 @@
 	<script src="<c:url value="/resources/js/jquery.firstVisitPopup.js"/>"></script>
 	<script src="<c:url value="/resources/js/custom.js"/>"></script>
 		<script src="<c:url value="/resources/js/jquery-ui.js"/>"></script>
+			<script src="<c:url value="/resources/js/main.js"/>"></script>
+		
 	
   <script>
   $(function() {

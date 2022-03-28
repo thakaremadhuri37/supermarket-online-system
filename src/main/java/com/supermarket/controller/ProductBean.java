@@ -12,6 +12,7 @@ public class ProductBean {
 	private String name;
 	private double price;
 	private String imagename;
+	private int quantity;
 	
 	
 	public int getId() {
@@ -38,9 +39,16 @@ public class ProductBean {
 	public void setImagename(String imagename) {
 		this.imagename = imagename;
 	}
+	
+	public int getQuntity() {
+		return quantity;
+	}
+	public void setQuntity(int quntity) {
+		this.quantity = quntity;
+	}
 	@Override
 	public String toString() {
-		return "ProductBean [id=" + id + ", name=" + name + ", price=" + price + ", imagename=" + imagename + "]";
+		return "ProductBean [id=" + id + ", name=" + name + ", price=" + price + ", imagename=" + imagename + ",quntity="+quantity+"]";
 	}
 	
 	

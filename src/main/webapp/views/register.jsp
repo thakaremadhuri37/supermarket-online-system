@@ -161,7 +161,8 @@
 		<!-- =====  Nav END  ===== -->
 
 		<!-- =====  HEADER START  ===== -->
-		<header id="header" class="section">
+		<%@ include file="comman.jsp" %>
+		<!-- <header id="header" class="section">
 			<div class="container">
 				<div class="header-top py-1">
 					<div class="row align-items-center">
@@ -228,7 +229,7 @@
 													<div class="dropdown-inner">
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="dropdown active"><a
 																href="category_page.html">Daal & Pulses</a>
 																<div class="dropdown-menu">
@@ -244,11 +245,11 @@
 																	</div>
 																</div></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="dropdown active"><a
 																href="category_page.html">Dry Fruits & Nuts</a>
 																<div class="dropdown-menu">
@@ -266,11 +267,11 @@
 																	</div>
 																</div></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="dropdown active"><a href="#">Edible
 																	Oils</a>
 																<div class="dropdown-menu">
@@ -289,11 +290,11 @@
 																	</div>
 																</div></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="dropdown active"><a
 																href="category_page.html">Riced cauliflower</a>
 																<div class="dropdown-menu">
@@ -309,7 +310,7 @@
 																	</div>
 																</div></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 														<div class="menu-image">
 															<img src="images/13.jpg" alt="" title=""
@@ -323,13 +324,13 @@
 													<div class="dropdown-inner">
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="main_cat active"><a
 																href="category_page.html">Deos & Perfumes</a></li>
 															<li class="main_cat"><a href="category_page.html">Hair
 																	Care</a></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 													</div>
 												</div></li>
@@ -339,13 +340,13 @@
 													<div class="dropdown-inner">
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="main_cat active"><a
 																href="category_page.html">Biscuits & Cookies</a></li>
 															<li class="main_cat"><a href="#">Chips & Crisps</a>
 															</li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 													</div>
 												</div></li>
@@ -355,13 +356,13 @@
 													<div class="dropdown-inner">
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="main_cat active"><a
 																href="category_page.html">Cleaning Tools & Brushes</a></li>
 															<li class="main_cat"><a href="category_page.html">Home
 																	& Car Fresheners</a></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 													</div>
 												</div></li>
@@ -371,13 +372,13 @@
 													<div class="dropdown-inner">
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="main_cat active"><a
 																href="category_page.html">Breakfast Cereal & Mixes</a></li>
 															<li class="main_cat"><a href="category_page.html">Paneer
 																	& Curd</a></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 													</div>
 												</div></li>
@@ -517,7 +518,7 @@
 					</div>
 				</div>
 			</div>
-		</header>
+		</header> -->
 		<!-- =====  HEADER END  ===== -->
 		<!-- =====  BREADCRUMB STRAT  ===== -->
 		<div class="breadcrumb section pt-60 pb-60">
@@ -615,7 +616,11 @@
 								</div>
 							</div>
 						</div>
-
+						
+</div>
+</div>
+</div>
+</div>
 						<!-- =====  CONTAINER END  ===== -->
 						<!-- =====  FOOTER START  ===== -->
 						<div class="footer section pt-40">

@@ -26,6 +26,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- =====  CSS  ===== -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
 
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/bootstrap.css" />" />
@@ -56,14 +58,14 @@
 
 
 </head>
+<body onload="homePageOnLoad()">
 
-<body>
 	<!-- =====  LODER  ===== -->
 	<div class="loder"></div>
 	<div class="wrapper">
 
 		<!-- Modal -->
-		<div id="subscribe-me-" class="modal animated" role="dialog"
+		<%-- 	<div id="subscribe-me-" class="modal animated" role="dialog"
 			data-keyboard="true" tabindex="-1">
 			<div class="newsletter-popup row align-items-center py-4  px-2">
 				<img src="<c:url value="/resources/images/newsbg.html" /> alt="
@@ -95,11 +97,11 @@
 					</form>
 				</div>
 			</div>
-		</div>
+		</div> --%>
 		<!-- Modal End -->
 
 		<!-- =====  Nav START  ===== -->
-		<nav id="top">
+		<!-- <nav id="top">
 			<div class="container">
 				<div class="row">
 					<span class="responsive-bar"><i class="fa fa-bars"></i></span>
@@ -198,16 +200,17 @@
 					</div>
 				</div>
 			</div>
-		</nav>
+		</nav> -->
 		<!-- =====  Nav END  ===== -->
 
 		<!-- =====  HEADER START  ===== -->
-		<header id="header" class="section">
+		<%@ include file="comman.jsp"%>
+	<%-- 	<header id="header" class="section">
 			<div class="container">
 				<div class="header-top py-1">
-					<div class="row align-items-center">
-						<div class="col-md-6">
-							<ul class="header-top-left pull-left">
+					<!-- <div class="row align-items-center"> -->
+						<!-- <div class="col-md-6"> -->
+				<!-- 			<ul class="header-top-left pull-left">
 								<li class="language dropdown px-2"><span
 									class="dropdown-toggle" id="dropdownMenu1"
 									data-toggle="dropdown" aria-haspopup="true"
@@ -230,12 +233,12 @@
 										<li><a href="#">Â£ Pound Sterling</a></li>
 										<li><a href="#">$ US Dollar</a></li>
 									</ul></li>
-							</ul>
-						</div>
+							</ul> 
+						</div>-->
 						<div class="col-md-6">
 							<ul class="header-top-right pull-right">
 								<li class="telephone"><a href="#"><i
-										class="fa fa-phone"></i> +91 987-654-321</a></li>
+										class="fa fa-phone"></i> +91 9673961258</a></li>
 								<li class="login"><a href="login.html"><i
 										class="fa fa-user"></i>Login</a></li>
 								<li class="register"><a href="register.html">Signup</a></li>
@@ -247,12 +250,14 @@
 			<div class="header section pt-15 pb-15">
 				<div class="container">
 					<div class="row">
-						<div class="navbar-header col-2 header-bottom-left">
-							<a class="navbar-brand" href="index-2.html"> <img
+						 <div class="navbar-header col-2 header-bottom-left">
+						 <a class="navbar-brand" href="index-2.html"> <img
 								alt="Bigmarket"
-								src="<c:url value="/resources/images/logo.png"/>" />
-							</a>
-						</div>
+								src="<c:url value="/resources/images/logo2.png"/>" width="100px" /> 
+							</a> 
+						
+						</div> 
+						
 						<div class="col-10 header-bottom-right">
 							<div class="header-menu">
 								<div class="responsive-menubar-block">
@@ -261,7 +266,8 @@
 										data-target=".navbar-ex1-collapse" data-toggle="collapse"><i
 										class="fa fa-bars"></i></span>
 								</div>
-								<nav id="menu" class="navbar">
+					
+					<!-- <nav id="menu" class="navbar">
 									<div class="collapse navbar-collapse navbar-ex1-collapse">
 										<ul class="nav navbar-nav main-navigation">
 											<li class="main_cat dropdown active"><a
@@ -270,7 +276,7 @@
 													<div class="dropdown-inner">
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="dropdown active"><a
 																href="category_page.html">Daal & Pulses</a>
 																<div class="dropdown-menu">
@@ -286,11 +292,11 @@
 																	</div>
 																</div></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="dropdown active"><a
 																href="category_page.html">Dry Fruits & Nuts</a>
 																<div class="dropdown-menu">
@@ -308,11 +314,11 @@
 																	</div>
 																</div></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="dropdown active"><a href="#">Edible
 																	Oils</a>
 																<div class="dropdown-menu">
@@ -331,11 +337,11 @@
 																	</div>
 																</div></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="dropdown active"><a
 																href="category_page.html">Riced cauliflower</a>
 																<div class="dropdown-menu">
@@ -351,7 +357,7 @@
 																	</div>
 																</div></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 														<div class="menu-image">
 															<img src="images/13.jpg" alt="" title=""
@@ -365,13 +371,13 @@
 													<div class="dropdown-inner">
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="main_cat active"><a
 																href="category_page.html">Deos & Perfumes</a></li>
 															<li class="main_cat"><a href="category_page.html">Hair
 																	Care</a></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 													</div>
 												</div></li>
@@ -381,13 +387,13 @@
 													<div class="dropdown-inner">
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="main_cat active"><a
 																href="category_page.html">Biscuits & Cookies</a></li>
 															<li class="main_cat"><a href="#">Chips & Crisps</a>
 															</li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 													</div>
 												</div></li>
@@ -397,13 +403,13 @@
 													<div class="dropdown-inner">
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="main_cat active"><a
 																href="category_page.html">Cleaning Tools & Brushes</a></li>
 															<li class="main_cat"><a href="category_page.html">Home
 																	& Car Fresheners</a></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 													</div>
 												</div></li>
@@ -413,13 +419,13 @@
 													<div class="dropdown-inner">
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="main_cat active"><a
 																href="category_page.html">Breakfast Cereal & Mixes</a></li>
 															<li class="main_cat"><a href="category_page.html">Paneer
 																	& Curd</a></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 													</div>
 												</div></li>
@@ -432,49 +438,49 @@
 												</div></li>
 										</ul>
 									</div>
-								</nav>
+								</nav> -->
+					<!-- </div> -->
+					<div class="header-link-search">
+						<div class="header-search">
+							<div class="actions">
+								<button type="submit" title="Search" class="action search"
+									id="head-search"></button>
 							</div>
-							<div class="header-link-search">
-								<div class="header-search">
-									<div class="actions">
-										<button type="submit" title="Search" class="action search"
-											id="head-search"></button>
-									</div>
-									<div id="search" class="input-group">
-										<input type="text" id="search-input" name="search" value=""
-											placeholder="Search" class="form-control input-lg"
-											autocomplete="off"> <span class="input-group-btn">
-											<button type="button" class="btn btn-default btn-lg">Search</button>
-										</span>
-									</div>
-								</div>
-								<div class="header-link">
+							<div id="search" class="input-group">
+								<input type="text" id="search-input" name="search" value=""
+									placeholder="Search" class="form-control input-lg"
+									autocomplete="off"> <span class="input-group-btn">
+									<button type="button" class="btn btn-default btn-lg">Search</button>
+								</span>
+							</div>
+						</div>
+						<!-- <div class="header-link">
 									<ul class="list-unstyled">
 										<li><a href="#">Bm offers</a></li>
 										<li><a href="#">Bm express</a></li>
 										<li><a href="#">Bm speciality</a></li>
 										<li><a href="#">Bm store</a></li>
 									</ul>
-								</div>
-							</div>
-							<div class="shopcart">
-								<div id="cart" class="btn-block mt-40 mb-30 ">
-									<button type="button" class="btn" data-target="#cart-dropdown"
-										data-toggle="collapse" aria-expanded="true">
-										<span id="shippingcart">My basket</span><span id="cart-total">
-											0</span>
-									</button>
-									<a href="cart_page.html" class="cart_responsive btn"><span
-										id="cart-text">My basket</span><span id="cart-total-res">1</span>
-									</a>
-								</div>
-								<div id="cart-dropdown" class="cart-menu collapse">
-									<ul>
-										<li>
-											<table class="table table-striped">
-												<tbody id="myItemCart">
+								</div> -->
+					</div>
+					<div class="shopcart">
+						<div id="cart" class="btn-block mt-40 mb-30 ">
+							<button type="button" class="btn" data-target="#cart-dropdown"
+								data-toggle="collapse" aria-expanded="true">
+								<span id="shippingcart">My basket</span><span id="cart-total">
+									0</span>
+							</button>
+							<a href="cart_page.html" class="cart_responsive btn"><span
+								id="cart-text">My basket</span><span id="cart-total-res">1</span>
+							</a>
+						</div>
+						<div id="cart-dropdown" class="cart-menu collapse">
+							<ul>
+								<li>
+									<table class="table table-striped">
+										<tbody id="myItemCart">
 
-													<!-- 	<tr>
+											<!-- 	<tr>
 														<td class="text-center"><a href="#"><img
 																src="images/pro/70x70_1.jpg" alt="iPod Classic"
 																title="iPod Classic"></a></td>
@@ -507,212 +513,209 @@
 														<td class="text-center"><a class="close-cart"><i
 																class="fa fa-times-circle"></i></a></td>
 													</tr> -->
-												</tbody>
-											</table>
-										</li>
-										<li>
-											<table class="table">
-												<tbody>
-													<!-- <tr>
-														<td class="text-right"><strong>Sub-Total</strong></td>
-														<td class="text-right" id="subTotal">0.00</td>
-													</tr>
-													<tr>
-														<td class="text-right"><strong>Eco Tax
-																(-2.00)</strong></td>
-														<td class="text-right">₹2.00</td>
-													</tr>
-													<tr>
-														<td class="text-right"><strong>VAT (20%)</strong></td>
-														<td class="text-right">₹20.00</td>
-													</tr> -->
-													<tr>
-														<td class="text-right"><strong>Total Cart
-																Amount &nbsp;&nbsp;&nbsp; </strong></td>
-														<td class="text-right" id="totalCartAmt">₹0.00</td>
-													</tr>
-												</tbody>
-											</table>
-										</li>
-										<li>
-											<!-- 	<div >
+										</tbody>
+									</table>
+								</li>
+								<li>
+									<table class="table">
+										<tbody>
+											
+											<tr>
+												<td class="text-right"><strong>Total Cart
+														Amount &nbsp;&nbsp;&nbsp; </strong></td>
+												<td class="text-right" id="totalCartAmt">₹0.00</td>
+											</tr>
+										</tbody>
+									</table>
+								</li>
+								<li>
+									<!-- 	<div >
 												<input class="btn pull-left" id="viewCartDetails" name="cartbean" value="View cart" type="button">
 											</div>  -->
-											<form action="viewCart" , method="POST">
-												<input type="hidden" id="viewCartDetails1" name="cartBean" value="">
-												<input class="btn pull-left" name="cartbean"
-													value="View cart" type="submit">
-											</form>
-											<form action="checkoutFromCart" , method="POST">
-												<input type="hidden" id="cheackOutDetails" name="cartBean" value="">
-												<input class="btn pull-right" name="cartbean"
-													value="Checkout" type="submit">
-											</form>
-											
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="header-static-block">
-				<div class="container">
-					<div class="row">
-						<div class="icon-block">
-							<div class="home_icon">
-								<a href="index-2.html"><i class="fa fa-home"></i>Home</a>
-							</div>
-							<div class="search_icon">
-								<a href="#"><i class="fa fa-search"></i>Search</a>
-							</div>
-							<div class="cart_icon"></div>
-							<div class="login_icon">
-								<a href="login.html"><i class="fa fa-user"></i>Login</a>
-							</div>
-							<div class="telephone_icon">
-								<a href="contact_us.html"><i class="fa fa-phone"></i>Contact</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
-		<!-- =====  HEADER END  ===== -->
+									<form action="viewCart" , method="POST">
+										<input type="hidden" id="viewCartDetails1" name="cartBean"
+											value=""> <input class="btn pull-left"
+											name="cartbean" value="View cart" type="submit">
+									</form>
+									<form action="checkoutFromCart" , method="POST">
+										<input type="hidden" id="cheackOutDetails" name="cartBean"
+											value=""> <input class="btn pull-right"
+											name="cartbean" value="Checkout" type="submit">
+									</form>
 
-		<!-- =====  BANNER STRAT  ===== -->
-		<div class="banner section">
-			<div class="main-banner owl-carousel">
-				<div class="item">
-					<a href="#"><img
-						src="<c:url value="/resources/images/banner/banner1.jpg"/>"
-						alt="Main Banner" class="img-responsive" /></a>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
-				<div class="item">
-					<a href="#"><img
-						src="<c:url value="/resources/images/banner/banner2.jpg"/>"
-						alt="Main Banner" class="img-responsive" /></a>
+			</div>
+	</div>
+	</div>
+	<div class="header-static-block">
+		<div class="container">
+			<div class="row">
+				<div class="icon-block">
+					<div class="home_icon">
+						<a href="index-2.html"><i class="fa fa-home"></i>Home</a>
+					</div>
+					<div class="search_icon">
+						<a href="#"><i class="fa fa-search"></i>Search</a>
+					</div>
+					<div class="cart_icon"></div>
+					<div class="login_icon">
+						<a href="login.html"><i class="fa fa-user"></i>Login</a>
+					</div>
+					<div class="telephone_icon">
+						<a href="contact_us.html"><i class="fa fa-phone"></i>Contact</a>
+					</div>
 				</div>
-				<%-- <div class="item">
+			</div>
+		</div>
+	</div>
+	</header> --%>
+	<!-- =====  HEADER END  ===== -->
+
+	<!-- =====  BANNER STRAT  ===== -->
+	<div class="banner section">
+		<div class="main-banner owl-carousel">
+			<div class="item">
+				<a href="#"><img
+					src="<c:url value="/resources/images/banner/banner1.jpg"/>"
+					alt="Main Banner" class="img-responsive" /></a>
+			</div>
+			<div class="item">
+				<a href="#"><img
+					src="<c:url value="/resources/images/banner/banner2.jpg"/>"
+					alt="Main Banner" class="img-responsive" /></a>
+			</div>
+			<%-- <div class="item">
 					<a href="#"><img
 						src="<c:url value="/resources/images/main_banner2.jpg"/>"
 						alt="Main Banner" class="img-responsive" /></a>
 				</div> --%>
+		</div>
+	</div>
+
+	<!-- =====  CONTAINER START  ===== -->
+	<div class="container">
+		<!-- =====  SUB BANNER  STRAT ===== -->
+		<div class="subbanner-section section mt-20">
+			<div class="owl-carousel banner-carousel">
+				<div class="home-subbanner">
+					<div class="home-img">
+						<a href="#"><img class="leftbanner"
+							src="<c:url value="/resources/images/sub-banner1.jpg"/>"
+							alt="sub-banner1"></a>
+					</div>
+					<div class="cms-desc">
+						<div class="cms-text1">
+							Get <b>Chana Dal</b>
+						</div>
+						<div class="cms-text2">@ ₹20</div>
+						<div class="cms-text3">Shop for ₹500</div>
+					</div>
+				</div>
+				<div class="home-subbanner">
+					<div class="home-img">
+						<a href="#"><img class="leftbanner"
+							src="<c:url value="/resources/images/sub-banner2.jpg" />"
+							alt="sub-banner1"></a>
+					</div>
+					<div class="cms-desc">
+						<div class="cms-text1">
+							Get <b>California RED</b>
+						</div>
+						<div class="cms-text2">@ ₹12</div>
+						<div class="cms-text3">Shop for ₹200</div>
+					</div>
+				</div>
+				<div class="home-subbanner">
+					<div class="home-img">
+						<a href="#"><img class="leftbanner"
+							src="<c:url value="/resources/images/sub-banner3.jpg"/>"
+							alt="sub-banner1"></a>
+					</div>
+					<div class="cms-desc">
+						<div class="cms-text1">
+							Get <b>Chana dal</b>
+						</div>
+						<div class="cms-text2">@ ₹20</div>
+						<div class="cms-text3">Shop for ₹500</div>
+					</div>
+				</div>
 			</div>
 		</div>
+		<!-- =====  SUB BANNER END  ===== -->
 
-		<!-- =====  CONTAINER START  ===== -->
-		<div class="container">
-			<!-- =====  SUB BANNER  STRAT ===== -->
-			<div class="subbanner-section section mt-20">
-				<div class="owl-carousel banner-carousel">
-					<div class="home-subbanner">
-						<div class="home-img">
-							<a href="#"><img class="leftbanner"
-								src="<c:url value="/resources/images/sub-banner1.jpg"/>"
-								alt="sub-banner1"></a>
-						</div>
-						<div class="cms-desc">
-							<div class="cms-text1">
-								Get <b>Chana Dal</b>
-							</div>
-							<div class="cms-text2">@ ₹20</div>
-							<div class="cms-text3">Shop for ₹500</div>
+		<!-- =====  SEARVICES START  ===== -->
+		<div class="shipping-outer section">
+			<div class="shipping-inner row">
+				<div class="heading col-lg-3 col-12 text-center text-lg-left">
+					<h2>Why choose us?</h2>
+				</div>
+				<div
+					class="subtitle-part subtitle-part1 col-lg-3 col-4 text-center text-lg-left">
+					<div class="subtitle-part-inner">
+						<div class="subtitile">
+							<div class="subtitle-part-image"></div>
+							<div class="subtitile1">On time delivery</div>
+							<div class="subtitile2">15% back if not able</div>
 						</div>
 					</div>
-					<div class="home-subbanner">
-						<div class="home-img">
-							<a href="#"><img class="leftbanner"
-								src="<c:url value="/resources/images/sub-banner2.jpg" />"
-								alt="sub-banner1"></a>
-						</div>
-						<div class="cms-desc">
-							<div class="cms-text1">
-								Get <b>California RED</b>
-							</div>
-							<div class="cms-text2">@ ₹12</div>
-							<div class="cms-text3">Shop for ₹200</div>
+				</div>
+				<div
+					class="subtitle-part subtitle-part2 col-lg-3 col-4 text-center text-lg-left">
+					<div class="subtitle-part-inner">
+						<div class="subtitile">
+							<div class="subtitle-part-image"></div>
+							<div class="subtitile1">Free delivery</div>
+							<div class="subtitile2">Order over $ 200</div>
 						</div>
 					</div>
-					<div class="home-subbanner">
-						<div class="home-img">
-							<a href="#"><img class="leftbanner"
-								src="<c:url value="/resources/images/sub-banner3.jpg"/>"
-								alt="sub-banner1"></a>
-						</div>
-						<div class="cms-desc">
-							<div class="cms-text1">
-								Get <b>Chana dal</b>
-							</div>
-							<div class="cms-text2">@ ₹20</div>
-							<div class="cms-text3">Shop for ₹500</div>
+				</div>
+				<div
+					class="subtitle-part subtitle-part3 col-lg-3 col-4 text-center text-lg-left">
+					<div class="subtitle-part-inner">
+						<div class="subtitile">
+							<div class="subtitle-part-image"></div>
+							<div class="subtitile1">Quality assurance</div>
+							<div class="subtitile2">You can trust us</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- =====  SUB BANNER END  ===== -->
+		</div>
+		<!-- =====  SEARVICES END  ===== -->
 
-			<!-- =====  SEARVICES START  ===== -->
-			<div class="shipping-outer section">
-				<div class="shipping-inner row">
-					<div class="heading col-lg-3 col-12 text-center text-lg-left">
-						<h2>Why choose us?</h2>
-					</div>
-					<div
-						class="subtitle-part subtitle-part1 col-lg-3 col-4 text-center text-lg-left">
-						<div class="subtitle-part-inner">
-							<div class="subtitile">
-								<div class="subtitle-part-image"></div>
-								<div class="subtitile1">On time delivery</div>
-								<div class="subtitile2">15% back if not able</div>
-							</div>
-						</div>
-					</div>
-					<div
-						class="subtitle-part subtitle-part2 col-lg-3 col-4 text-center text-lg-left">
-						<div class="subtitle-part-inner">
-							<div class="subtitile">
-								<div class="subtitle-part-image"></div>
-								<div class="subtitile1">Free delivery</div>
-								<div class="subtitile2">Order over $ 200</div>
-							</div>
-						</div>
-					</div>
-					<div
-						class="subtitle-part subtitle-part3 col-lg-3 col-4 text-center text-lg-left">
-						<div class="subtitle-part-inner">
-							<div class="subtitile">
-								<div class="subtitle-part-image"></div>
-								<div class="subtitile1">Quality assurance</div>
-								<div class="subtitile2">You can trust us</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- =====  SEARVICES END  ===== -->
+		<!-- =====  PRODUCT CATEGORY START  ===== -->
 
-			<!-- =====  PRODUCT CATEGORY START  ===== -->
-			<div class="category-banner-block">
-				<div class="section_title">top categories</div>
-				<div class="row">
+
+		<div class="category-banner-block">
+			<div class="section_title">top categories</div>
+
+
+
+			<div class="row">
+				<c:forEach var="category" items="${categorylist}">
+
 					<div class="product-layout col-lg-2 col-md-3 col-sm-4 col-6">
 						<div class="product-thumb transition text-center">
 							<div class="caption categoryname">
 								<h4>
-									<a href="#">Del Monte Beets</a>
+									<a href="categorypage?categoryid=${category.categoryid}">${category.name}</a>
 								</h4>
 							</div>
 							<div class="image">
-								<a href="category_page.html"><img
-									src="<c:url value="/resources/images/cat1.png"/>"
+								<a href="categorypage?categoryid=${category.categoryid}"> <%-- <a href="categorypage?categoryid=${catagory.categoryid}"> --%>
+									<img
+									src="<c:url value="/resources/images/${category.imagename}"/>"
 									alt="Del Monte Beets" title="Del Monte Beets"
 									class="img-responsive"></a>
 							</div>
 						</div>
-					</div>
-					<div class="product-layout col-lg-2 col-md-3 col-sm-4 col-6">
+						<!-- 					</div>
+ -->
+						<%-- <div class="product-layout col-lg-2 col-md-3 col-sm-4 col-6">
 						<div class="product-thumb transition text-center">
 							<div class="caption categoryname">
 								<h4>
@@ -725,7 +728,7 @@
 									title="Veggies" class="img-responsive"></a>
 							</div>
 						</div>
-					</div>
+					</div> 
 					<div class="product-layout col-lg-2 col-md-3 col-sm-4 col-6">
 						<div class="product-thumb transition text-center">
 							<div class="caption categoryname">
@@ -784,9 +787,11 @@
 									class="img-responsive"></a>
 							</div>
 						</div>
+					</div> --%>
 					</div>
-				</div>
+				</c:forEach>
 			</div>
+
 			<!-- =====  PRODUCT CATEGORY END  ===== -->
 
 			<!-- =====  PRODUCT section  ===== -->
@@ -807,10 +812,10 @@
 										11<br> % <br> <i>off</i>
 									</p>
 									<h4>
-										<a href="category_page.html">Apple</a>
+										<a href="product">Apple</a>
 									</h4>
 									<div class="image">
-										<a href="category_page.html"><img
+										<a href="product"><img
 											src="<c:url value="/resources/images/12.jpg"/>" alt="Apple"
 											title="Apple" class="img-thumbnail"></a>
 									</div>
@@ -906,24 +911,24 @@
 									<div class="product-thumb transition">
 										<div class="image">
 											<div class="first_image">
-												<a href="product_detail_page.html"> <img
+												<a href="product?id=${product.id}"> <img
+													src="<c:url value="/resources/images/pro/${product.imagename}"/>"
+													alt="pure-spice-3" title="pure-spice-3"
+													class="img-responsive" height="200" width="200">
+												</a>
+											</div>
+											<%-- <div class="swap_image">
+												<a href="product/${product.id}"> <img
 													src="<c:url value="/resources/images/pro/${product.imagename}"/>"
 													alt="pure-spice-3" title="pure-spice-3"
 													class="img-responsive">
 												</a>
-											</div>
-											<div class="swap_image">
-												<a href="product_detail_page.html"> <img
-													src="<c:url value="/resources/images/pro/${product.imagename}"/>"
-													alt="pure-spice-3" title="pure-spice-3"
-													class="img-responsive">
-												</a>
-											</div>
+											</div> --%>
 										</div>
 										<div class="product-details">
 											<div class="caption">
 												<h4>
-													<a id="productName" href="product_detail_page.html">${product.name}</a>
+													<a id="productName" href="product/${product.id}">${product.name}</a>
 												</h4>
 												<p id="productPrice" class="price">₹ ${product.price}</p>
 												<div class="product_option">
@@ -937,12 +942,13 @@
 													</select>
 												</div>  -->
 													<br>
+													
 													<div class="input-group button-group">
 														<label class="control-label">Qty</label> <input
 															id="totalQty" type="number" name="quantity" min="1"
 															value="1" step="1" class="qty form-control">
 														<%-- 													<button type="button" value="${product}" class="addtocart pull-right">Add</button>
- --%>
+ --%>													
 														<button type="button"
 															value='{"id":${product.id}, "name":"${product.name}", "price":${product.price}, "imagename":"${product.imagename}"}'
 															class="addtocart pull-right">Add</button>

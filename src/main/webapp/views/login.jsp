@@ -160,43 +160,20 @@
 		</nav>
 		<!-- =====  Nav END  ===== -->
 
-		<!-- =====  HEADER START  ===== -->
-		<header id="header" class="section">
+	 	<!-- =====  HEADER START  ===== -->
+	 	<%@ include file="comman.jsp" %>
+	<!--	<header id="header" class="section">
 			<div class="container">
 				<div class="header-top py-1">
 					<div class="row align-items-center">
 						<div class="col-md-6">
-							<ul class="header-top-left pull-left">
-								<li class="language dropdown px-2"><span
-									class="dropdown-toggle" id="dropdownMenu1"
-									data-toggle="dropdown" aria-haspopup="true"
-									aria-expanded="false" role="button">Language <span
-										class="caret"></span>
-								</span>
-									<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-										<li><a href="#">English</a></li>
-										<li><a href="#">French</a></li>
-										<li><a href="#">German</a></li>
-									</ul></li>
-								<li class="currency dropdown pl-2"><span
-									class="dropdown-toggle" id="dropdownMenu12"
-									data-toggle="dropdown" aria-haspopup="true"
-									aria-expanded="false" role="button">Currency <span
-										class="caret"></span>
-								</span>
-									<ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-										<li><a href="#">€ Euro</a></li>
-										<li><a href="#">£ Pound Sterling</a></li>
-										<li><a href="#">$ US Dollar</a></li>
-									</ul></li>
-							</ul>
+							
 						</div>
 						<div class="col-md-6">
 							<ul class="header-top-right pull-right">
 								<li class="telephone"><a href="#"><i
-										class="fa fa-phone"></i> +91 987-654-321</a></li>
-								<li class="login"><a href="login"><i
-										class="fa fa-user"></i>Login</a></li>
+										class="fa fa-phone"></i> +91 9673961258</a></li>
+								<li class="login"><a href="login"><i class="fa fa-user"></i>Login</a></li>
 								<li class="register"><a href="register">Signup</a></li>
 							</ul>
 						</div>
@@ -228,7 +205,7 @@
 													<div class="dropdown-inner">
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="dropdown active"><a
 																href="category_page.html">Daal & Pulses</a>
 																<div class="dropdown-menu">
@@ -244,11 +221,11 @@
 																	</div>
 																</div></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="dropdown active"><a
 																href="category_page.html">Dry Fruits & Nuts</a>
 																<div class="dropdown-menu">
@@ -266,11 +243,11 @@
 																	</div>
 																</div></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="dropdown active"><a href="#">Edible
 																	Oils</a>
 																<div class="dropdown-menu">
@@ -289,11 +266,11 @@
 																	</div>
 																</div></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="dropdown active"><a
 																href="category_page.html">Riced cauliflower</a>
 																<div class="dropdown-menu">
@@ -309,7 +286,7 @@
 																	</div>
 																</div></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 														<div class="menu-image">
 															<img src="images/13.jpg" alt="" title=""
@@ -323,13 +300,13 @@
 													<div class="dropdown-inner">
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="main_cat active"><a
 																href="category_page.html">Deos & Perfumes</a></li>
 															<li class="main_cat"><a href="category_page.html">Hair
 																	Care</a></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 													</div>
 												</div></li>
@@ -339,13 +316,13 @@
 													<div class="dropdown-inner">
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="main_cat active"><a
 																href="category_page.html">Biscuits & Cookies</a></li>
 															<li class="main_cat"><a href="#">Chips & Crisps</a>
 															</li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 													</div>
 												</div></li>
@@ -355,13 +332,13 @@
 													<div class="dropdown-inner">
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="main_cat active"><a
 																href="category_page.html">Cleaning Tools & Brushes</a></li>
 															<li class="main_cat"><a href="category_page.html">Home
 																	& Car Fresheners</a></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 													</div>
 												</div></li>
@@ -371,13 +348,13 @@
 													<div class="dropdown-inner">
 														<ul class="list-unstyled childs_1">
 
-															<!-- 2 Level Sub Categories START -->
+															2 Level Sub Categories START
 															<li class="main_cat active"><a
 																href="category_page.html">Breakfast Cereal & Mixes</a></li>
 															<li class="main_cat"><a href="category_page.html">Paneer
 																	& Curd</a></li>
 
-															<!-- 2 Level Sub Categories END -->
+															2 Level Sub Categories END
 														</ul>
 													</div>
 												</div></li>
@@ -407,12 +384,10 @@
 									</div>
 								</div>
 								<div class="header-link">
-									<ul class="list-unstyled">
-										<li><a href="#">Bm offers</a></li>
-										<li><a href="#">Bm express</a></li>
-										<li><a href="#">Bm speciality</a></li>
-										<li><a href="#">Bm store</a></li>
-									</ul>
+									<marquee width="100%" direction="right" behavior="alternate"
+										height="100px" > <h3 style="color:green;">!! Shop with exciting unlimited
+										Offers !!</h3> </marquee>
+									
 								</div>
 							</div>
 							<div class="shopcart">
@@ -517,7 +492,7 @@
 					</div>
 				</div>
 			</div>
-		</header>
+		</header> -->
 		<!-- =====  HEADER END  ===== -->
 		<!-- =====  BREADCRUMB STRAT  ===== -->
 		<div class="breadcrumb section pt-60 pb-60">
@@ -554,12 +529,13 @@
 										</div>
 										<div class="form-group">
 											<input type="password" class="form-control"
-												id="exampleInputPassword1" placeholder="Password" name="password">
+												id="exampleInputPassword1" placeholder="Password"
+												name="password">
 										</div>
 										<div class="form-check">
 											<input type="checkbox" class="form-check-input"
 												id="exampleCheck1"> <label class="form-check-label"
-												for="exampleCheck1" >Remember me</label>
+												for="exampleCheck1">Remember me</label>
 										</div>
 										<button type="submit" class="btn mt-10">Login</button>
 									</form>

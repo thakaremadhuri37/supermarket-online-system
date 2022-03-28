@@ -169,7 +169,7 @@
 			<div class="header-top py-1">
 				<div class="row align-items-center">
 					<div class="col-md-6">
-						<ul class="header-top-left pull-left">
+						<!-- <ul class="header-top-left pull-left">
 							<li class="language dropdown px-2"><span
 								class="dropdown-toggle" id="dropdownMenu1"
 								data-toggle="dropdown" aria-haspopup="true"
@@ -177,27 +177,16 @@
 									class="caret"></span>
 							</span>
 								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-									<li><a href="#">English</a></li>
+									<li><a href="#">Enmglish</a></li>
 									<li><a href="#">French</a></li>
 									<li><a href="#">German</a></li>
-								</ul></li>
-							<li class="currency dropdown pl-2"><span
-								class="dropdown-toggle" id="dropdownMenu12"
-								data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false" role="button">Currency <span
-									class="caret"></span>
-							</span>
-								<ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-									<li><a href="#">â¬ Euro</a></li>
-									<li><a href="#">Â£ Pound Sterling</a></li>
-									<li><a href="#">$ US Dollar</a></li>
-								</ul></li>
-						</ul>
+						
+						</ul> -->
 					</div>
 					<div class="col-md-6">
 						<ul class="header-top-right pull-right">
 							<li class="telephone"><a href="#"><i class="fa fa-phone"></i>
-									+91 987-654-321</a></li>
+									+91 96396125j8</a></li>
 							<li class="login"><a href="login.html"><i
 									class="fa fa-user"></i>Login</a></li>
 							<li class="register"><a href="register.html">Signup</a></li>
@@ -407,13 +396,13 @@
 								</div>
 							</div>
 							<div class="header-link">
-								<ul class="list-unstyled">
+								<!-- <ul class="list-unstyled">
 									<li><a href="#">Bm offers</a></li>
 									<li><a href="#">Bm express</a></li>
 									<li><a href="#">Bm speciality</a></li>
 									<li><a href="#">Bm store</a></li>
 								</ul>
-							</div>
+ -->							</div>
 						</div>
 						<div class="shopcart">
 							<div id="cart" class="btn-block mt-40 mb-30 ">
