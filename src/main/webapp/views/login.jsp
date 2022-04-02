@@ -7,6 +7,10 @@
 <!-- Mirrored from html.lionode.com/bigmarket/bm002/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 01 Mar 2022 11:07:34 GMT -->
 <head>
 
+<script>
+
+</script>
+
 <!-- =====  BASIC PAGE NEEDS  ===== -->
 <meta charset="utf-8">
 <title>Bigmarket E-commerce Bootstrap Template</title>
@@ -25,6 +29,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- =====  CSS  ===== -->
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/bootstrap.css" />" />
 <link rel="stylesheet"
@@ -53,12 +60,16 @@
 
 </head>
 
-<body>
+<body onload="homePageOnLoad()">
+
+
 	<!-- =====  LODER  ===== -->
 	<div class="loder"></div>
+	
+<div class="main">
 	<div class="wrapper">
 		<!-- =====  Nav START  ===== -->
-		<nav id="top">
+		<!-- <nav id="top">
 			<div class="container">
 				<div class="row">
 					<span class="responsive-bar"><i class="fa fa-bars"></i></span>
@@ -157,12 +168,13 @@
 					</div>
 				</div>
 			</div>
-		</nav>
+		</nav> -->
 		<!-- =====  Nav END  ===== -->
 
-	 	<!-- =====  HEADER START  ===== -->
-	 	<%@ include file="comman.jsp" %>
-	<!--	<header id="header" class="section">
+		<!-- =====  HEADER START  ===== -->
+		
+		<%@ include file="comman.jsp"%>
+		<!--	<header id="header" class="section">
 			<div class="container">
 				<div class="header-top py-1">
 					<div class="row align-items-center">
@@ -499,7 +511,7 @@
 			<div class="container">
 				<h1 class="uppercase">Login</h1>
 				<ul>
-					<li><a href="index-2.html"><i class="fa fa-home"></i></a></li>
+					<li><a href="home"><i class="fa fa-home"></i></a></li>
 					<li class="active">Login</li>
 				</ul>
 			</div>
@@ -519,18 +531,17 @@
 
 									<h3>Login to your account</h3>
 									<!-- Login Form -->
-									<form class="my-4" action="login" method="post">
-										<div class="form-group">
-
+									<form class="my-4" action="login" method="post" onsubmit="return login()">
+										<div class="form-group" >
+											<div style="color: red">${Login_msg}</div>
 											<input type="text" class="form-control"
-												id="exampleInputEmail1"
-												aria-describedby="exampleInputEmail1"
-												placeholder="Enter your username" name="username">
+												id="email" placeholder="Enter your Email_id"
+												name="email" required>
 										</div>
 										<div class="form-group">
 											<input type="password" class="form-control"
 												id="exampleInputPassword1" placeholder="Password"
-												name="password">
+												name="password" required>
 										</div>
 										<div class="form-check">
 											<input type="checkbox" class="form-check-input"
@@ -541,7 +552,7 @@
 									</form>
 
 									<h4>
-										Don’t have account? please click <a href="register.html">Register</a>
+										Don’t have account? please click <a href="register.html" style="color: green;">Register</a>
 									</h4>
 
 								</div>
@@ -694,6 +705,8 @@
 	<script src="<c:url value="/resources/js/jquery.magnific-popup.js"/>"></script>
 	<script src="<c:url value="/resources/js/jquery.firstVisitPopup.js"/>"></script>
 	<script src="<c:url value="/resources/js/custom.js"/>"></script>
+	<script src="<c:url value="/resources/js/main.js"/>"></script>
+</div>
 </body>
 
 

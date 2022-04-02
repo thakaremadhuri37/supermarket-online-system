@@ -3,6 +3,7 @@ package com.supermarket.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.supermarket.bean.CartBean;
 import com.supermarket.bean.CustSessionBean;
@@ -12,7 +13,7 @@ import com.supermarket.controller.ProductBean;
 public class BeanConfig {public BeanConfig() {
 	// TODO Auto-generated constructor stub
 }
-	@Bean
+	@Bean //create obj of @autoWired if @controller not given
 	public CartBean cartBeanObj()
 	{
 		return new CartBean();
@@ -26,4 +27,11 @@ public class BeanConfig {public BeanConfig() {
 	public ProductBean getProductBean() {
 		return new ProductBean();
 	}
+	@Bean
+	public CommonsMultipartResolver multipartResolver()
+	
+	{
+		return new CommonsMultipartResolver();
+	}
 }
+

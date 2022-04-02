@@ -459,7 +459,7 @@
       <div class="container">
         <h1 class="uppercase">Shopping Cart</h1>
         <ul>
-          <li><a href="http://html.lionode.com/bigmarket/bm002/index.html"><i class="fa fa-home"></i></a></li>
+          <li><a href="home"><i class="fa fa-home"></i></a></li>
           <li class="active">Shopping Cart</li>
         </ul>
       </div>
@@ -1322,9 +1322,9 @@ orders you have previously made.</p>
                           <tr>
                             <td class="text-left"><a href="#">${cartproduct.name}</a></td>
                            <!--  <td class="text-left"></td> -->
-                            <td class="text-right">1</td>
+                            <td class="text-right">${cartproduct.quantity}</td>
                             <td class="text-right">${cartproduct.price}</td>
-                            <td class="text-right">${cartproduct.price}</td>
+                            <td class="text-right">${cartproduct.productTotal}</td>
                           </tr>
                           	</c:forEach> 
                         </tbody>
@@ -1333,10 +1333,7 @@ orders you have previously made.</p>
                             <td class="text-right" colspan="3"><strong>Sub-Total:</strong></td>
                             <td class="text-right">${cartbean.totalCartAmount}</td>
                           </tr>
-                          <tr>
-                            <td class="text-right" colspan="3"><strong>Flat Shipping Rate:</strong></td>
-                            <td class="text-right">$00.00</td>
-                          </tr>
+                         
                           <tr>
                             <td class="text-right" colspan="3"><strong>Total:</strong></td>
                             <td class="text-right">${cartbean.totalCartAmount}</td>
@@ -1346,7 +1343,7 @@ orders you have previously made.</p>
                     </div>
                     <div class="buttons">
                       <div class="pull-right">
-                       <a href="orderConfirm" ><input type="button" data-loading-text="Loading..." class="btn" id="button-confirm" value="Confirm Order"></a>
+                       <a href="orderConfirm" ><input type="button" data-loading-text="Loading..." class="btn" id="button-confirm" value="Confirm Order" onclick="confirm_order_localstore()"></a>
                       </div>
                     </div>
                   </div>

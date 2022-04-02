@@ -18,11 +18,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.supermarket.bean.CartBean;
 import com.supermarket.bean.CustSessionBean;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @Controller
 public class ProductCheckoutController {
+	
+	@Autowired	//spring--creating object 
+	viewCartController viewCartController;
 
-	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping(value = "/checkout_page", method = RequestMethod.POST)
 	public ModelAndView showCheckoutPage(@ModelAttribute("CartBeanObj") CartBean cartBean,BindingResult bindingResult) {
 		System.out.println("---Inside showCheckoutPage : " + cartBean);
@@ -31,12 +32,14 @@ public class ProductCheckoutController {
 			System.out.println("Error :: "+bindingResult.getAllErrors());
 		}
 		ModelAndView view = new ModelAndView();
+		viewCartController.setProductToatal(cartBean);
+
 		view.addObject("cartbean", cartBean);
 		view.setViewName("checkout_page");
 		// System.out.println("cartBeanObj : "+cartBeanObj);
 		return view;
 	}
-	
+	//header button veiwcart
 	@RequestMapping(value = "/checkoutFromCart", method = RequestMethod.POST)
 	public ModelAndView showviewCartPage(@RequestParam  String cartBean) {
 
@@ -44,20 +47,24 @@ public class ProductCheckoutController {
 		System.out.println("cartBean  "+cartBean);
 		ObjectMapper mapper = new ObjectMapper();
 		CartBean cartBeanObj = new CartBean();
+		System.out.println("cartBeanObjjjj"+cartBeanObj);
+
 		try {
 			 cartBeanObj = mapper.readValue(cartBean, CartBean.class);
 		} catch (JsonProcessingException e) {
 			System.out.println("Exception occured while converting json to object");
 			e.printStackTrace();
 		}
-		System.out.println("cartBeanObj"+cartBeanObj);
+		System.out.println("cartBeanObjjjj"+cartBeanObj);
 		
-		
+		viewCartController.setProductToatal(cartBeanObj);
+
 		ModelAndView view = new ModelAndView();
 		view.addObject("cartbean", cartBeanObj);
 		view.setViewName("checkout_page");
 		// System.out.println("cartBeanObj : "+cartBeanObj);
 		return view;
 	}
+	
 
 }

@@ -1,7 +1,11 @@
 package com.supermarket.controller;
 
+import java.util.List;
+
 import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,24 +22,37 @@ import com.supermarket.bean.CartBean;
 public class viewCartController {
 
 	@RequestMapping(value = "/viewCart", method = RequestMethod.POST)
-	public ModelAndView showviewCartPage(@RequestParam  String cartBean) {
+	public String showviewCartPage(@RequestParam  String cartBean, Model view) {
 		System.out.println("inside viewCart page show method");
 		System.out.println("cartBean  "+cartBean);
-		ModelAndView view = new ModelAndView();
-		ObjectMapper mapper = new ObjectMapper();
-		CartBean cartBeanObj = new CartBean();
-		try {
-			 cartBeanObj = mapper.readValue(cartBean, CartBean.class);//json to java obj
-		} catch (JsonProcessingException e) {
-			System.out.println("Exception occured while converting json to object");
-			e.printStackTrace();
+		if (null!=cartBean) {
+			ObjectMapper mapper = new ObjectMapper();
+			CartBean cartBeanObj = new CartBean();
+			try {
+				cartBeanObj = mapper.readValue(cartBean, CartBean.class);//json to java obj
+			} catch (JsonProcessingException e) {
+				System.out.println("Exception occured while converting json to object");
+				e.printStackTrace();
+			}
+			System.out.println(cartBeanObj);
+			if (null != cartBeanObj && !CollectionUtils.isEmpty(cartBeanObj.getProductList())) {
+				setProductToatal(cartBeanObj);
+				view.addAttribute("cartbean", cartBeanObj);
+				view.addAttribute("CartBeanObj", new CartBean());
+				return "viewCartNew";
+			} 
 		}
-		System.out.println(cartBeanObj);
-		view.addObject("cartbean",cartBeanObj);
-		view.addObject("CartBeanObj",new CartBean());
-		view.setViewName("viewCartNew");
-		return view;		
+		return "redirect:home";		
 		
+		
+	}
+	public void setProductToatal(CartBean cartBean) {
+		List<ProductBean> list=cartBean.getProductList();
+		for(ProductBean productBean:list) {
+			productBean.setProductTotal(productBean.getPrice()*productBean.getQuantity());
+			
+		}
+		System.out.print("after change"+cartBean);
 		
 	}
 	@RequestMapping(value = "orderConfirm", method = RequestMethod.GET)

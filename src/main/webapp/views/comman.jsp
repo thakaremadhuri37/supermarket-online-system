@@ -19,8 +19,18 @@
 							<li class="telephone"><a href="#"><i class="fa fa-phone"></i>
 									+91 9673961258</a></li>
 							<li class="login"><a href="login"><i class="fa fa-user"></i>Login</a></li>
-							<li class="register"><a href="register">Signup</a></li>
+							<li class="register"><a href="register">Signup</a></li>&emsp;
+							<li class="register"><b><a href=addProductPage>Product Dashboard</a></b></li>
+							<li class="register"><a href=addProductPage><div id="usr_name_vaue">${user_login}</div></a></li>
+							
+							<li><input type="hidden" id="usr_name" value="${user_login}"/></li>
+							<li><input type="hidden" id="user_email" value="${user_login_email}"/></li>
+							
+							<li><input type="hidden" id="usr_error" value="${Login_msg}"/></li>
+							
+							
 						</ul>
+						
 					</div>
 				</div>
 			</div>
@@ -207,7 +217,7 @@
 									<span id="shippingcart">My basket</span><span id="cart-total">
 										0</span>
 								</button>
-								<a href="cart_page.html" class="cart_responsive btn"><span
+								<a href="viewCart" class="cart_responsive btn"><span
 									id="cart-text">My basket</span><span id="cart-total-res">1</span>
 								</a>
 							</div>
@@ -244,6 +254,7 @@
 										</form>
 
 									</li>
+									
 							</div>
 						</div>
 					</div>

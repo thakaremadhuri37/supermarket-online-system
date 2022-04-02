@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,25 +29,31 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView login(@RequestParam String username, @RequestParam String password) {
+	public ModelAndView login(@RequestParam String email, @RequestParam String password) {
+		ModelAndView view = new ModelAndView();
 
-		System.out.println("inside login username  " + username + "  password " + password);
-		
-		Connection con=null;
+		System.out.println("inside login username  " + email + "  password " + password);
+
+		Connection con = null;
 		DBConnection db = new DBConnection();
 		try {
-			 con = db.getConnection();
+			con = db.getConnection();
 			PreparedStatement ps = con
-					.prepareStatement("	select count (*) from users where username=? AND password =?");
-			ps.setString(1, username);
+					.prepareStatement("	select username  from users where email=? AND password =?");
+			ps.setString(1, email);
 			ps.setString(2, password);
-			ResultSet rs=ps.executeQuery();
-			if (rs.next() && rs.getInt(1)>0) {
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
 				System.out.println("Login Successfully");
-				
-			}
-			else {
+				String user_login = rs.getString("username");
+				view.addObject("user_login", user_login);
+				view.addObject("user_login_email", email);
+				view.setViewName("home");
+			} else {
 				System.out.println("Login Failed");
+				view.addObject("Login_msg", "Login Failed: Wrong Username And Password");
+
+				view.setViewName("login");
 
 			}
 
@@ -54,20 +62,18 @@ public class LoginController {
 
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		finally {
+		} finally {
 			try {
-				if (null!=con) {
+				if (null != con) {
 					con.close();
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 		}
-		ModelAndView view = new ModelAndView();
-		view.setViewName("login");
+
 		return view;
 	}
 

@@ -28,8 +28,9 @@
 
 <!-- =====  CSS  ===== -->
 <link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
+<link rel="stylesheet"
 	href="<c:url value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />" />
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/bootstrap.css" />" />
 <link rel="stylesheet"
@@ -562,15 +563,15 @@
 													width="70px"></a></td>
 											 <td class="text-left"> <a href="product.html">${cartproduct.name}</a> 
 											<form:hidden path="productList[${tagStatus.index}].id" value="${cartproduct.id}" />
-											<form:hidden path="productList[${tagStatus.index}].name" value="${cartproduct.name}" />
 											<form:hidden path="productList[${tagStatus.index}].imagename" value="${cartproduct.imagename}" />
+											
 											
 											</td> 
 <%-- 											<td class="text-left">${cartproduct.name}</td>
  --%>											<td class="text-left">
 												<div style="max-width: 200px;" class="input-group btn-block">
 													<input type="text" class="form-control quantity" size="1"
-														value="1" name="quantity"> <span
+														value="${cartproduct.quantity}" name="quantity"> <span
 														class="input-group-btn">
 														<button class="btn" title="" data-toggle="tooltip"
 															type="submit" data-original-title="Update">
@@ -583,10 +584,16 @@
 														</button>
 													</span>
 												</div>
+												<form:hidden path="productList[${tagStatus.index}].quantity" value="${cartproduct.quantity}" />
+												
 											</td>
 											<td class="text-right">${cartproduct.price}</td>
-											<td class="text-right">${cartproduct.price}</td>
+											<td class="text-right">${cartproduct.productTotal} </td>
+											<form:hidden path="productList[${tagStatus.index}].productTotal" value="${cartproduct.price}" />
+											
 											<form:hidden path="productList[${tagStatus.index}].price" value="${cartproduct.price}" />
+											<form:hidden path="productList[${tagStatus.index}].name" value="${cartproduct.name}" />
+											
 										</tr>
 									</c:forEach>
 								</tbody>
@@ -602,10 +609,10 @@
 											<td class="text-right"><strong>Sub-Total:</strong></td>
 											<td class="text-right">${cartbean.totalCartAmount}</td>
 										</tr>
-										<tr>
+										<!-- <tr>
 											<td class="text-right"><strong>GST (18%):</strong></td>
 											<td class="text-right">0.00</td>
-										</tr>
+										</tr> -->
 										<tr>
 											<td class="text-right"><strong>Total:</strong></td>
 											<td class="text-right" id="totalCartAmt">${cartbean.totalCartAmount}</td>

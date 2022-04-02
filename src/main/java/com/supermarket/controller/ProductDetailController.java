@@ -31,12 +31,13 @@ public class ProductDetailController {
 			ResultSet rs=ps.executeQuery();
 			System.out.println("inside try block");
 			while(rs.next()) {
+				productBean.setId(id);
 				productBean.setName(rs.getString(1));
 				productBean.setPrice(rs.getDouble(2));
 				productBean.setImagename(rs.getString(3));
 				
 			}
-			System.out.println("inside try block"+productBean.getName()+"  "+productBean.getPrice()+" "+productBean.getImagename());
+			System.out.println("inside try block"+productBean.getName()+"  "+productBean.getPrice()+" "+productBean.getImagename()+" "+productBean.getId());
 			}
 			catch (Exception e) {
 				System.out.println(e);

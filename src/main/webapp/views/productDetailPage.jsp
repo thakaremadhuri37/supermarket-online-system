@@ -29,7 +29,7 @@
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
-	<link rel="stylesheet"
+<link rel="stylesheet"
 	href="<c:url value="/resources/css/bootstrap.css" />" />
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/font-awesome.min.css" />" />
@@ -203,7 +203,7 @@
 		<!-- =====  Nav END  ===== -->
 
 		<!-- =====  HEADER START  ===== -->
-		<%@ include file="comman.jsp" %>
+		<%@ include file="comman.jsp"%>
 		<%-- <header id="header" class="section">
 			<div class="container">
 				<div class="header-top py-1">
@@ -584,74 +584,114 @@
 			</div>
 		</header> --%>
 		<!-- =====  HEADER END  ===== -->
-		
-		
-		    <!-- =====  BREADCRUMB STRAT  ===== -->
-    <div class="breadcrumb section pt-60 pb-60 mb-30">
-      <div class="container">
-        <h1 class="uppercase">Grocery & Staples</h1>
-        <ul>
-          <li><a href="index-2.html"><i class="fa fa-home"></i></a></li>
-          <li class="active">Grocery & Staples</li>
-        </ul>
-      </div>
-    </div>
 
-    <!-- =====  BREADCRUMB END===== -->
-    
-    <div class="product-section section">
-    <!-- =====  CONTAINER START  ===== -->
-      <div class="container">
-        <div class="row">
-          <div class="col-12 mb-20">
-            <div class="row mt_10 ">
-<%--            <c:forEach var="productDetail" items="${productbean}">
- --%>              <div class="col-md-5">
-                <div><a class="thumbnails"> <img data-name="product_image" src= " <c:url value="/resources/images/pro/${productbean.imagename }"/>" alt="" /></a></div>
-                <div id="product-thumbnail" class="owl-carousel">
-                  <div class="item">
-                    <div class="image-additional"><a class="thumbnail" href="images/pro/001.jpg" data-fancybox="group1"> <img src="<c:url value="/resources/images/pro/001.jpg "/>" alt="" /></a></div>
-                  </div>
-                  <div class="item">
-                    <div class="image-additional"><a class="thumbnail" href="images/pro/002.jpg" data-fancybox="group1"> <img src="images/pro/002.jpg" alt="" /></a></div>
-                  </div>
-                  <div class="item">
-                    <div class="image-additional"><a class="thumbnail" href="images/pro/003.jpg" data-fancybox="group1"> <img src="images/pro/003.jpg" alt="" /></a></div>
-                  </div>
-                  <div class="item">
-                    <div class="image-additional"><a class="thumbnail" href="images/pro/004.jpg" data-fancybox="group1"> <img src="images/pro/004.jpg" alt="" /></a></div>
-                  </div>
-                  <div class="item">
-                    <div class="image-additional"><a class="thumbnail" href="images/pro/005.jpg" data-fancybox="group1"> <img src="images/pro/005.jpg" alt="" /></a></div>
-                  </div>
-                  <div class="item">
-                    <div class="image-additional"><a class="thumbnail" href="images/pro/006.jpg" data-fancybox="group1"> <img src="images/pro/006.jpg" alt="" /></a></div>
-                  </div>
-                  <div class="item">
-                    <div class="image-additional"><a class="thumbnail" href="images/pro/007.jpg" data-fancybox="group1"> <img src="images/pro/007.jpg" alt="" /></a></div>
-                  </div>
-                </div> 
-              </div>
-<%--               </c:forEach>
- --%>              <div class="col-md-7 prodetail caption">
-                <h4 data-name="product_name" class="product-name">${productbean.name}</h4>
-                  <div class="rating mt-5 mb-5"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-x"></i></span> </div>
-                <span class="price mb-20"><span class="amount"><span class="currencySymbol">&#x20B9 ${productbean.price}</span></span>
-                </span>
-                <hr>
-                <ul class="list-unstyled product_info my-3">
-                  <li>
-                    <label>Brand:</label>
-                    <span> <a href="#">${productbean.name}</a></span></li>
-                  
-                  <li>
-                    <label>Availability:</label>
-                    <span> In Stock</span></li>
-                </ul>
-                <hr>
-<!--                 <p class="product-desc mt-20"> More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go. Cover Flow. Browse through your music collection by flipping..</p>
- -->                <div id="product">
-                  <!-- <div class="form-group">
+
+		<!-- =====  BREADCRUMB STRAT  ===== -->
+		<div class="breadcrumb section pt-60 pb-60 mb-30">
+			<div class="container">
+				<h1 class="uppercase">Grocery & Staples</h1>
+				<ul>
+					<li><a href="index-2.html"><i class="fa fa-home"></i></a></li>
+					<li class="active">Grocery & Staples</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- =====  BREADCRUMB END===== -->
+
+		<div class="product-section section">
+			<!-- =====  CONTAINER START  ===== -->
+			<div class="container">
+				<div class="row">
+					<div class="col-12 mb-20">
+	<form id="productFormId" name="productForm" onsubmit= "return cartNumbers2(event)" >
+					
+						<div class="row mt_10 ">
+							<%--            <c:forEach var="productDetail" items="${productbean}">
+ --%>
+							<div class="col-md-5">
+								<div>
+									<a class="thumbnails"> <img data-name="product_image"
+										src=" <c:url value="/resources/images/pro/${productbean.imagename }"/>"
+										alt=""  height="300px" width="300px"/></a>
+								</div>
+								<div id="product-thumbnail" class="owl-carousel">
+									<div class="item">
+										<div class="image-additional">
+											<a class="thumbnail" href="images/pro/002.jpg"
+												data-fancybox="group1"> <img
+												src="<c:url value="/resources/images/pro/002.jpg "/>" alt="" /></a>
+										</div>
+									</div>
+									<div class="item">
+										<div class="image-additional">
+											<a class="thumbnail" href="images/pro/003.jpg"
+												data-fancybox="group1"> <img
+												src="<c:url value="/resources/images/pro/003.jpg "/>" alt="" /></a>
+										</div>
+									</div>
+									<div class="item">
+										<div class="image-additional">
+											<a class="thumbnail" href="images/pro/002.jpg"
+												data-fancybox="group1"> <img
+												src="<c:url value="/resources/images/pro/002.jpg "/>" alt="" /></a>
+										</div>
+									</div>
+									<div class="item">
+										<div class="image-additional">
+											<a class="thumbnail" href="images/pro/014.jpg"
+												data-fancybox="group1"> <img
+												src="<c:url value="/resources/images/pro/014.jpg "/>" alt="" /></a>
+										</div>
+									</div>
+									<div class="item">
+										<div class="image-additional">
+											<a class="thumbnail" href="images/pro/001.jpg"
+												data-fancybox="group1"> <img src="images/pro/001.jpg"
+												alt="" /></a>
+										</div>
+									</div>
+									<div class="item">
+										<div class="image-additional">
+											<a class="thumbnail" href="images/pro/006.jpg"
+												data-fancybox="group1"> <img src="images/pro/006.jpg"
+												alt="" /></a>
+										</div>
+									</div>
+									<div class="item">
+										<div class="image-additional">
+											<a class="thumbnail" href="images/pro/007.jpg"
+												data-fancybox="group1"> <img src="images/pro/007.jpg"
+												alt="" /></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<%--               </c:forEach>
+ --%>
+							<div class="col-md-7 prodetail caption">
+								<h4 data-name="product_name" class="product-name">${productbean.name}</h4>
+								<div class="rating mt-5 mb-5">
+									<span class="fa fa-stack"><i
+										class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i
+										class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i
+										class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i
+										class="fa fa-star fa-stack-1x"></i></span> <span class="fa fa-stack"><i
+										class="fa fa-star fa-stack-x"></i></span>
+								</div>
+								<span class="price mb-20"><span class="amount"><span
+										class="currencySymbol">&#x20B9 ${productbean.price}</span></span> </span>
+								<hr>
+								<ul class="list-unstyled product_info my-3">
+									<li><label>Brand:</label> <span> <a href="#">${productbean.name}</a></span></li>
+
+									<li><label>Availability:</label> <span> In Stock</span></li>
+								</ul>
+								<hr>
+								<!--                 <p class="product-desc mt-20"> More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go. Cover Flow. Browse through your music collection by flipping..</p>
+ -->
+								<div id="product">
+									<!-- <div class="form-group">
                     <div class="row">
                       <div class="Sort-by col-lg-6 col-12 mt-20">
                         <label>Sort by</label>
@@ -672,21 +712,36 @@
                       </div>
                     </div>
                   </div> -->
-                  <div class="qty mt-30 form-group">
-                    <label>Qty</label>
-                    <input name="product_quantity" min="1" value="1" type="number">
-                  </div>
-                  <div class="button-group mt-30">
-                    <div class="add-to-cart" data-toggle="tooltip" title="" data-original-title="Add to cart"><a href="#"><span class="addtocart pull-right">Add</span></a></div>
-                    <div class="wishlist" data-toggle="tooltip" title="" data-original-title="Wish list"><a href="#"><span ><i class="fa fa-heart"></i></span></a></div><div class="compare" data-toggle="tooltip" title="" data-original-title="Compare"><a href="#"><span><i class="fas fa-exchange-alt"></i></span></a></div>
-                  </div>
-               
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12 my-5">
-               <!--  <ul class="nav nav-tabs mb-30" id="myTab" role="tablist">
+									<div class="qty mt-30 form-group">
+										<label>Qty</label> <input  min="1"
+											value="1" type="number" name="quantity">
+									</div>
+									<input type="hidden" value='{"id":"${productbean.id}", "name":"${productbean.name}", "price":${productbean.price}, "imagename":"${productbean.imagename}"}' name="productDetails"/>
+									<div class="button-group mt-30">
+										                    <div class="add-to-cart" data-toggle="tooltip" title="" data-original-title="Add to cart"><a href="#">
+										                    <button type="submit"  value='{"id":${productbean.id}, "name":"${productbean.name}", "price":${productbean.price}, "imagename":"${product.imagename}"}'   class="addtocart pull-right">Add</button></a></div>
+ 	
+ 	
+										<%-- <button type="submit"
+											value='{"id":${productbean.id}, "name":"${productbean.name}", "price":${productbean.price}, "imagename":"${productbean.imagename}"}'
+											class="addtocart pull-right">Add</button> --%>
+										<!-- <div class="wishlist" data-toggle="tooltip" title=""
+											data-original-title="Wish list">
+											<a href="#"><span><i class="fa fa-heart"></i></span></a>
+										</div>
+										<div class="compare" data-toggle="tooltip" title=""
+											data-original-title="Compare">
+											<a href="#"><span><i class="fas fa-exchange-alt"></i></span></a>
+										</div> -->
+									</div>
+
+								</div>
+							</div>
+						</div>
+						</form>
+						<div class="row">
+							<div class="col-12 my-5">
+								<!--  <ul class="nav nav-tabs mb-30" id="myTab" role="tablist">
                   <li class="nav-item">
                     <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#Overview" role="tab" aria-controls="Overview" aria-selected="true">Overview</a>
                   </li>
@@ -697,248 +752,385 @@
                     <a class="nav-link" id="solution-tab" data-toggle="tab" href="#Solution" role="tab" aria-controls="solution-tab" aria-selected="false">Solution</a>
                   </li>
                 </ul> -->
-                <div class="tab-content" id="myTabContent">
-                 <!--  <div class="tab-pane fade show active" id="Overview" role="tabpanel" aria-labelledby="Overview"><p>CLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis malesuada mi id tristique. Sed ipsum nisi, dapibus at faucibus non, dictum a diam. Nunc vitae interdum diam. Sed finibus, justo vel maximus facilisis, sapien turpis euismod tellus, vulputate semper diam ipsum vel tellus.</p></div>
+								<div class="tab-content" id="myTabContent">
+									<!--  <div class="tab-pane fade show active" id="Overview" role="tabpanel" aria-labelledby="Overview"><p>CLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis malesuada mi id tristique. Sed ipsum nisi, dapibus at faucibus non, dictum a diam. Nunc vitae interdum diam. Sed finibus, justo vel maximus facilisis, sapien turpis euismod tellus, vulputate semper diam ipsum vel tellus.</p></div>
                   <div class="tab-pane fade" id="Reviews" role="tabpanel" aria-labelledby="Reviews"> -->
-                    <form>
-                      <div id="review"></div>
-                      <h4 class="mt-5 mb-10">Write a review</h4>
-                      <div class="form-group required">
-                        <label for="formGroupExampleInput">Your Name</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Your Name">
-                      </div>
-                      <div class="form-group required">
-                        <label for="formGroupExampleInput2">Your Review</label>
-                        <textarea class="form-control" id="formGroupExampleInput2" placeholder="Your Review"></textarea>
-                        <div class="help-block"><span class="text-danger">Note:</span> HTML is not translated!</div>
-                      </div>
-                      <div class="form-group row align-items-center">
-                        <div class="col-8 col-md-9">
-                          <label class="control-label">Rating</label>
-                          <div class="rates"> <span class="ml-10"> Bad</span>
-                          <input type="radio" name="rating" value="1">
-                          <input type="radio" name="rating" value="2">
-                          <input type="radio" name="rating" value="3">
-                          <input type="radio" name="rating" value="4">
-                          <input type="radio" name="rating" value="5">
-                          <span>Good</span></div>
-                        </div>
-                        <div class="col-4 col-md-3">
-                          <div class="buttons pull-right">
-                              <button type="submit" class="btn">Continue</button>
-                          </div>
-                        </div>
-                      </div>
-                    </form>
+									<form>
+										<div id="review"></div>
+										<h4 class="mt-5 mb-10">Write a review</h4>
+										<div class="form-group required">
+											<label for="formGroupExampleInput">Your Name</label> <input
+												type="text" class="form-control" id="formGroupExampleInput"
+												placeholder="Your Name">
+										</div>
+										<div class="form-group required">
+											<label for="formGroupExampleInput2">Your Review</label>
+											<textarea class="form-control" id="formGroupExampleInput2"
+												placeholder="Your Review"></textarea>
+											<div class="help-block">
+												<span class="text-danger">Note:</span> HTML is not
+												translated!
+											</div>
+										</div>
+										<div class="form-group row align-items-center">
+											<div class="col-8 col-md-9">
+												<label class="control-label">Rating</label>
+												<div class="rates">
+													<span class="ml-10"> Bad</span> <input type="radio"
+														name="rating" value="1"> <input type="radio"
+														name="rating" value="2"> <input type="radio"
+														name="rating" value="3"> <input type="radio"
+														name="rating" value="4"> <input type="radio"
+														name="rating" value="5"> <span>Good</span>
+												</div>
+											</div>
+											<div class="col-4 col-md-3">
+												<div class="buttons pull-right">
+													<button type="submit" class="btn">Continue</button>
+												</div>
+											</div>
+										</div>
+									</form>
 
-                  </div>
-<!--                   <div class="tab-pane fade" id="Solution" role="tabpanel" aria-labelledby="Solution"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis malesuada mi id tristique. Sed ipsum nisi, dapibus at faucibus non, dictum a diam. Nunc vitae interdum diam. Sed finibus, justo vel maximus facilisis, sapien turpis euismod tellus, vulputate semper diam ipsum vel tellus.applied clearfix to the tab-content to rid of the gap between the tab and the content</p></div>
- -->                </div>
+								</div>
+								<!--                   <div class="tab-pane fade" id="Solution" role="tabpanel" aria-labelledby="Solution"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis malesuada mi id tristique. Sed ipsum nisi, dapibus at faucibus non, dictum a diam. Nunc vitae interdum diam. Sed finibus, justo vel maximus facilisis, sapien turpis euismod tellus, vulputate semper diam ipsum vel tellus.applied clearfix to the tab-content to rid of the gap between the tab and the content</p></div>
+ -->
+							</div>
 
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="heading-part text-center mb-10">
-                  <h3 class="section_title mt-50">Related Products</h3>
-                </div>
-                <div class="related_pro">
-                  <div class="product-layout related-pro  owl-carousel mb-50 ">
-                    <div class="product-grid">
-                      <div class="item">
-                         <div class="product-thumb transition">
-                            <div class="image">
-                              <div class="first_image"> <a href="#"> <img src="images/pro/014.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a> </div>
-                              <div class="swap_image"> <a href="#"> <img src="images/pro/015.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a></div>
-                            </div>
-                            <div class="product-details">
-                              <div class="caption">
-                                <h4><a href="#">pure-spice-3</a></h4>
-                                <p class="price">$7.25<span class="price-tax">Ex Tax: $7.25</span></p>
-                                <p class="desc">freshly picked for you.Store them in a cool, dry place away from direct sunlight...</p>
-                                <div class="product_option">
-                                  <div class="form-group required ">
-                                    <select name="option[239]" id="input-option231" class="form-control">
-                                      <option value=""> --- Please Select --- </option>
-                                      <option value="45">1kg(+$0.07)</option>
-                                      <option value="46">5kg(+$0.22)</option>
-                                      <option value="47">10kg(+$0.44)</option>
-                                    </select>
-                                  </div>
-                                  <div class="input-group button-group">
-                                    <label class="control-label">Qty</label>
-                                    <input type="number" name="quantity" min="1" value="1"  step="1" class="qty form-control">
-                                    <button type="button" class="addtocart pull-right">Add</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="product-grid">
-                      <div class="item">
-                         <div class="product-thumb transition">
-                            <div class="image">
-                              <div class="first_image"> <a href="#"> <img src="images/pro/015.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a> </div>
-                              <div class="swap_image"> <a href="#"> <img src="images/pro/016.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a></div>
-                            </div>
-                            <div class="product-details">
-                              <div class="caption">
-                                <h4><a href="#">pure-spice-3</a></h4>
-                                <p class="price">$7.25<span class="price-tax">Ex Tax: $7.25</span></p>
-                                <p class="desc">freshly picked for you.Store them in a cool, dry place away from direct sunlight...</p>
-                                <div class="product_option">
-                                  <div class="form-group required ">
-                                    <select name="option[239]" id="input-option232" class="form-control">
-                                      <option value=""> --- Please Select --- </option>
-                                      <option value="45">1kg(+$0.07)</option>
-                                      <option value="46">5kg(+$0.22)</option>
-                                      <option value="47">10kg(+$0.44)</option>
-                                    </select>
-                                  </div>
-                                  <div class="input-group button-group">
-                                    <label class="control-label">Qty</label>
-                                    <input type="number" name="quantity" min="1" value="1"  step="1" class="qty form-control">
-                                    <button type="button" class="addtocart pull-right">Add</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="product-grid">
-                      <div class="item">
-                         <div class="product-thumb transition">
-                            <div class="image">
-                              <div class="first_image"> <a href="#"> <img src="images/pro/004.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a> </div>
-                              <div class="swap_image"> <a href="#"> <img src="images/pro/005.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a></div>
-                            </div>
-                            <div class="product-details">
-                              <div class="caption">
-                                <h4><a href="#">pure-spice-3</a></h4>
-                                <p class="price">$7.25<span class="price-tax">Ex Tax: $7.25</span></p>
-                                <p class="desc">freshly picked for you.Store them in a cool, dry place away from direct sunlight...</p>
-                                <div class="product_option">
-                                  <div class="form-group required ">
-                                    <select name="option[239]" id="input-option233" class="form-control">
-                                      <option value=""> --- Please Select --- </option>
-                                      <option value="45">1kg(+$0.07)</option>
-                                      <option value="46">5kg(+$0.22)</option>
-                                      <option value="47">10kg(+$0.44)</option>
-                                    </select>
-                                  </div>
-                                  <div class="input-group button-group">
-                                    <label class="control-label">Qty</label>
-                                    <input type="number" name="quantity" min="1" value="1"  step="1" class="qty form-control">
-                                    <button type="button" class="addtocart pull-right">Add</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="product-grid">
-                      <div class="item">
-                         <div class="product-thumb transition">
-                            <div class="image">
-                              <div class="first_image"> <a href="#"> <img src="images/pro/001.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a> </div>
-                              <div class="swap_image"> <a href="#"> <img src="images/pro/002.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a></div>
-                            </div>
-                            <div class="product-details">
-                              <div class="caption">
-                                <h4><a href="#">pure-spice-3</a></h4>
-                                <p class="price">$7.25<span class="price-tax">Ex Tax: $7.25</span></p>
-                                <p class="desc">freshly picked for you.Store them in a cool, dry place away from direct sunlight...</p>
-                                <div class="product_option">
-                                  <div class="form-group required ">
-                                    <select name="option[239]" id="input-option234" class="form-control">
-                                      <option value=""> --- Please Select --- </option>
-                                      <option value="45">1kg(+$0.07)</option>
-                                      <option value="46">5kg(+$0.22)</option>
-                                      <option value="47">10kg(+$0.44)</option>
-                                    </select>
-                                  </div>
-                                  <div class="input-group button-group">
-                                    <label class="control-label">Qty</label>
-                                    <input type="number" name="quantity" min="1" value="1"  step="1" class="qty form-control">
-                                    <button type="button" class="addtocart pull-right">Add</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="product-grid">
-                      <div class="item">
-                         <div class="product-thumb transition">
-                            <div class="image">
-                              <div class="first_image"> <a href="#"> <img src="images/pro/003.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a> </div>
-                              <div class="swap_image"> <a href="#"> <img src="images/pro/004.jpg" alt="pure-spice-3" title="pure-spice-3" class="img-responsive"> </a></div>
-                            </div>
-                            <div class="product-details">
-                              <div class="caption">
-                                <h4><a href="#">pure-spice-3</a></h4>
-                                <p class="price">$7.25<span class="price-tax">Ex Tax: $7.25</span></p>
-                                <p class="desc">freshly picked for you.Store them in a cool, dry place away from direct sunlight...</p>
-                                <div class="product_option">
-                                  <div class="form-group required ">
-                                    <select name="option[239]" id="input-option235" class="form-control">
-                                      <option value=""> --- Please Select --- </option>
-                                      <option value="45">1kg(+$0.07)</option>
-                                      <option value="46">5kg(+$0.22)</option>
-                                      <option value="47">10kg(+$0.44)</option>
-                                    </select>
-                                  </div>
-                                  <div class="input-group button-group">
-                                    <label class="control-label">Qty</label>
-                                    <input type="number" name="quantity" min="1" value="1"  step="1" class="qty form-control">
-                                    <button type="button" class="addtocart pull-right">Add</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    <!-- =====  Brand start ===== -->
-      <div id="brand_carouse" class="section text-center mt-30 pb-15">
-        <div class="row">
-          <div class="col-12">
-            <div class="section_title">Our Popular Brands</div>
-          </div>
-          <div class="col-sm-12">
-            <div class="brand owl-carousel">
-              <div class="product-thumb"><div class="item text-center"> <a href="#"><img src="images/brand/brand1.png" alt="Disney" class="img-responsive" /></a> </div></div>
-              <div class="product-thumb"><div class="item text-center"> <a href="#"><img src="images/brand/brand2.png" alt="Dell" class="img-responsive" /></a> </div></div>
-              <div class="product-thumb"><div class="item text-center"> <a href="#"><img src="images/brand/brand3.png" alt="Harley" class="img-responsive" /></a> </div></div>
-              <div class="product-thumb"><div class="item text-center"> <a href="#"><img src="images/brand/brand4.png" alt="Canon" class="img-responsive" /></a> </div></div>
-              <div class="product-thumb"><div class="item text-center"> <a href="#"><img src="images/brand/brand5.png" alt="Canon" class="img-responsive" /></a> </div></div>
-              <div class="product-thumb"><div class="item text-center"> <a href="#"><img src="images/brand/brand6.png" alt="Canon" class="img-responsive" /></a> </div></div>
-              <div class="product-thumb"><div class="item text-center"> <a href="#"><img src="images/brand/brand7.png" alt="Canon" class="img-responsive" /></a> </div></div>
-              <div class="product-thumb"><div class="item text-center"> <a href="#"><img src="images/brand/brand8.png" alt="Canon" class="img-responsive" /></a> </div></div>
-              <div class="product-thumb"><div class="item text-center"> <a href="#"><img src="images/brand/brand9.png" alt="Canon" class="img-responsive" /></a> </div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- =====  Brand end ===== -->
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="heading-part text-center mb-10">
+								<h3 class="section_title mt-50">Related Products</h3>
+							</div>
+							<div class="related_pro">
+								<div class="product-layout related-pro  owl-carousel mb-50 ">
+									<div class="product-grid">
+										<div class="item">
+											<div class="product-thumb transition">
+												<div class="image">
+													<div class="first_image">
+														<a href="#"> <img src="images/pro/014.jpg"
+															alt="pure-spice-3" title="pure-spice-3"
+															class="img-responsive">
+														</a>
+													</div>
+													<div class="swap_image">
+														<a href="#"> <img src="images/pro/015.jpg"
+															alt="pure-spice-3" title="pure-spice-3"
+															class="img-responsive">
+														</a>
+													</div>
+												</div>
+												<div class="product-details">
+													<div class="caption">
+														<h4>
+															<a href="#">pure-spice-3</a>
+														</h4>
+														<p class="price">
+															$7.25<span class="price-tax">Ex Tax: $7.25</span>
+														</p>
+														<p class="desc">freshly picked for you.Store them in a
+															cool, dry place away from direct sunlight...</p>
+														<div class="product_option">
+															<div class="form-group required ">
+																<select name="option[239]" id="input-option231"
+																	class="form-control">
+																	<option value="">--- Please Select ---</option>
+																	<option value="45">1kg(+$0.07)</option>
+																	<option value="46">5kg(+$0.22)</option>
+																	<option value="47">10kg(+$0.44)</option>
+																</select>
+															</div>
+															<div class="input-group button-group">
+																<label class="control-label">Qty</label> <input
+																	type="number" name="quantity" min="1" value="1"
+																	step="1" class="qty form-control">
+																<button type="button" class="addtocart pull-right">Add</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="product-grid">
+										<div class="item">
+											<div class="product-thumb transition">
+												<div class="image">
+													<div class="first_image">
+														<a href="#"> <img src="images/pro/015.jpg"
+															alt="pure-spice-3" title="pure-spice-3"
+															class="img-responsive">
+														</a>
+													</div>
+													<div class="swap_image">
+														<a href="#"> <img src="images/pro/016.jpg"
+															alt="pure-spice-3" title="pure-spice-3"
+															class="img-responsive">
+														</a>
+													</div>
+												</div>
+												<div class="product-details">
+													<div class="caption">
+														<h4>
+															<a href="#">pure-spice-3</a>
+														</h4>
+														<p class="price">
+															$7.25<span class="price-tax">Ex Tax: $7.25</span>
+														</p>
+														<p class="desc">freshly picked for you.Store them in a
+															cool, dry place away from direct sunlight...</p>
+														<div class="product_option">
+															<div class="form-group required ">
+																<select name="option[239]" id="input-option232"
+																	class="form-control">
+																	<option value="">--- Please Select ---</option>
+																	<option value="45">1kg(+$0.07)</option>
+																	<option value="46">5kg(+$0.22)</option>
+																	<option value="47">10kg(+$0.44)</option>
+																</select>
+															</div>
+															<div class="input-group button-group">
+																<label class="control-label">Qty</label> <input
+																	type="number" name="quantity" min="1" value="1"
+																	step="1" class="qty form-control">
+																<button type="button" class="addtocart pull-right">Add</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="product-grid">
+										<div class="item">
+											<div class="product-thumb transition">
+												<div class="image">
+													<div class="first_image">
+														<a href="#"> <img src="images/pro/004.jpg"
+															alt="pure-spice-3" title="pure-spice-3"
+															class="img-responsive">
+														</a>
+													</div>
+													<div class="swap_image">
+														<a href="#"> <img src="images/pro/005.jpg"
+															alt="pure-spice-3" title="pure-spice-3"
+															class="img-responsive">
+														</a>
+													</div>
+												</div>
+												<div class="product-details">
+													<div class="caption">
+														<h4>
+															<a href="#">pure-spice-3</a>
+														</h4>
+														<p class="price">
+															$7.25<span class="price-tax">Ex Tax: $7.25</span>
+														</p>
+														<p class="desc">freshly picked for you.Store them in a
+															cool, dry place away from direct sunlight...</p>
+														<div class="product_option">
+															<div class="form-group required ">
+																<select name="option[239]" id="input-option233"
+																	class="form-control">
+																	<option value="">--- Please Select ---</option>
+																	<option value="45">1kg(+$0.07)</option>
+																	<option value="46">5kg(+$0.22)</option>
+																	<option value="47">10kg(+$0.44)</option>
+																</select>
+															</div>
+															<div class="input-group button-group">
+																<label class="control-label">Qty</label> <input
+																	type="number" name="quantity" min="1" value="1"
+																	step="1" class="qty form-control">
+																<button type="button" class="addtocart pull-right">Add</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="product-grid">
+										<div class="item">
+											<div class="product-thumb transition">
+												<div class="image">
+													<div class="first_image">
+														<a href="#"> <img src="images/pro/001.jpg"
+															alt="pure-spice-3" title="pure-spice-3"
+															class="img-responsive">
+														</a>
+													</div>
+													<div class="swap_image">
+														<a href="#"> <img src="images/pro/002.jpg"
+															alt="pure-spice-3" title="pure-spice-3"
+															class="img-responsive">
+														</a>
+													</div>
+												</div>
+												<div class="product-details">
+													<div class="caption">
+														<h4>
+															<a href="#">pure-spice-3</a>
+														</h4>
+														<p class="price">
+															$7.25<span class="price-tax">Ex Tax: $7.25</span>
+														</p>
+														<p class="desc">freshly picked for you.Store them in a
+															cool, dry place away from direct sunlight...</p>
+														<div class="product_option">
+															<div class="form-group required ">
+																<select name="option[239]" id="input-option234"
+																	class="form-control">
+																	<option value="">--- Please Select ---</option>
+																	<option value="45">1kg(+$0.07)</option>
+																	<option value="46">5kg(+$0.22)</option>
+																	<option value="47">10kg(+$0.44)</option>
+																</select>
+															</div>
+															<div class="input-group button-group">
+																<label class="control-label">Qty</label> <input
+																	type="number" name="quantity" min="1" value="1"
+																	step="1" class="qty form-control">
+																<button type="button" class="addtocart pull-right">Add</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="product-grid">
+										<div class="item">
+											<div class="product-thumb transition">
+												<div class="image">
+													<div class="first_image">
+														<a href="#"> <img src="images/pro/003.jpg"
+															alt="pure-spice-3" title="pure-spice-3"
+															class="img-responsive">
+														</a>
+													</div>
+													<div class="swap_image">
+														<a href="#"> <img src="images/pro/004.jpg"
+															alt="pure-spice-3" title="pure-spice-3"
+															class="img-responsive">
+														</a>
+													</div>
+												</div>
+												<div class="product-details">
+													<div class="caption">
+														<h4>
+															<a href="#">pure-spice-3</a>
+														</h4>
+														<p class="price">
+															$7.25<span class="price-tax">Ex Tax: $7.25</span>
+														</p>
+														<p class="desc">freshly picked for you.Store them in a
+															cool, dry place away from direct sunlight...</p>
+														<div class="product_option">
+															<div class="form-group required ">
+																<select name="option[239]" id="input-option235"
+																	class="form-control">
+																	<option value="">--- Please Select ---</option>
+																	<option value="45">1kg(+$0.07)</option>
+																	<option value="46">5kg(+$0.22)</option>
+																	<option value="47">10kg(+$0.44)</option>
+																</select>
+															</div>
+															<div class="input-group button-group">
+																<label class="control-label">Qty</label> <input
+																	type="number" name="quantity" min="1" value="1"
+																	step="1" class="qty form-control">
+																<button type="button" class="addtocart pull-right">Add</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- =====  Brand start ===== -->
+			<div id="brand_carouse" class="section text-center mt-30 pb-15">
+				<div class="row">
+					<div class="col-12">
+						<div class="section_title">Our Popular Brands</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="brand owl-carousel">
+							<div class="product-thumb">
+								<div class="item text-center">
+									<a href="#"><img src="images/brand/brand1.png" alt="Disney"
+										class="img-responsive" /></a>
+								</div>
+							</div>
+							<div class="product-thumb">
+								<div class="item text-center">
+									<a href="#"><img src="images/brand/brand2.png" alt="Dell"
+										class="img-responsive" /></a>
+								</div>
+							</div>
+							<div class="product-thumb">
+								<div class="item text-center">
+									<a href="#"><img src="images/brand/brand3.png" alt="Harley"
+										class="img-responsive" /></a>
+								</div>
+							</div>
+							<div class="product-thumb">
+								<div class="item text-center">
+									<a href="#"><img src="images/brand/brand4.png" alt="Canon"
+										class="img-responsive" /></a>
+								</div>
+							</div>
+							<div class="product-thumb">
+								<div class="item text-center">
+									<a href="#"><img src="images/brand/brand5.png" alt="Canon"
+										class="img-responsive" /></a>
+								</div>
+							</div>
+							<div class="product-thumb">
+								<div class="item text-center">
+									<a href="#"><img src="images/brand/brand6.png" alt="Canon"
+										class="img-responsive" /></a>
+								</div>
+							</div>
+							<div class="product-thumb">
+								<div class="item text-center">
+									<a href="#"><img src="images/brand/brand7.png" alt="Canon"
+										class="img-responsive" /></a>
+								</div>
+							</div>
+							<div class="product-thumb">
+								<div class="item text-center">
+									<a href="#"><img src="images/brand/brand8.png" alt="Canon"
+										class="img-responsive" /></a>
+								</div>
+							</div>
+							<div class="product-thumb">
+								<div class="item text-center">
+									<a href="#"><img src="images/brand/brand9.png" alt="Canon"
+										class="img-responsive" /></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- =====  Brand end ===== -->
 
-      </div>
-    <!-- =====  CONTAINER END  ===== -->
-    </div>
-    
-    
-   
+		</div>
+		<!-- =====  CONTAINER END  ===== -->
+	</div>
+
+
+
 
 	</div>
 	<!-- =====  CONTAINER END  ===== -->

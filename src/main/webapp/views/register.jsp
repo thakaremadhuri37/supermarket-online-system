@@ -26,6 +26,8 @@
 
 <!-- =====  CSS  ===== -->
 <link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
+<link rel="stylesheet"
 	href="<c:url value="/resources/css/bootstrap.css" />" />
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/font-awesome.min.css" />" />
@@ -53,7 +55,7 @@
 
 </head>
 
-<body>
+<body onload="homePageOnLoad()">
 	<!-- =====  LODER  ===== -->
 	<div class="loder"></div>
 	<div class="wrapper">
@@ -554,27 +556,27 @@
 														<h3>Registration to your account</h3>
 
 														<!-- register Form -->
-														<form action="register" method="post" class="my-4">
+														<form action="register" method="post" name="reg" class="my-4" onsubmit="return check()">
 															<div class="form-group">
 																<input type="text" class="form-control"
 																	id="exampleInputtext"
 																	aria-describedby="exampleInputtext"
-																	placeholder="Enter your name" name="username">
+																	placeholder="Enter your name" name="username" required>
 															</div>
 															<div class="form-group">
 																<input type="email" class="form-control"
 																	id="exampleInputemail"
 																	aria-describedby="exampleInputemail"
-																	placeholder="Enter your email" name="email">
+																	placeholder="Enter your email" name="email" required>
+															</div>
+															<div class="form-group">
+																<input type="password" class="form-control" value=""
+																	id="password" placeholder="Password" name="password" required/><span id="pass_msg" style="color: red"></span>
 															</div>
 															<div class="form-group">
 																<input type="password" class="form-control"
-																	id="exampleInputPassword1" placeholder="Password" name="password">
-															</div>
-															<div class="form-group">
-																<input type="password" class="form-control"
-																	id="exampleInputConformPassword1"
-																	placeholder="Conform password" name="confirmpassword">
+																	id="confirmpassword" value=""
+																	placeholder="Conform password" name="confirmpassword"  required><span id="pass_msg"></span>
 															</div>
 															<button type="submit" class="btn mt-10">register</button>
 														</form>
@@ -674,7 +676,7 @@
 										<h2>Subscribe for our offer news</h2>
 									</div>
 									<div class="news-form pull-right">
-										<form onsubmit="return validatemail();" method="post">
+										<form  method="post">
 											<div class="form-group required">
 												<input name="email" id="email"
 													placeholder="Enter Your Email"
@@ -748,6 +750,8 @@
 						<script
 							src="<c:url value="/resources/js/jquery.firstVisitPopup.js"/>"></script>
 						<script src="<c:url value="/resources/js/custom.js"/>"></script>
+							<script src="<c:url value="/resources/js/main.js"/>"></script>
+						
 </body>
 
 

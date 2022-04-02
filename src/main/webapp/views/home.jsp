@@ -137,7 +137,7 @@
 															Oil</a></li>
 													<li><a href="category_page.html">Health Oils</a></li>
 													<li><a href="category_page.html">Mustard Oils</a></li>
-													<li><a href="category_page.html">Soyabean Oils</a></li>
+											A		<li><a href="category_page.html">Soyabean Oils</a></li>
 													<li><a href="category_page.html">Sunflower Oils</a></li>
 												</ul></li>
 											<li class="dropdown"><a href="2.html">Riced
@@ -823,9 +823,7 @@
 							</div>
 							<div class="product-layout col-lg-4 col-md-4 col-sm-4 col-6">
 								<div class="product-thumb transition">
-									<p class="tag">
-										20<br> % <br> <i>off</i>
-									</p>
+									
 									<h4>
 										<a href="category_page.html">Strawberry</a>
 									</h4>
@@ -850,6 +848,9 @@
 							</div>
 							<div class="product-layout col-lg-4 col-md-4 col-sm-4 col-6">
 								<div class="product-thumb transition">
+								<p class="tag">
+										20<br> % <br> <i>off</i>
+									</p>
 									<h4>
 										<a href="category_page.html">Banana</a>
 									</h4>
@@ -863,6 +864,7 @@
 							<div class="product-layout col-lg-4 col-md-4 col-sm-4 col-6">
 								<div class="product-thumb transition">
 									<h4>
+									
 										<a href="category_page.html">Orange</a>
 									</h4>
 									<div class="image">
@@ -874,9 +876,9 @@
 							</div>
 							<div class="product-layout col-lg-4 col-md-4 col-sm-4 col-6">
 								<div class="product-thumb transition">
-									<p class="tag">
+									<!-- <p class="tag">
 										10<br> % <br> <i>off</i>
-									</p>
+									</p> -->
 									<h4>
 										<a href="category_page.html">Greps</a>
 									</h4>
@@ -906,8 +908,8 @@
 					<div class="section-product grid section">
 						<!--start -->
 						<c:forEach var="product" items="${productlist}">
-							<form method="post">
-								<div class=" product-items col-6 col-sm-4 col-md-4 col-lg-3">
+							<form id="productFormId" name="productForm" onsubmit= "return cartNumbers2(event)" >
+ 								<div class=" product-items col-6 col-sm-4 col-md-4 col-lg-3">
 									<div class="product-thumb transition">
 										<div class="image">
 											<div class="first_image">
@@ -917,13 +919,7 @@
 													class="img-responsive" height="200" width="200">
 												</a>
 											</div>
-											<%-- <div class="swap_image">
-												<a href="product/${product.id}"> <img
-													src="<c:url value="/resources/images/pro/${product.imagename}"/>"
-													alt="pure-spice-3" title="pure-spice-3"
-													class="img-responsive">
-												</a>
-											</div> --%>
+											
 										</div>
 										<div class="product-details">
 											<div class="caption">
@@ -932,24 +928,15 @@
 												</h4>
 												<p id="productPrice" class="price">₹ ${product.price}</p>
 												<div class="product_option">
-													<!-- 	<div class="form-group required ">
-													<select name="option[239]" id="input-option230"
-														class="form-control">
-														<option value="">--- Please Select ---</option>
-														<option value="45">1kg(+$0.07)</option>
-														<option value="46">5kg(+$0.22)</option>
-														<option value="47">10kg(+$0.44)</option>
-													</select>
-												</div>  -->
 													<br>
 													
 													<div class="input-group button-group">
 														<label class="control-label">Qty</label> <input
-															id="totalQty" type="number" name="quantity" min="1"
-															value="1" step="1" class="qty form-control">
+															id="totalQty" type="number" value="1" name="quantity" min="1"
+															 step="1" class="qty form-control">
 														<%-- 													<button type="button" value="${product}" class="addtocart pull-right">Add</button>
- --%>													
-														<button type="button"
+ --%>													<input type="hidden" value='{"id":${product.id}, "name":"${product.name}", "price":${product.price}, "imagename":"${product.imagename}"}' name="productDetails">
+														<button type="submit"
 															value='{"id":${product.id}, "name":"${product.name}", "price":${product.price}, "imagename":"${product.imagename}"}'
 															class="addtocart pull-right">Add</button>
 
@@ -959,8 +946,8 @@
 										</div>
 									</div>
 								</div>
-							</form>
-						</c:forEach>
+ 							</form>
+ 						</c:forEach>
 						<!-- End -->
 
 

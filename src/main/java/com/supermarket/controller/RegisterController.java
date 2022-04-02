@@ -26,7 +26,7 @@ public class RegisterController {
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public ModelAndView register(@ModelAttribute RegisterBean registerBean) throws JsonProcessingException {
+	public String register(@ModelAttribute RegisterBean registerBean) throws JsonProcessingException {
 		System.out.println("Inside Register method : "+registerBean.toString());
 		 printJson(registerBean);  
 		DBConnection db = new DBConnection();
@@ -62,10 +62,7 @@ public class RegisterController {
 			}
 			
 		}
-
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("register");
-		return mv;
+return "redirect:home";
 
 	}
 
