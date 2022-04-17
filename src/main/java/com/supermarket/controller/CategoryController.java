@@ -31,6 +31,55 @@ public class CategoryController {
 		return mv;
 
 	}
+	@RequestMapping(value="/search", method = RequestMethod.GET)
+	public ModelAndView searchItem(@RequestParam("search") String searchitem) {
+		System.out.println("inside searchItem method.... searchitem= " + searchitem);
+	  List<ProductBean> productlist = getProductListBySearch(searchitem);
+	  ModelAndView mv = new ModelAndView();
+	  mv.addObject("productlist",productlist);
+	  mv.setViewName("category");
+		return mv;
+
+		
+	}
+	
+	
+	
+	public List<ProductBean> getProductListBySearch(String search) {
+		System.out.print("getProductListBySearch="+search);
+		
+DBConnection  connection=new DBConnection();
+		
+		Connection con = null;
+		
+		List<ProductBean> productlist = new ArrayList<ProductBean>();
+
+		try {
+			 con = connection.getConnection();
+			PreparedStatement ps = con
+					.prepareStatement("select name,price,image,id from products where name::text like ?");
+			ps.setString(1, "%" + search + "%");
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				ProductBean productBean = new ProductBean();
+
+				productBean.setName(rs.getString(1));
+				productBean.setPrice(rs.getDouble(2));
+				productBean.setImagename(rs.getString(3));
+				productBean.setId(rs.getInt(4));
+
+				productlist.add(productBean);
+				System.out.println("inside try block" + productBean.getName() + "  " + productBean.getPrice() + " "
+						+ productBean.getImagename());
+
+			}
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return productlist;
+	}
+	
 
 	
 

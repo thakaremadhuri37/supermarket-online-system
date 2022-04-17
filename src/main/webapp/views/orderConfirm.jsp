@@ -32,6 +32,7 @@
 			</tbody>
 		</table>
 	</div>
+	<%@include file="pdf.jsp" %>
 </body>
 </html>
 

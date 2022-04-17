@@ -34,7 +34,7 @@ public class RegisterController {
 		try {
 			con = db.getConnection();
 			PreparedStatement ps = con
-					.prepareStatement("insert into users (username,password,email,created_on)	values(?,?,?,NOW()) ");
+					.prepareStatement("insert into users (username,password,email,created_on,role)	values(?,?,?,NOW(),'user') ");
 			ps.setString(1, registerBean.getUsername());
 			ps.setString(2, registerBean.getPassword());
 			ps.setString(3, registerBean.getEmail());

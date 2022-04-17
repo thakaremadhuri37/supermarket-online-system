@@ -23,18 +23,23 @@ import com.supermarket.db.DBConnection;
 
 @Controller
 public class AddProductController {
-	private static final String UPLOAD_DIRECTORY = "/resources/images/pro";
+	//private static final String UPLOAD_DIRECTORY = "/resources/images/pro";
+	private static final String UPLOAD_DIRECTORY = "resources/images/pro/";
 
+	
 	@RequestMapping("/addProductPage")
-	public ModelAndView showAddProductPage() {
+	public ModelAndView showAddProductPage(HttpSession session) {
 		System.out.print("inside add controller");
 		ModelAndView mv = new ModelAndView();
-		CategoryDaoImpl categoryDaoImpl = new CategoryDaoImpl();
-		List<CategoryBean> categorylist = categoryDaoImpl.getProductCategoryList();
-		System.out.print("inside add controller;;;;;" + categorylist);
-
-		mv.addObject("categorylist", categorylist);
-		mv.setViewName("addProductAdmin");
+		if (null!=session.getAttribute("role") && "admin".equalsIgnoreCase((String)session.getAttribute("role"))) {
+			CategoryDaoImpl categoryDaoImpl = new CategoryDaoImpl();
+			List<CategoryBean> categorylist = categoryDaoImpl.getProductCategoryList();
+			System.out.print("inside add controller;;;;;" + categorylist);
+			mv.addObject("categorylist", categorylist);
+			mv.setViewName("addProductAdmin");
+		}else {
+			mv.setViewName("unAuthorizePage");
+		}
 		return mv;
 	}
 
@@ -54,12 +59,14 @@ public class AddProductController {
 		DBConnection connection = new DBConnection();
 		try {
 			Connection con = connection.getConnection();
+			System.out.print("showOnHome--"+productBean.getShowOnHome());
 			PreparedStatement ps = con
-					.prepareStatement("insert into products (name,price,image,categoryid) values(?,?,?,?)");
+					.prepareStatement("insert into products (name,price,image,categoryid,displayonhome,isactive) values(?,?,?,?,?,'Y')");
 			ps.setString(1, productBean.getName());
 			ps.setDouble(2, productBean.getPrice());
 			ps.setString(3, filename);
 			ps.setInt(4, productBean.getCatagoryId());
+			ps.setString(5, productBean.getShowOnHome());
 			int count = ps.executeUpdate();
 			if (count == 1) {
 				System.out.println("product added");

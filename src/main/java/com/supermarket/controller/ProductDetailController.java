@@ -21,35 +21,7 @@ public class ProductDetailController {
 		public ModelAndView showProductDetailPage( @RequestParam("id") int id )
 	 {
 			System.out.println("inside showProductDetailPage show method.... id= "+id);
-			Connection con=null;
-			DBConnection db=new DBConnection();
-			ProductBean productBean=new ProductBean();
-			try {
-			con=db.getConnection();
-			int c=1;
-			PreparedStatement ps=con.prepareStatement("select name,price,image from products where id="+id);
-			ResultSet rs=ps.executeQuery();
-			System.out.println("inside try block");
-			while(rs.next()) {
-				productBean.setId(id);
-				productBean.setName(rs.getString(1));
-				productBean.setPrice(rs.getDouble(2));
-				productBean.setImagename(rs.getString(3));
-				
-			}
-			System.out.println("inside try block"+productBean.getName()+"  "+productBean.getPrice()+" "+productBean.getImagename()+" "+productBean.getId());
-			}
-			catch (Exception e) {
-				System.out.println(e);
-			}
-			finally {
-				try {
-					con.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
+			ProductBean productBean = getProductById(id);
 			
 
 		 ModelAndView mv=new ModelAndView();
@@ -57,6 +29,40 @@ public class ProductDetailController {
 		 mv.setViewName("productDetailPage");
 		 return mv;
 	 }
+
+	public ProductBean getProductById(int id) {
+		Connection con=null;
+		DBConnection db=new DBConnection();
+		ProductBean productBean=new ProductBean();
+		try {
+		con=db.getConnection();
+		int c=1;
+		PreparedStatement ps=con.prepareStatement("select name,price,image,categoryid from products where id=?");
+		ps.setInt(1, id);
+		ResultSet rs=ps.executeQuery();
+		System.out.println("inside try block");
+		while(rs.next()) {
+			productBean.setId(id);
+			productBean.setName(rs.getString(1));
+			productBean.setPrice(rs.getDouble(2));
+			productBean.setImagename(rs.getString(3));
+			productBean.setCatagoryId(rs.getInt(4));
+		}
+		System.out.println("inside try block"+productBean.getName()+"  "+productBean.getPrice()+" "+productBean.getImagename()+" "+productBean.getId());
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+		finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return productBean;
+	}
 	 
 	 
 	 

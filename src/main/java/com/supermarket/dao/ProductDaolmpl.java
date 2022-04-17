@@ -19,20 +19,35 @@ public class ProductDaolmpl {
 		DBConnection connection = new DBConnection();
 		try {
 			con = connection.getConnection();
-			PreparedStatement ps = con.prepareStatement("select id,name,price,image from products");
+			PreparedStatement ps = con.prepareStatement("select id,name,price,image,displayonhome,isactive from products");
 			ResultSet rs = ps.executeQuery();
+			
 			while (rs.next()) {
+				/*
+				 * String v=rs.getString(5); System.out.print("v"+v);
+				 */
+				//String v=rs.getDouble(3);
+				System.out.print("v="+rs.getString(5));
+				
+				String display=rs.getString(5);
+				String active=rs.getString(6);
+				if(  display.equals("Y") && active.equals("Y")) {
+					System.out.print("inside if");
 				ProductBean bean = new ProductBean();
 				bean.setId(rs.getInt(1));
 				bean.setName(rs.getString(2));
 				bean.setPrice(rs.getDouble(3));
 				bean.setImagename(rs.getString(4));
+				System.out.println("listtthdhfbb");
+
 				list.add(bean);
+				System.out.println("listtt"+bean.toString());
 
+				}
 			}
-
+			
 		} catch (Exception e) {
-			System.out.println("Exception Occur");
+			System.out.println("Exception Occur"+ e);
 
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -63,9 +78,11 @@ public class ProductDaolmpl {
 		try {
 			Connection con = dbconnection.getConnection();
 			PreparedStatement ps = con
-					.prepareStatement("select name,price,image,id from products where categoryid=" + categoryid);
+					.prepareStatement("select name,price,image,id,isactive from products where categoryid=" + categoryid);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
+				String active=rs.getString(5);
+				if(  active.equals("Y")) {
 				ProductBean productBean = new ProductBean();
 
 				productBean.setName(rs.getString(1));
@@ -78,7 +95,7 @@ public class ProductDaolmpl {
 						+ productBean.getImagename());
 
 			}
-
+			}
 		} catch (Exception e) {
 			System.out.println(e);
 		}

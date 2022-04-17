@@ -17,9 +17,16 @@ public class ProductBean {
 	private double productTotal;
 	private int catagoryId;
 	private CommonsMultipartFile file;
+	private String showOnHome;
 	
 	
 	
+	public String getShowOnHome() {
+		return showOnHome;
+	}
+	public void setShowOnHome(String showOnHome) {
+		this.showOnHome = showOnHome;
+	}
 	public CommonsMultipartFile getFile() {
 		return file;
 	}

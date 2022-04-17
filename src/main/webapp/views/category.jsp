@@ -7,7 +7,7 @@
 
 <!-- =====  BASIC PAGE NEEDS  ===== -->
 <meta charset="utf-8">
-<title>Bigmarket E-commerce Bootstrap Template</title>
+<title>Grocery-Supermarket</title>
 
 <!-- =====  SEO MATE  ===== -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -23,6 +23,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- =====  CSS  ===== -->
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/bootstrap.css" />" />
 <link rel="stylesheet"
@@ -53,7 +56,13 @@
 <link rel="apple-touch-icon" sizes="114x114"
 	href="<c:url value="/resources/images/apple-touch-icon-114x114.html"/>" />
 
-
+<style>
+.zoom:hover {
+	-ms-transform: scale(1.1); /* IE 9 */
+	-webkit-transform: scale(1.1); /* Safari 3-8 */
+	transform: scale(1.1);
+}
+</style>
 </head>
 
 <body onload="homePageOnLoad()">
@@ -61,418 +70,17 @@
 	<div class="loder"></div>
 	<div class="wrapper">
 
-		<!-- =====  Nav START  ===== -->
-		<nav id="top">
-			<div class="container">
-				<div class="row">
-					<span class="responsive-bar"><i class="fa fa-bars"></i></span>
-					<div class="header-middle-outer closetoggle">
-						<div id="responsive-menu"
-							class="nav-container1 nav-responsive navbar">
-							<div class="navbar-collapse navbar-ex1-collapse collapse">
-								<ul class="nav navbar-nav">
-									<li class="collapsed" data-toggle="collapse"
-										data-target="#GroceryampStaples"><a href="#">Grocery
-											Staples</a> <span><i class="fa fa-plus"></i></span>
-										<ul class="menu-dropdown collapse" id="GroceryampStaples">
-											<li class="dropdown"><a href="category_page.html">Daal
-													Pulses</a>
-												<ul class="list-unstyled childs_2">
-													<li><a href="category_page.html">Arhar</a></li>
-													<li><a href="category_page.html">Masoor</a></li>
-													<li><a href="category_page.html">Moong</a></li>
-													<li><a href="category_page.html">Rajma Chana</a></li>
-													<li><a href="category_page.html">Urad</a></li>
-												</ul></li>
-											<li class="dropdown"><a href="5.html">Dry Fruits
-													Nuts</a>
-												<ul class="list-unstyled childs_2">
-													<li><a href="category_page.html">Akhrot Figs</a></li>
-													<li><a href="category_page.html">Almonds Cashews</a></li>
-													<li><a href="category_page.html">Nuts Seeds</a></li>
-													<li><a href="category_page.html">Other Dry Fruits</a></li>
-												</ul></li>
-											<li class="dropdown"><a href="6.html">Edible Oils</a>
-												<ul class="list-unstyled childs_2">
-													<li><a href="category_page.html">Groundnut Coconut
-															Oil</a></li>
-													<li><a href="category_page.html">Health Oils</a></li>
-													<li><a href="category_page.html">Mustard Oils</a></li>
-													<li><a href="category_page.html">Soyabean Oils</a></li>
-													<li><a href="category_page.html">Sunflower Oils</a></li>
-												</ul></li>
-											<li class="dropdown"><a href="2.html">Riced
-													cauliflower</a>
-												<ul class="list-unstyled childs_2">
-													<li><a href="category_page.html">Basmati</a></li>
-													<li><a href="category_page.html">Millet Others</a></li>
-													<li><a href="category_page.html">Poha</a></li>
-													<li><a href="category_page.html">Sonamasuri Kolam</a></li>
-												</ul></li>
-											<li>
-												<div class="menu-image">
-													<img
-														src="../../../opencart.lionode.com/bigmarket/oc012019/oc01/image/cache/catalog/13-281x391.jpg"
-														alt="" title="" class="img-thumbnail">
-												</div>
-											</li>
-										</ul></li>
-									<li class="collapsed" data-toggle="collapse"
-										data-target="#PersonalCare"><a href="#">Personal Care</a>
-										<span><i class="fa fa-plus"></i></span>
-										<ul class="menu-dropdown collapse" id="PersonalCare">
-											<li class="main_cat"><a href="category_page.html">Deos
-													Perfumes</a></li>
-											<li class="main_cat"><a href="category_page.html">Hair
-													Care</a></li>
-										</ul></li>
-									<li class="collapsed" data-toggle="collapse"
-										data-target="#Biscuits,SnacksampChocolates"><a href="#">Biscuits,
-											Snacks Chocolates</a> <span><i class="fa fa-plus"></i></span>
-										<ul class="menu-dropdown collapse"
-											id="Biscuits,SnacksampChocolates">
-											<li class="main_cat"><a href="category_page.html">Biscuits
-													Cookies</a></li>
-											<li class="main_cat"><a href="category_page.html">Chips
-													Crisps</a></li>
-										</ul></li>
-									<li class="collapsed" data-toggle="collapse"
-										data-target="#HouseholdNeeds"><a href="#">Household
-											Needs</a> <span><i class="fa fa-plus"></i></span>
-										<ul class="menu-dropdown collapse" id="HouseholdNeeds">
-											<li class="main_cat"><a href="category_page.html">Cleaning
-													Tools Brushes</a></li>
-											<li class="main_cat"><a href="category_page.html">Home
-													Car Fresheners</a></li>
-										</ul></li>
-									<li class="collapsed" data-toggle="collapse"
-										data-target="#BreakfastampDairy"><a href="#">Breakfast
-											Dairy</a> <span><i class="fa fa-plus"></i></span>
-										<ul class="menu-dropdown collapse" id="BreakfastampDairy">
-											<li class="main_cat"><a href="category_page.html">Breakfast
-													Cereal Mixes</a></li>
-											<li class="main_cat"><a href="category_page.html">Paneer
-													Curd</a></li>
-										</ul></li>
-									<li><a href="#">Fruits store</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</nav>
-		<!-- =====  Nav END  ===== -->
+	
 		<%@ include file="comman.jsp"%>
 
-		<!-- <header id="header" class="section">
-      <div class="container">
-        <div class="header-top py-1">
-          <div class="row align-items-center">
-            <div class="col-md-6">
-              <ul class="header-top-left pull-left">              
-                <li class="language dropdown px-2"> <span class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Language <span class="caret"></span> </span>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">English</a></li>
-                    <li><a href="#">French</a></li>
-                    <li><a href="#">German</a></li>
-                  </ul>
-                </li>
-                <li class="currency dropdown pl-2"> <span class="dropdown-toggle" id="dropdownMenu12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Currency <span class="caret"></span> </span>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-                    <li><a href="#">â¬ Euro</a></li>
-                    <li><a href="#">Â£ Pound Sterling</a></li>
-                    <li><a href="#">$ US Dollar</a></li>
-                  </ul>
-                </li>
-              </ul> 
-            </div>
-            <div class="col-md-6">
-              <ul class="header-top-right pull-right">
-                <li class="telephone">
-                  <a href="#"><i class="fa fa-phone"></i> +91 9673961258</a> 
-                </li>
-                <li class="login">
-                  <a href="login.html"><i class="fa fa-user"></i>Login</a>
-                </li>
-                <li class="register">
-                  <a href="register.html">Signup</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="header section pt-15 pb-15">
-        <div class="container">
-          <div class="row">
-            <div class="navbar-header col-2 header-bottom-left"> <a class="navbar-brand" href="index-2.html"> <img
-								alt="Bigmarket" src="images/logo.png">
-							</a> </div>
-            <div class="col-10 header-bottom-right">
-              <div class="header-menu">
-                <div class="responsive-menubar-block">
-                  <span>Shop By<br> Category</span>
-                  <span class="menu-bar collapsed" data-target=".navbar-ex1-collapse" data-toggle="collapse"><i class="fa fa-bars"></i></span>
-                </div>
-                <nav id="menu" class="navbar">
-                  <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav main-navigation">
-                      <li class="main_cat dropdown active"> <a href="category_page.html">Grocery & Staples</a>
-                        <div class="dropdown-menu megamenu column4">
-                          <div class="dropdown-inner">
-                            <ul class="list-unstyled childs_1">
-                              
-                              2 Level Sub Categories START
-                              <li class="dropdown active"><a href="category_page.html">Daal & Pulses</a>
-                                <div class="dropdown-menu">
-                                  <div class="dropdown-inner">
-                                    <ul class="list-unstyled childs_2">
-                                      <li class="active"><a href="category_page.html">Arhar</a></li>
-                                      <li><a href="category_page.html">Masoor</a></li>
-                                      <li><a href="category_page.html">Moong</a></li>
-                                      <li><a href="category_page.html">Rajma & Chana</a></li>
-                                      <li><a href="category_page.html">Urad</a></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </li>
-                              
-                              2 Level Sub Categories END
-                            </ul>
-                            <ul class="list-unstyled childs_1">
-                              
-                              2 Level Sub Categories START
-                              <li class="dropdown active"><a href="category_page.html">Dry Fruits & Nuts</a>
-                                <div class="dropdown-menu">
-                                  <div class="dropdown-inner">
-                                    <ul class="list-unstyled childs_2">
-                                      <li class="active"><a href="category_page.html">Akhrot & Figs</a></li>
-                                      <li><a href="category_page.html">Almonds & Cashews</a></li>
-                                      <li><a href="category_page.html">Nuts & Seeds</a></li>
-                                      <li><a href="category_page.html">Other Dry Fruits</a></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </li>
-                              
-                              2 Level Sub Categories END
-                            </ul>
-                            <ul class="list-unstyled childs_1">
-                              
-                              2 Level Sub Categories START
-                              <li class="dropdown active"><a href="#">Edible Oils</a>
-                                <div class="dropdown-menu">
-                                  <div class="dropdown-inner">
-                                    <ul class="list-unstyled childs_2">
-                                      <li class="active"><a href="category_page.html">Groundnut & Coconut Oil</a></li>
-                                      <li><a href="category_page.html">Health Oils</a></li>
-                                      <li><a href="category_page.html">Mustard Oils</a></li>
-                                      <li><a href="category_page.html">Soyabean Oils</a></li>
-                                      <li><a href="category_page.html">Sunflower Oils</a></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </li>
-                              
-                              2 Level Sub Categories END
-                            </ul>
-                            <ul class="list-unstyled childs_1">
-                              
-                              2 Level Sub Categories START
-                              <li class="dropdown active"><a href="category_page.html">Riced cauliflower</a>
-                                <div class="dropdown-menu">
-                                  <div class="dropdown-inner">
-                                    <ul class="list-unstyled childs_2">
-                                      <li class="active"><a href="category_page.html">Basmati</a></li>
-                                      <li><a href="category_page.html">Millet & Others</a></li>
-                                      <li><a href="category_page.html">Poha</a></li>
-                                      <li><a href="category_page.html">Sonamasuri & Kolam</a></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </li>
-                              
-                              2 Level Sub Categories END
-                            </ul>
-                            <div class="menu-image"> <img src="images/13.jpg" alt="" title="" class="img-thumbnail"> </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="main_cat dropdown"> <a href="category_page.html">Personal Care</a>
-                        <div class="dropdown-menu megamenu column1">
-                          <div class="dropdown-inner">
-                            <ul class="list-unstyled childs_1">
-                              
-                              <li class="main_cat active"> <a href="category_page.html">Deos & Perfumes</a> </li>
-                              <li class="main_cat"> <a href="category_page.html">Hair Care</a> </li>
-                              
-                            </ul>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="main_cat dropdown"> <a href="category_page.html">Biscuits, Snacks & Chocolates</a>
-                        <div class="dropdown-menu megamenu column1">
-                          <div class="dropdown-inner">
-                            <ul class="list-unstyled childs_1">
-                              
-                              <li class="main_cat active"> <a href="category_page.html">Biscuits & Cookies</a> </li>
-                              <li class="main_cat"> <a href="#">Chips & Crisps</a> </li>
-                              
-                            </ul>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="main_cat dropdown"> <a href="category_page.html">Household Needs</a>
-                        <div class="dropdown-menu megamenu column1">
-                          <div class="dropdown-inner">
-                            <ul class="list-unstyled childs_1">
-                              
-                              <li class="main_cat active"> <a href="category_page.html">Cleaning Tools & Brushes</a> </li>
-                              <li class="main_cat"> <a href="category_page.html">Home & Car Fresheners</a> </li>
-                              
-                              2 Level Sub Categories END
-                            </ul>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="main_cat dropdown"> <a href="category_page.html">Breakfast & Dairy</a>
-                        <div class="dropdown-menu megamenu column1">
-                          <div class="dropdown-inner">
-                            <ul class="list-unstyled childs_1">
-                              
-                           
-                              <li class="main_cat active"> <a href="category_page.html">Breakfast Cereal & Mixes</a> </li>
-                              <li class="main_cat"> <a href="category_page.html">Paneer & Curd</a> </li>
-                              
-                            </ul>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="main_cat thumb"> <a href="category_page.html">Fruits store </a>
-                        <div class="dropdown-menu">
-                          <div class="dropdown-inner"> <img src="#" alt="" title="" class="img-thumbnail"> </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </nav>
-              </div>
-              <div class="header-link-search">
-                <div class="header-search">
-                  <div class="actions">
-                      <button type="submit" title="Search" class="action search" id="head-search"></button>
-                  </div>
-                  <div id="search" class="input-group">
-                    <input type="text" id="search-input" name="search" value="" placeholder="Search" class="form-control input-lg" autocomplete="off">
-                    <span class="input-group-btn">
-                      <button type="button" class="btn btn-default btn-lg">Search</button>
-                    </span>
-                  </div>
-                </div>
-                <div class="header-link">
-                 <ul class="list-unstyled">
-                  <li><a href="#">Bm offers</a></li>
-                  <li><a href="#">Bm express</a></li>
-                  <li><a href="#">Bm speciality</a></li>
-                  <li><a href="#">Bm store</a></li>
-                </ul>
-              </div>
-              </div>
-              <div class="shopcart">
-                <div id="cart" class="btn-block mt-40 mb-30 ">
-                  <button type="button" class="btn" data-target="#cart-dropdown" data-toggle="collapse" aria-expanded="true"><span id="shippingcart">My basket</span><span id="cart-total">Item 0</span></button>
-                  <a href="cart_page.html" class="cart_responsive btn"><span id="cart-text">My basket</span><span id="cart-total-res">0</span> </a>
-                </div>
-                <div id="cart-dropdown" class="cart-menu collapse">
-                  <ul>
-                    <li>
-                      <table class="table table-striped">
-                        <tbody>
-                          <tr>
-                            <td class="text-center"><a href="#"><img src="images/pro/70x70_1.jpg" alt="iPod Classic" title="iPod Classic"></a></td>
-                            <td class="text-left product-name"><a href="#">MacBook Pro</a> <span class="text-left price">$20.00</span>
-                              <input class="cart-qty" name="product_quantity" min="1" value="1" type="number">
-                            </td>
-                            <td class="text-center"><a class="close-cart"><i class="fa fa-times-circle"></i></a></td>
-                          </tr>
-                          <tr>
-                            <td class="text-center"><a href="#"><img src="images/pro/70x70_2.jpg" alt="iPod Classic" title="iPod Classic"></a></td>
-                            <td class="text-left product-name"><a href="#">MacBook Pro</a> <span class="text-left price">$20.00</span>
-                              <input class="cart-qty" name="product_quantity" min="1" value="1" type="number">
-                            </td>
-                            <td class="text-center"><a class="close-cart"><i class="fa fa-times-circle"></i></a></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </li>
-                    <li>
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td class="text-right"><strong>Sub-Total</strong></td>
-                            <td class="text-right">$2,100.00</td>
-                          </tr>
-                          <tr>
-                            <td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
-                            <td class="text-right">$2.00</td>
-                          </tr>
-                          <tr>
-                            <td class="text-right"><strong>VAT (20%)</strong></td>
-                            <td class="text-right">$20.00</td>
-                          </tr>
-                          <tr>
-                            <td class="text-right"><strong>Total</strong></td>
-                            <td class="text-right">$2,122.00</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </li>
-                    <li>
-                      <form action="http://html.lionode.com/bigmarket/bm002/cart_page.html">
-                        <input class="btn pull-left" value="View cart" type="submit">
-                      </form>
-                      <form action="http://html.lionode.com/bigmarket/bm002/checkout_page.html">
-                        <input class="btn pull-right" value="Checkout" type="submit">
-                      </form>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="header-static-block">
-        <div class="container">
-          <div class="row">
-            <div class="icon-block">
-              <div class="home_icon">
-              <a href="index-2.html"><i class="fa fa-home"></i>Home</a>
-              </div>
-              <div class="search_icon">
-              <a href="#"><i class="fa fa-search"></i>Search</a>
-              </div>
-              <div class="cart_icon">
-              </div>
-              <div class="login_icon">
-                <a href="login.html"><i class="fa fa-user"></i>Login</a>
-              </div>
-              <div class="telephone_icon">
-                <a href="contact_us.html"><i class="fa fa-phone"></i>Contact</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>  -->
+	
 		<!-- =====  HEADER END  ===== -->
 		<!-- =====  BREADCRUMB STRAT  ===== -->
 		<div class="breadcrumb section pt-60 pb-60">
 			<div class="container">
-				<h1 class="uppercase">Grocery & Staples</h1>
+				<h1 class="uppercase">Gdrocery & Staples</h1>
 				<ul>
-					<li><a href="index-2.html"><i class="fa fa-home"></i></a></li>
+					<li><a href="home"><i class="fa fa-home"></i></a></li>
 					<li class="active">Grocery & Staples</li>
 				</ul>
 			</div>
@@ -482,115 +90,10 @@
 			<!-- =====  CONTAINER START  ===== -->
 			<div class="container">
 				<div class="row">
-					<div id="column-left" class="col-lg-3 col-xl-3 col-sm-4">
-						<div id="category-menu" class="mb-30 mt-10">
-							<div class="nav-responsive">
-								<div class="heading-part">
-									<h3 class="section_title">Top category</h3>
-								</div>
-								<ul>
-									<!--  <li><a href="#">Appliances</a></li>
-                <li><a href="#">Mobile Phones</a></li>
-                <li><a href="#">Tablet PC & Accessories</a></li>
-                <li><a href="#">Consumer Electronics</a></li>
-                <li><a href="#">Computers & Networking</a></li>
-                <li><a href="#">Electrical & Tools</a></li>
-                <li><a href="#">Apparel</a></li>
-                <li><a href="#">Bags & Shoes</a></li>
-                <li><a href="#">Toys & Hobbies</a></li>
-                <li><a href="#">Watches & Jewelry</a></li>
-                <li><a href="#">Home & Garden</a></li>
-                <li><a href="#">Health & Beauty</a></li>
-                <li><a href="#">Outdoors & Sports</a></li> -->
-								</ul>
-							</div>
-						</div>
-						<div class="filter left-sidebar-widget mb-50">
-							<div class="heading-part my-3 ">
-								<h3 class="section_title">Refinr Search</h3>
-							</div>
-							<div class="filter-block">
-								<p>
-									<label for="amount">Price range:</label> <input type="text"
-										id="amount" readonly>
-								</p>
-								<div id="slider-range" class="my-3"></div>
-								<div class="list-group">
-									<div class="list-group-item mb-10">
-										<label>Packet Size</label>
-										<div id="filter-group1">
-											<div class="checkbox">
-												<label> <input value="" type="checkbox">
-													250gm-1kg
-												</label>
-											</div>
-											<div class="checkbox">
-												<label> <input value="" type="checkbox">
-													1kg-5kg
-												</label>
-											</div>
-											<div class="checkbox ">
-												<label> <input value="" type="checkbox">
-													5kg-10kg
-												</label>
-											</div>
-											<div class="checkbox ">
-												<label> <input value="" type="checkbox">
-													10kg OR More
-												</label>
-											</div>
-										</div>
-									</div>
 
-								</div>
-							</div>
-						</div>
-						<div class="left_banner left-sidebar-widget mb-50">
-							<a href="#"><img src="images/left1.jpg" alt="Left Banner"
-								class="img-responsive" /></a>
-						</div>
-					</div>
-					<div class="col-lg-9 col-xl-9 col-sm-8">
-						<div class="category-page-wrapper mb-15 pb-10">
-							<div class="row">
-								<div class="col list-grid-wrapper Order-1">
-									<div class="btn-group btn-list-grid">
-										<!--                 <button type="button" id="grid-view" class="btn btn-default grid-view active"></button>
- -->
-										<!--                 <button type="button" id="list-view" class="btn btn-default list-view"></button>
- -->
-									</div>
-								</div>
-								<div class="col-md-auto page-wrapper order-12">
-									<label class="control-label" for="input-limit">Show :</label>
-									<div class="limit">
-										<select id="input-limit" class="form-control">
-											<option value="8" selected="selected">08</option>
-											<option value="25">25</option>
-											<option value="50">50</option>
-											<option value="75">75</option>
-											<option value="100">100</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-md-auto sort-wrapper order-11">
-									<label class="control-label" for="input-sort">Sort By :</label>
-									<div class="sort-inner">
-										<select id="input-sort" class="form-control">
-											<option value="ASC" selected="selected">Default</option>
-											<option value="ASC">Name (A - Z)</option>
-											<option value="DESC">Name (Z - A)</option>
-											<option value="ASC">Price (Low &gt; High)</option>
-											<option value="DESC">Price (High &gt; Low)</option>
-											<option value="DESC">Rating (Highest)</option>
-											<option value="ASC">Rating (Lowest)</option>
-											<option value="ASC">Model (A - Z)</option>
-											<option value="DESC">Model (Z - A)</option>
-										</select>
-									</div>
-								</div>
-							</div>
-						</div>
+					<div class="col-lg-9 col-xl-9 col-sm-8"
+						style="flex: 0 0 100%; max-width: 100%;">
+
 						<div class="row">
 
 
@@ -602,7 +105,7 @@
 											<div class="image">
 												<div class="first_image">
 
-													<a href="product?id=${category.id}"> <img
+													 <a href="product?id=${category.id}" >  <img
 														src="<c:url value="/resources/images/pro/${category.imagename}"/>"
 														alt="pure-spice-3" title="pure-spice-3"
 														class="img-responsive">
@@ -620,32 +123,20 @@
 														&#x20B9 ${category.price}<span class="price-tax">Ex
 															Tax: $7.25</span>
 													</p>
-													<p class="desc">freshly picked for you.Store them in a
-														cool, dry place away from direct sunlight...</p>
+
 													<div class="product_option">
-														<!-- <div class="form-group required ">
-                          <select name="option[239]" id="input-option231" class="form-control">
-                            <option value=""> --- Please Select --- </option>
-                            <option value="45">1kg(+$0.07)</option>
-                            <option value="46">5kg(+$0.22)</option>
-                            <option value="47">10kg(+$0.44)</option>
-                          </select>
-                        </div> -->
-														<form id="productFormId" name="productForm"
+											<form id="productFormId" name="productForm"
 															onsubmit="return cartNumbers2(event)" method="post">
 
 															<div class="input-group button-group">
 																<label class="control-label">Qty</label> <input
 																	type="number" name="quantity" min="1" value="1"
-																	step="1" class="qty form-control"/> 
-																	<input
+																	step="1" class="qty form-control" /> <input
 																	type="hidden"
 																	value='{"id":${category.id}, "name":"${category.name}", "price":${category.price}, "imagename":"${category.imagename}"}'
-																	name="productDetails"/>
+																	name="productDetails" />
 
-																<button type="submit"
-																	
-																	class="addtocart pull-right">Add</button>
+																<button type="submit" class="addtocart pull-right">Add</button>
 															</div>
 														</form>
 													</div>
@@ -660,7 +151,7 @@
 
 						</div>
 
-						<div class="pagination-nav text-center mt-50">
+						<!-- <div class="pagination-nav text-center mt-50">
 							<ul>
 								<li><a href="#"><i class="fas fa-angle-double-left"></i></a></li>
 								<li><a href="#"><i class="fas fa-angle-left"></i></a></li>
@@ -670,7 +161,7 @@
 								<li><a href="#"><i class="fas fa-angle-right"></i></a></li>
 								<li><a href="#"><i class="fas fa-angle-double-right"></i></a></li>
 							</ul>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>

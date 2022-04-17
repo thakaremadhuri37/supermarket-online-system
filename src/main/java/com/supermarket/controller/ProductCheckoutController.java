@@ -2,6 +2,8 @@ package com.supermarket.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -20,51 +22,60 @@ import com.supermarket.bean.CustSessionBean;
 
 @Controller
 public class ProductCheckoutController {
-	
-	@Autowired	//spring--creating object 
+
+	@Autowired // spring--creating object
 	viewCartController viewCartController;
 
 	@RequestMapping(value = "/checkout_page", method = RequestMethod.POST)
-	public ModelAndView showCheckoutPage(@ModelAttribute("CartBeanObj") CartBean cartBean,BindingResult bindingResult) {
+	public ModelAndView showCheckoutPage(@ModelAttribute("CartBeanObj") CartBean cartBean, BindingResult bindingResult,
+			HttpSession session) {
 		System.out.println("---Inside showCheckoutPage : " + cartBean);
-		
-		if(bindingResult.hasErrors()) {
-			System.out.println("Error :: "+bindingResult.getAllErrors());
-		}
 		ModelAndView view = new ModelAndView();
+		// String sessionData = (String) session.getAttribute("user_login_email");
+		if (bindingResult.hasErrors()) {
+			System.out.println("Error :: " + bindingResult.getAllErrors());
+		}
 		viewCartController.setProductToatal(cartBean);
-
 		view.addObject("cartbean", cartBean);
 		view.setViewName("checkout_page");
+		session.setAttribute("cartbeanSessionObj", cartBean);
+	
 		// System.out.println("cartBeanObj : "+cartBeanObj);
 		return view;
 	}
-	//header button veiwcart
+
+	
+	
+	// header button veiwcart
 	@RequestMapping(value = "/checkoutFromCart", method = RequestMethod.POST)
-	public ModelAndView showviewCartPage(@RequestParam  String cartBean) {
+	public ModelAndView showviewCartPage(@RequestParam String cartBean) {
 
 		System.out.println("inside showviewCartPage method ");
-		System.out.println("cartBean  "+cartBean);
+		System.out.println("cartBean  " + cartBean);
 		ObjectMapper mapper = new ObjectMapper();
 		CartBean cartBeanObj = new CartBean();
-		System.out.println("cartBeanObjjjj"+cartBeanObj);
+		System.out.println("cartBeanObjjjj" + cartBeanObj);
 
 		try {
-			 cartBeanObj = mapper.readValue(cartBean, CartBean.class);
+			cartBeanObj = mapper.readValue(cartBean, CartBean.class);
 		} catch (JsonProcessingException e) {
 			System.out.println("Exception occured while converting json to object");
 			e.printStackTrace();
 		}
-		System.out.println("cartBeanObjjjj"+cartBeanObj);
-		
+		System.out.println("cartBeanObjjjj" + cartBeanObj);
+
 		viewCartController.setProductToatal(cartBeanObj);
 
 		ModelAndView view = new ModelAndView();
 		view.addObject("cartbean", cartBeanObj);
 		view.setViewName("checkout_page");
+		view.addObject("CartBeanObj", new CartBean());
+
 		// System.out.println("cartBeanObj : "+cartBeanObj);
 		return view;
 	}
-	
 
-}
+	
+			
+		}
+

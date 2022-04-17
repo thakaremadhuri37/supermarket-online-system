@@ -55,11 +55,10 @@ public class viewCartController {
 		System.out.print("after change"+cartBean);
 		
 	}
-	@RequestMapping(value = "orderConfirm", method = RequestMethod.GET)
-	public String showConfirmationPage()
-	{
-		return "orderConfirm";
-	}
+	/*
+	 * @RequestMapping(value = "orderConfirm", method = RequestMethod.GET) public
+	 * String showConfirmationPage() { return "orderConfirm"; }
+	 */
 	/*
 	 * @RequestMapping(value = "/viewCart", method = RequestMethod.GET) public
 	 * ModelAndView finalPage(@RequestParam("name")String str) {

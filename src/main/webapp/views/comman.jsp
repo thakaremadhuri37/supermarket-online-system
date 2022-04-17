@@ -20,17 +20,46 @@
 									+91 9673961258</a></li>
 							<li class="login"><a href="login"><i class="fa fa-user"></i>Login</a></li>
 							<li class="register"><a href="register">Signup</a></li>&emsp;
-							<li class="register"><b><a href=addProductPage>Product Dashboard</a></b></li>
-							<li class="register"><a href=addProductPage><div id="usr_name_vaue">${user_login}</div></a></li>
+							<%-- 	<%
+							if (null!=session.getAttribute("role") && 
 							
-							<li><input type="hidden" id="usr_name" value="${user_login}"/></li>
-							<li><input type="hidden" id="user_email" value="${user_login_email}"/></li>
-							
-							<li><input type="hidden" id="usr_error" value="${Login_msg}"/></li>
-							
-							
+							"admin".equalsIgnoreCase((String)session.getAttribute("role"))){
+							%>
+							<li class="register"><b><a href=addProductPage>Product
+										Dashboard</a></b></li>
+							<%
+							}
+							%> --%>
+							<li class="register"><a href=addProductPage>
+									${sessionScope.user_login }</a></li>
+							<%
+							if (null != session.getAttribute("user_login")) {
+								
+							%>
+							<li><a href="logout" onclick="confirm_order_localstore()">logout</a></li>
+							<%
+							}
+							%>
+							<li><input type="hidden" id="usr_name" value="${user_login}" /></li>
+							<li><input type="hidden" id="user_email"
+								value="${user_login_email}" /></li>
+
+							<li><input type="hidden" id="usr_error" value="${Login_msg}" /></li>
+
+							<%
+							if (null != session.getAttribute("role") &&
+
+									"admin".equalsIgnoreCase((String) session.getAttribute("role"))) {
+							%>
+							<li class="register"><b><a href=addProductPage>Product
+										Dashboard</a></b></li>
+							<%
+							}
+							%>
+
+
 						</ul>
-						
+
 					</div>
 				</div>
 			</div>
@@ -40,8 +69,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="navbar-header col-2 header-bottom-left">
-						<a class="navbar-brand" href="home"> <img
-							alt="Bigmarket" src="images/logo.png">
+						<a class="navbar-brand" href="home"> <img alt="Supermarket"
+							src="images/logo1.png">
 						</a>
 					</div>
 					<div class="col-10 header-bottom-right">
@@ -56,155 +85,51 @@
 								<div class="collapse navbar-collapse navbar-ex1-collapse">
 									<ul class="nav navbar-nav main-navigation">
 										<li class="main_cat dropdown active"><a
-											href="category_page.html">Grocery & Staples</a>
-											<div class="dropdown-menu megamenu column4">
-												<div class="dropdown-inner">
-													<ul class="list-unstyled childs_1">
-
-														<!-- 2 Level Sub Categories START -->
-														<li class="dropdown active"><a
-															href="category_page.html">Daal & Pulses</a>
-															<div class="dropdown-menu">
-																<div class="dropdown-inner">
-																	<ul class="list-unstyled childs_2">
-																		<li class="active"><a href="category_page.html">Arhar</a></li>
-
-																	</ul>
-																</div>
-															</div></li>
-
-														<!-- 2 Level Sub Categories END -->
-													</ul>
-													<ul class="list-unstyled childs_1">
-
-														<!-- 2 Level Sub Categories START -->
-														<li class="dropdown active"><a
-															href="category_page.html">Dry Fruits & Nuts</a>
-															<div class="dropdown-menu">
-																<div class="dropdown-inner">
-																	<ul class="list-unstyled childs_2">
-																		<li class="active"><a href="category_page.html">Akhrot
-																				& Figs</a></li>
-																		<li><a href="category_page.html">Almonds &
-																				Cashews</a></li>
-																		<li><a href="category_page.html">Nuts & Seeds</a></li>
-																		<li><a href="category_page.html">Other Dry
-																				Fruits</a></li>
-																	</ul>
-																</div>
-															</div></li>
-
-														<!-- 2 Level Sub Categories END -->
-													</ul>
-													<ul class="list-unstyled childs_1">
-
-														<!-- 2 Level Sub Categories START -->
-														<li class="dropdown active"><a href="#">Edible
-																Oils</a>
-															<div class="dropdown-menu">
-																<div class="dropdown-inner">
-																	<ul class="list-unstyled childs_2">
-
-																		<li><a href="category_page.html">Soyabean
-																				Oils</a></li>
-																		<li><a href="category_page.html">Sunflower
-																				Oils</a></li>
-																	</ul>
-																</div>
-															</div></li>
-
-														<!-- 2 Level Sub Categories END -->
-													</ul>
-													<ul class="list-unstyled childs_1">
-													</ul>
-													<div class="menu-image">
-														<img src="images/13.jpg" alt="" title=""
-															class="img-thumbnail">
-													</div>
-												</div>
-											</div></li>
+											href="categorypage?categoryid=5">Soap and Daily need</a>
+											</li>
 										<li class="main_cat d	ropdown"><a
-											href="category_page.html">Personal Care</a>
+											href="categorypage?categoryid=6">Fruits</a>
 											<div class="dropdown-menu megamenu column1">
 												<div class="dropdown-inner">
-													<ul class="list-unstyled childs_1">
-
-														<!-- 2 Level Sub Categories START -->
-														<li class="main_cat active"><a
-															href="category_page.html">Deos & Perfumes</a></li>
-														<li class="main_cat"><a href="category_page.html">Hair
-																Care</a></li>
-
-														<!-- 2 Level Sub Categories END -->
-													</ul>
+											
 												</div>
 											</div></li>
 										<li class="main_cat dropdown"><a
-											href="category_page.html">Biscuits, Snacks & Chocolates</a>
-											<div class="dropdown-menu megamenu column1">
-												<div class="dropdown-inner">
-													<ul class="list-unstyled childs_1">
-
-														<!-- 2 Level Sub Categories START -->
-														<li class="main_cat active"><a
-															href="category_page.html">Biscuits & Cookies</a></li>
-														<li class="main_cat"><a href="#">Chips & Crisps</a></li>
-
-														<!-- 2 Level Sub Categories END -->
-													</ul>
-												</div>
-											</div></li>
+											href="categorypage?categoryid=1">Oil</a>
+											</li>
 										<li class="main_cat dropdown"><a
-											href="category_page.html">Dairy Products</a></li>
+											href="categorypage?categoryid=8">Dairy and Bakery</a></li>
 										<li class="main_cat dropdown"><a
-											href="category_page.html">Breakfast & Dairy</a>
-											<div class="dropdown-menu megamenu column1">
-												<div class="dropdown-inner">
-													<ul class="list-unstyled childs_1">
-
-														<!-- 2 Level Sub Categories START -->
-														<li class="main_cat active"><a
-															href="category_page.html">Breakfast Cereal & Mixes</a></li>
-														<li class="main_cat"><a href="category_page.html">Paneer
-																& Curd</a></li>
-
-														<!-- 2 Level Sub Categories END -->
-													</ul>
-												</div>
-											</div></li>
-										<li class="main_cat thumb"><a href="product">Fruits
-												store </a>
-											<div class="dropdown-menu">
-												<div class="dropdown-inner">
-													<img src="#" alt="" title="" class="img-thumbnail">
-												</div>
-											</div></li>
+											href="categorypage?categoryid=4">Cleaning & handwash</a>
+											</li>
+									
 									</ul>
 								</div>
 							</nav>
 						</div>
 						<div class="header-link-search">
 							<div class="header-search">
-								<div class="actions">
+								<!-- 	<div class="actions">
 									<button type="submit" title="Search" class="action search"
 										id="head-search"></button>
-								</div>
-								<div id="search" class="input-group">
-									<input type="text" id="search-input" name="search" value=""
-										placeholder="Search" class="form-control input-lg"
-										autocomplete="off"> <span class="input-group-btn">
-										<button type="button" class="btn btn-default btn-lg">Search</button>
-									</span>
-								</div>
+								</div> -->
+								<form action="search" method="get">
+									<div id="search" class="input-group">
+										<input type="text" id="search-input" name="search" value=""
+											placeholder="Search" class="form-control input-lg"
+											autocomplete="off"> <span class="input-group-btn">
+											<button type="submit" class="btn btn-default btn-lg">Search</button>
+										</span>
+									</div>
+								</form>
 							</div>
 							<div class="header-link">
 								<ul>
-				
+
 									<marquee behavior="alternate">
-									<li><a href="#">Offers !!</a></li>
-										<li><a href="#"> !! 
-												Offers !! </a></li>
-												 <li><a href="#">offers !!</a></li>
+										<li><a href="#">Offers !!</a></li>
+										<li><a href="#"> !! Offers !! </a></li>
+										<li><a href="#">offers !!</a></li>
 									</marquee>
 								</ul>
 
@@ -254,7 +179,6 @@
 										</form>
 
 									</li>
-									
 							</div>
 						</div>
 					</div>
@@ -262,7 +186,7 @@
 			</div>
 		</div>
 
-	
+
 		<div class="header-static-block">
 			<div class="container">
 				<div class="row">
