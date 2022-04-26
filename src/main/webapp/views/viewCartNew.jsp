@@ -63,7 +63,7 @@
 <body onload="homePageOnLoad()">
 	<!-- =====  LODER  ===== -->
 	 <div class="loder"></div>
-				  <div class="wrapper"> -->
+				  <div class="wrapper"> 
 
 
 	<!-- =====  HEADER START  ===== -->

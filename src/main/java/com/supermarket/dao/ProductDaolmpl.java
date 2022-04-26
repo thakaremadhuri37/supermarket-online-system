@@ -38,10 +38,23 @@ public class ProductDaolmpl {
 				bean.setName(rs.getString(2));
 				bean.setPrice(rs.getDouble(3));
 				bean.setImagename(rs.getString(4));
-				System.out.println("listtthdhfbb");
+				//System.out.println("listtthdhfbb");
+				
+				
+				PreparedStatement ps1 = con.prepareStatement("select total_qty from product_stock where product_id=?");
+				ps1.setInt(1, rs.getInt(1));
+				ResultSet rs1 = ps1.executeQuery();
+				rs1.next();
+					bean.setProduct_stock(rs1.getInt(1));
+					System.out.println(bean.getProduct_stock());
+					
+				
+				
+				
+				
 
 				list.add(bean);
-				System.out.println("listtt"+bean.toString());
+				System.out.println("listtt===="+bean.toString());
 
 				}
 			}

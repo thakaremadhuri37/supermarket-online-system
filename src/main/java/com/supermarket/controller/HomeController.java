@@ -30,4 +30,11 @@ public class HomeController {
 		return mv;
 	}
 	
+	@RequestMapping(value = "/about", method = RequestMethod.GET)
+	public String displayaboutPage() {
+
+		
+		return "about";
+	}
+	
 }

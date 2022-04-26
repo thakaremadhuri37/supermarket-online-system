@@ -77,10 +77,10 @@
 		<!-- =====  BREADCRUMB STRAT  ===== -->
 		<div class="breadcrumb section pt-60 pb-60">
 			<div class="container">
-				<h1 class="uppercase">Shopping Cart</h1>
+				<h1 class="uppercase">payment Process</h1>
 				<ul>
 					<li><a href="home"><i class="fa fa-home"></i></a></li>
-					<li class="active">Shopping Cart</li>
+					<li class="active">payment Process</li>
 				</ul>
 			</div>
 		</div>
@@ -140,12 +140,38 @@
 							<%
 							} else {
 							%>
+							<!-- document.getElementById(frmObj.id).focus();
+document.getElementById(frmObj.id).select(); -->
 							<div class="card my-1">
+								<div class="card-header" id="headingFive1">
+									<h4 class="mb-0">
+										<a data-toggle="collapse" data-parent="#accordion"
+											href="#collapseFive1" id="qr2" onclick="address1()">
+											Enter Address <i class="fa fa-caret-down"></i>
+										</a>
+									</h4>
+								</div>
+								<div id="collapseFive1" class="collapse"
+									aria-labelledby="headingFive" data-parent="#accordion">
+									<div class="card-body">
+										<p>Please enter your address with city,state.</p>
+										<input type="text" id="addresss" name="address"
+											onkeypress="address()"> <a data-toggle="collapse"
+											data-parent="#accordion" href="#collapseFive"
+											style="font-family: sans-serif; background-color: white; color: red; font-size: x-large;">
+											<input type="button" value="Go to payment"
+											class="btn" id="gotoconfirm1" disabled="disabled" required="required">
+										</a>
+
+									</div>
+								</div>
+
 								<div class="card-header" id="headingFive">
 									<h4 class="mb-0">
 										<a data-toggle="collapse" data-parent="#accordion"
-											href="#collapseFive"> Payment Method <i
+											href="#collapseFived" id="qr1"> Payment Method <i
 											class="fa fa-caret-down"></i></a>
+
 									</h4>
 								</div>
 								<div id="collapseFive" class="collapse"
@@ -154,25 +180,40 @@
 										<p>Please select the preferred payment method to use on
 											this order.</p>
 
-										<div class="form-check">
-											<input class="form-check-input" type="radio"
-												name="exampleRadios" id="exampleRadios2" value="option2"
-												checked="checked"> <label class="form-check-label"
-												for="exampleRadios2"> Credit Card </label>
+										<div class="radio mb-10">
+											<label> <input type="radio" checked="checked"
+												value="existing" name="payment_address"
+												data-id="payment-existing" id="qr"> QR Payment
+											</label>
 										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="radio"
-												name="exampleRadios" id="exampleRadios1" value="option1">
-											<label class="form-check-label" for="exampleRadios1">
-												Debit Card </label>
+										<div id="payment-existing" style="">
+											<div class="col-50">
+												<img
+													src="${pageContext.request.contextPath}/qrcode/${cartbean.totalCartAmount}+'Payment successfully'"
+													width="200" height="200">
+											</div>
+											<div class="col-50">
+											<!-- 	<input type="text" name="paymentStatus" id="paymentStatus1" /> --><input type="text" name="paymentStatus" id="paymentStatus1" autofocus=true/>
+
+
+											</div>
+										</div>
+
+										<div class="radio mb-10 mt-10">
+											<label> <input type="radio" value="new"
+												name="payment_address" id="cardradiobutton"
+												data-id="payment-new"> Credit Card/ Debit Card
+											</label>
+										</div>
+										
+										<div id="payment-new" style="display: none;">
+
+											<%@  include file="payment.jsp"%>
+
 										</div>
 
 
 
-
-										<%@  include file="payment.jsp"%>
-
-		
 									</div>
 								</div>
 							</div>
@@ -224,7 +265,7 @@
 															<form:hidden
 																path="productList[${tagStatus.index}].imagename"
 																value="${cartproduct.imagename}" />
-															
+
 															<form:hidden
 																path="productList[${tagStatus.index}].quantity"
 																value="${cartproduct.quantity}" />
@@ -249,7 +290,7 @@
 											</table>
 										</div>
 										<form:hidden path="totalCartAmount"
-																value="${cartbean.totalCartAmount}" />
+											value="${cartbean.totalCartAmount}" />
 										<div class="buttons">
 											<div class="pull-right">
 												<a href=""><input type="submit"
@@ -303,7 +344,7 @@
 				<div class="col-lg-3 footer-block">
 					<h4 class="footer-title py-2">Information</h4>
 					<ul>
-						<li><a href="#">About Us</a></li>
+						<li><a href="about">About Us</a></li>
 						<li><a href="#">Delivery Information</a></li>
 						<li><a href="#">Privacy Policy</a></li>
 						<li><a href="#">Terms &amp; Conditions</a></li>
@@ -335,16 +376,15 @@
 				<div class="col-lg-3 footer-block">
 					<h4 class="footer-title py-2">Contacts</h4>
 					<ul>
-						<li class="add">Warehouse &amp; Offices, 12345 Street name,
-							California USA</li>
-						<li class="phone">(+123) 456 789 <br> (+024) 666 888
+<li class="add">Jaylaxmi Supermarket</li>
+						<li class="phone">9673961258
 						</li>
 						<li class="email">Contact@yourcompany.com</li>
 					</ul>
 				</div>
 			</div>
 			<!-- =====  Newslatter ===== -->
-			<div class="newsletters mt-30">
+			<div class="newsletters mt-30">	
 				<div class="news-head pull-left">
 					<h2>Subscribe for our offer news</h2>
 				</div>

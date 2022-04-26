@@ -18,9 +18,18 @@ public class ProductBean {
 	private int catagoryId;
 	private CommonsMultipartFile file;
 	private String showOnHome;
+	private int product_stock;
+
 	
 	
 	
+	
+	public int getProduct_stock() {
+		return product_stock;
+	}
+	public void setProduct_stock(int product_stock) {
+		this.product_stock = product_stock;
+	}
 	public String getShowOnHome() {
 		return showOnHome;
 	}
@@ -79,8 +88,9 @@ public class ProductBean {
 	public String toString() {
 		return "ProductBean [id=" + id + ", name=" + name + ", price=" + price + ", imagename=" + imagename
 				+ ", quantity=" + quantity + ", productTotal=" + productTotal + ", catagoryId=" + catagoryId + ", file="
-				+ file + "]";
+				+ file + ", showOnHome=" + showOnHome + ", product_stock=" + product_stock + "]";
 	}
+	
 	
 	
 	

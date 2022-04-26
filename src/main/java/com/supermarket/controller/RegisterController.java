@@ -18,6 +18,8 @@ import com.supermarket.db.DBConnection;
 
 @Controller
 public class RegisterController {
+	DBConnection db = new DBConnection();
+	Connection con=null;
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public ModelAndView showRegisterPage() {
 		ModelAndView mv = new ModelAndView();
@@ -26,44 +28,79 @@ public class RegisterController {
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String register(@ModelAttribute RegisterBean registerBean) throws JsonProcessingException {
+	public ModelAndView register(@ModelAttribute RegisterBean registerBean) throws JsonProcessingException {
+		ModelAndView mv=new ModelAndView();
 		System.out.println("Inside Register method : "+registerBean.toString());
 		 printJson(registerBean);  
-		DBConnection db = new DBConnection();
-		Connection con=null;
-		try {
-			con = db.getConnection();
-			PreparedStatement ps = con
-					.prepareStatement("insert into users (username,password,email,created_on,role)	values(?,?,?,NOW(),'user') ");
-			ps.setString(1, registerBean.getUsername());
-			ps.setString(2, registerBean.getPassword());
-			ps.setString(3, registerBean.getEmail());
+		
+		System.out.println("emaill--"+registerBean.getEmail());
+		int cheack=checkEmailInDb(registerBean.getEmail());
+		System.out.println("check=="+cheack);
 
-			int count = ps.executeUpdate();
-			if (count == 1) {
-				System.out.println("record added");
-
-			} else {
-				System.out.println("record failed");
-			}
-		} catch (Exception e) {
-			System.out.println("inside catch block");
-			e.printStackTrace();
-		}finally {
+		if(cheack==0) {
 			try {
-				
-				if (null!=con) {
-					
-					con.close();
+				con = db.getConnection();
+				PreparedStatement ps = con
+						.prepareStatement("insert into users (username,password,email,created_on,role)	values(?,?,?,NOW(),'user') ");
+				ps.setString(1, registerBean.getUsername());
+				ps.setString(2, registerBean.getPassword());
+				ps.setString(3, registerBean.getEmail());
+
+				int count = ps.executeUpdate();
+				if (count == 1) {
+					System.out.println("record added");
+
+				} else {
+					System.out.println("record failed");
 				}
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+			} catch (Exception e) {
+				System.out.println("inside catch block");
 				e.printStackTrace();
+			}finally {
+				try {
+					
+					if (null!=con) {
+						
+						con.close();
+					}
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 			}
+		}else {
+			System.out.println("record alresdy exists");
+			mv.setViewName("register");
+			mv.addObject("record_status", "email alresdy exists");
+
+			return mv;
+		}
+		
+		mv.setViewName("home");
+		mv.addObject("record_status", "Register Successfully");
+		return mv;
+
+	}
+	public int checkEmailInDb(String email) {
+		try {
+		con=db.getConnection();
+		PreparedStatement ps = con.prepareStatement("select count(*) from users where email=?");
+		ps.setString(1, email);
+		ResultSet rs = ps.executeQuery();
+		
+
+		if (rs.next() && rs.getInt(1)>0) {
+
+			System.out.println("Login already exists");
+			return 1;
+		}
+		
+		}catch(Exception e) {
+			System.out.println("Exception Occur"+e);
 			
 		}
-return "redirect:home";
-
+		return 0;
 	}
 
 	private void printJson(RegisterBean registerBean) throws JsonProcessingException {

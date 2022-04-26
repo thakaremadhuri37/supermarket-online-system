@@ -127,7 +127,7 @@ span.price {
 <div class="row1">
   <div class="col-75">
     <div class="container1">
-      <form  onsubmit="return cardnumber()">
+      <form   onsubmit="return cardnumber()">
       
         <div class="row">
           <div class="col-50">
@@ -136,20 +136,20 @@ span.price {
             <input type="text" id="fname" name="firstname" value="${sessionScope.user_login}" placeholder="Enter Name" required="required">
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
             <input type="text" id="email" name="email" value="${sessionScope.user_login_email }" placeholder="Enter email" required>
-            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <!-- <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
             <input type="text" id="adr" name="address" placeholder="Eneter Address" required>
             <label for="city"><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="Enter City" required>
+            <input type="text" id="city" name="city" placeholder="Enter City" required> -->
 
             <div class="row">
-              <div class="col-50">
+<!--               <div class="col-50">
                 <label for="state">State</label>
                 <input type="text" id="state" name="state" 	placeholder="Eneter State" required>
-              </div>
-              <div class="col-50">
-                <label for="zip">Zip</label>
+              </div> -->
+              <!-- <div class="col-50">
+                <label for="zip">Zip<	/label>
                 <input type="number" id="zip" name="zip" placeholder="10001" required>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -177,6 +177,7 @@ span.price {
                 <label for="cvv">CVV</label>
                 <input type="number" id="cvv" name="cvv" placeholder="352" required>
               </div>
+              
             </div>
           </div>
              

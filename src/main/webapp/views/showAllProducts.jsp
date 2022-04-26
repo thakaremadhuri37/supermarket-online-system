@@ -56,11 +56,11 @@
 	href="<c:url value="/resources/images/apple-touch-icon-72x72.html" />" />
 <link rel="apple-touch-icon" sizes="114x114"
 	href="<c:url value="/resources/images/apple-touch-icon-114x114.html"/>" />
-<style >
+<style>
 .zoom:hover {
-  -ms-transform: scale(1.1); /* IE 9 */
-  -webkit-transform: scale(1.1); /* Safari 3-8 */
-  transform: scale(1.1); 
+	-ms-transform: scale(1.1); /* IE 9 */
+	-webkit-transform: scale(1.1); /* Safari 3-8 */
+	transform: scale(1.1);
 }
 </style>
 
@@ -68,84 +68,87 @@
 
 <body onload="homePageOnLoad()">
 	<!-- =====  LODER  ===== -->
-	  <div class="loder"></div>
-				  <div class="wrapper"> 
-	
-
-	<!-- =====  HEADER START  ===== -->
-	<%@ include file="comman.jsp"%>
-	
-	
-	<div class="breadcrumb section pt-60 pb-60">
-		<div class="container">
-			<h1 class="uppercase">Product Dashboard</h1>
-			<ul>
-				<li><a href="home"><i class="fa fa-home"></i></a></li>
-				<li class="active">Product Dashboard</li>
-			</ul>
-		</div>
-	</div>
-
-	<!-- =====  HEADER END  ===== -->
-	<div class="page-cart section">
-		<!-- =====  CONTAINER START  ===== -->
-
-		<div class="container">
-			<div class="row ">
-				<div class="col-12 mt-20 mb-20">
-
-					<div class="table-responsive">
-						<!-- <table class="table table-bordered"> -->
-						<table style=" border: 1px solid black;" class="table table-bordered">
-
-							<tr class="text-center" style="color: black; font-family: sans-serif;font-size: large;">
+	<div class="loder"></div>
+	<div class="wrapper">
 
 
-								<th class="text-center">ID</th>
-								<!-- 										<td class="text-left">Product Name</td>
- -->
-								<th class="text-center" class="zoom" >Image</th>
-								<th class="text-center" width="25%">Product Name</th>
-								<th class="text-center">Price</th>
-								<th class="text-center">Edit/Delet</th>
-
-							</tr>
-							<c:forEach var="product" items="${productList}">
-
-								<tbody align="center">
-
-									<tr style="color: black; font-family: sans-serif;font-size: medium;">
-										<td class="text-center">${product.id}</td>
-										<td class="text-center"><a href="#" class="zoom"><img
-												src="<c:url value="/resources/images/pro/${product.imagename}" />"
-												width="70px"></a></td>
-										<td class="text-center">${product.name}</td>
-										<td class="text-center">${product.price}</td>
+		<!-- =====  HEADER START  ===== -->
+		<%@ include file="comman.jsp"%>
 
 
-
-										<td class="text-center" style="color: blue;"><a  href="updateProductByAdmin?id=${product.id}">Edit</a>&nbsp;&nbsp;<a
-											href="deletProduct?id=${product.id}">Delet</a>
-											
-
-</td>
-									</tr>
-
-								</tbody>
-							</c:forEach>
-						</table>
-					</div>
-
-
-
-
-				</div>
+		<div class="breadcrumb section pt-60 pb-60">
+			<div class="container">
+				<h1 class="uppercase">Product Dashboard</h1>
+				<ul>
+					<li><a href="home"><i class="fa fa-home"></i></a></li>
+					<li class="active">Product Dashboard</li>
+				</ul>
 			</div>
-			
 		</div>
-		<!-- =====  CONTAINER END  ===== -->
-	</div>
-			<%@ include file="commanFooter.jsp" %>
+
+		<!-- =====  HEADER END  ===== -->
+		<div class="page-cart section">
+			<!-- =====  CONTAINER START  ===== -->
+
+			<div class="container">
+				<div class="row ">
+					<div class="col-12 mt-20 mb-20">
+
+						<div class="table-responsive">
+							<!-- <table class="table table-bordered"> -->
+							<table style="border: 1px solid black;"
+								class="table table-bordered">
+
+								<tr class="text-center"
+									style="color: black; font-family: sans-serif; font-size: large;">
+
+
+									<th class="text-center">ID</th>
+									<!-- 										<td class="text-left">Product Name</td>
+ -->
+									<th class="text-center" class="zoom">Image</th>
+									<th class="text-center" width="25%">Product Name</th>
+									<th class="text-center">Price</th>
+									<th class="text-center">Edit/Delete</th>
+									<th class="text-center">Product_Stock</th>
+
+								</tr>
+								<c:forEach var="product" items="${productList}">
+
+									<tbody align="center">
+
+										<tr
+											style="color: black; font-family: sans-serif; font-size: medium;">
+											<td class="text-center">${product.id}</td>
+											<td class="text-center"><a href="#" class="zoom"><img
+													src="<c:url value="/resources/images/pro/${product.imagename}" />"
+													width="70px"></a></td>
+											<td class="text-center">${product.name}</td>
+											<td class="text-center">${product.price}</td>
+
+
+
+											<td class="text-center" style="color: blue;"><a
+												href="updateProductByAdmin?id=${product.id}">Edit</a>&nbsp;&nbsp;<a
+												href="deletProduct?id=${product.id}">Delete</a></td>
+												<td class="text-center">${product.product_stock}</td>
+										</tr>
+
+									</tbody>
+								</c:forEach>
+							</table>
+						</div>
+
+
+
+
+					</div>
+				</div>
+
+			</div>
+			<!-- =====  CONTAINER END  ===== -->
+		</div>
+		<%@ include file="commanFooter.jsp"%>
 
 	</div>
 

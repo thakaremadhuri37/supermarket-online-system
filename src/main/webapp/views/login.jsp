@@ -127,7 +127,7 @@
 							<!-- Login With Social -->
 							<div class="col-md-6 col-12 d-flex">
 								<img
-												src="<c:url value="/resources/images/pro/supermarket.gif"/>"
+												src="<c:url value="/resources/images/pro/supermarket.png"/>"
 												alt="Strawberry" title="Strawberry" class="img-thumbnail">
 								<!-- <div class="social-login">
 									<h3>Also you can login with...</h3>
@@ -157,7 +157,7 @@
 				<div class="col-lg-3 footer-block">
 					<h4 class="footer-title py-2">Information</h4>
 					<ul>
-						<li><a href="#">About Us</a></li>
+						<li><a href="about">About Us</a></li>
 						<li><a href="#">Delivery Information</a></li>
 						<li><a href="#">Privacy Policy</a></li>
 						<li><a href="#">Terms & Conditions</a></li>
@@ -187,9 +187,8 @@
 				<div class="col-lg-3 footer-block">
 					<h4 class="footer-title py-2">Contacts</h4>
 					<ul>
-						<li class="add">Warehouse & Offices, 12345 Street name,
-							California USA</li>
-						<li class="phone">(+123) 456 789 <br> (+024) 666 888
+						<li class="add">Jaylaxmi Supermarket</li>
+						<li class="phone">9673961258
 						</li>
 						<li class="email">Contact@yourcompany.com</li>
 					</ul>

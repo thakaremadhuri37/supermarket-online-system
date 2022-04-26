@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ProductController {
-	
+	//not used
 	@RequestMapping(value="/product1" ,method = RequestMethod.GET)
 	public ModelAndView show(@RequestParam ("id") String id1) {
 		System.out.println("inside prod method id= "+id1);

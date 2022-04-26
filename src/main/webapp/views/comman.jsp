@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body >
 	<!-- =====  HEADER START  ===== -->
 	<header id="header" class="section">
 		<div class="container">
@@ -69,8 +69,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="navbar-header col-2 header-bottom-left">
-						<a class="navbar-brand" href="home"> <img alt="Supermarket"
-							src="images/logo1.png">
+						<a class="navbar-brand" href="home"> <img width="150" height="48"
+							 src="<c:url value="/resources/images/logo11.png"/>">
 						</a>
 					</div>
 					<div class="col-10 header-bottom-right">

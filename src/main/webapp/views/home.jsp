@@ -318,11 +318,11 @@
 																id="totalQty" type="number" value="1" name="quantity"
 																min="1" step="1" class="qty form-control"> <input
 																type="hidden"
-																value='{"id":${product.id}, "name":"${product.name}", "price":${product.price}, "imagename":"${product.imagename}"}'
+																value='{"id":${product.id}, "name":"${product.name}", "price":${product.price},"product_stock":"${product.product_stock}","imagename":"${product.imagename}"}'
 																name="productDetails" />
 															<button type="submit"
-																value='{"id":${product.id}, "name":"${product.name}", "price":${product.price}, "imagename":"${product.imagename}"}'
-																class="addtocart pull-right">Add</button>
+																value='{"id":${product.id}, "name":"${product.name}","product_stock":"${product.product_stock}", "price":${product.price}, "imagename":"${product.imagename}"}'
+																class="addtocart pull-right" >Add</button><span id="stock_msg" style="color: red"></span>
 
 														</div>
 													</div>

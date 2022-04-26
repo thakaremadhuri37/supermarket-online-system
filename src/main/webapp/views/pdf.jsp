@@ -23,7 +23,7 @@
 <div class="container d-flex justify-content-center mt-50 mb-50">
         <div class="row">
             <div class="col-md-12 text-right mb-3">
-                <button class="btn btn-primary" id="download"> download pdf</button>
+                <button class="btn btn-primary" id="download"> download invoice</button>
             </div>
             <div class="col-md-12">
                 <div class="card" id="invoice">
@@ -43,15 +43,15 @@
                             </div> -->
                         </div>
                         <div class="d-md-flex flex-md-wrap">
-                            <div class="mb-4 mb-md-2 text-left"> <span class="text-muted">Invoice To:</span>
+                            <div class="mb-4 mb-md-2 text-left"><!--  <span class="text-muted">Invoice To:</span> -->
                                 <ul class="list list-unstyled mb-0">
                                                                    
-                                
+                                <li><h6 class="my-2">orderId : ${orderId}</h6></li>
                                     <li>
                                       <h6 class="my-2">Name : ${sessionScope.user_login }</h6>
                                      </li>
                                      <li><h6 class="my-2">Email : ${sessionScope.user_login_email }</h6></li>
-                                  <li><time datetime="2017-02-14 20:00"></time></li>
+                                  <li><h6 class="my-2">Date and time: ${datetime}</h6></li>
                                    
                                 </ul>
                             </div>

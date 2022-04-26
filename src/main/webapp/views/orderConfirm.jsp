@@ -7,10 +7,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="background-color: white">
 	<div align="center">
 		<img src="<c:url value="/resources/images/orderConfirm.gif"/>">
-		<h1>Thank You For Your Order!!!</h1>
+		<h3>payment Successful</h3>
+		<h1>Thank You For Your Order!!!</h1> 
+<%-- 		<img src="<c:url value="/resources/images/coollogo_com-21784217.gif"/>">
+ --%>		<!-- <h1>Thank You For Your Order!!!</h1> -->
 		<br>
 		<table style="max-width: 600px;" width="100%" cellspacing="0"
 			cellpadding="0" border="0" align="center">

@@ -99,6 +99,7 @@
 														<h3>Registration to your account</h3>
 
 														<!-- register Form -->
+															<h3 style="color: red">${record_status}</h3>
 														<form action="register" method="post" name="reg"
 															class="my-4" onsubmit="return check()">
 															<div class="form-group">
@@ -141,7 +142,7 @@
 
 
 													<img
-														src="<c:url value="/resources/images/pro/supermarket.gif"/>"
+														src="<c:url value="/resources/images/pro/supermarket.png"/>"
 														alt="Strawberry" title="Strawberry" class="img-thumbnail">
 												</div>
 

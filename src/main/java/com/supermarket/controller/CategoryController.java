@@ -57,10 +57,12 @@ DBConnection  connection=new DBConnection();
 		try {
 			 con = connection.getConnection();
 			PreparedStatement ps = con
-					.prepareStatement("select name,price,image,id from products where name::text like ?");
+					.prepareStatement("select name,price,image,id,isactive from products where name::text like ?");
 			ps.setString(1, "%" + search + "%");
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
+				String active=rs.getString(5);
+				if(active.equals("Y")) {
 				ProductBean productBean = new ProductBean();
 
 				productBean.setName(rs.getString(1));
@@ -73,7 +75,7 @@ DBConnection  connection=new DBConnection();
 						+ productBean.getImagename());
 
 			}
-
+			}
 		} catch (Exception e) {
 			System.out.println(e);
 		}
