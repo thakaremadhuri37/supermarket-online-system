@@ -238,19 +238,20 @@ function cartNumbers2(event) {
 		'quantity': qty,
 		'product_stock': productObj.product_stock
 	};
-	checkStock(currentProduct.id,currentProduct.product_stock,currentProduct.quantity);
+	//checkStock(currentProduct.id,currentProduct.product_stock,currentProduct.quantity);
 
 
 	//localStorage.setItem("stock-" + currentProduct.id, currentProduct.product_stock);
-	alert("qty  " + qty + " stock " + currentProduct.product_stock);
-	if (qty > currentProduct.product_stock) {
+	//alert("qty  " + qty + " stock " + currentProduct.product_stock);
+	/*if (qty > currentProduct.product_stock) {
 		console.log("stockkkk");
 		//document.getElementById("stock_msg").innerHTML = "please enter quantity less than ".product_stock;
-		alert('please enter quantity less than ');
+		alert('please enter quantity less than'+currentProduct.product_stock);
+		return false;
 
-	}
+	}*/
 
-	else {
+/*	else {*/
 
 
 
@@ -297,7 +298,7 @@ function cartNumbers2(event) {
 		return false;
 
 	}
-}
+
 function displayItemsInViewCart(filterProductList) {
 
 	var flag = 1;
@@ -426,8 +427,8 @@ function validate(e) {
 }
 
 
-function stock(id) {
-	alert(id);
+/*function stock(id) {
+	//alert(id);
 	console.log('data:::: ');
 
 	$.ajax({
@@ -444,12 +445,12 @@ function stock(id) {
 		}
 	});
 }
-
+*/
 
 
 
 function checkStock(id, stockCount, qty) {
-	alert("inside checkstock"+id+"stockCount= "+stockCount+" qty="+qty)
+	//alert("inside checkstock"+id+"stockCount= "+stockCount+" qty="+qty)
 	let filterstockList = [];
 	var len = stockList.length;
 	console.log("stockList : "+len);
@@ -510,6 +511,13 @@ console.log("jjjjj");
 			}
 		}
 		*/
+function demo1(){
+	alert('hi');
+		document.getElementById("viewCartDetails1").click();
+		alert('hiii');
+
+}
+
 
 
 

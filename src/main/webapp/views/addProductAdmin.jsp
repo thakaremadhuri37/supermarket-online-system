@@ -147,30 +147,30 @@
 												</div>
 
 
-												<br> <br>
+												
 
 
 
 
 
-
-
+<div>
 												<h1>
 													<a href="showallproducts" class="btn mt-10"
-														style="color: red;font-size: large;border: 2px solid black;width:20;">Show
+														style="color: red;font-size: large;border: 2px solid black;">Show
 														All Products</a>
-												</h1>&nbsp;&nbsp;
+												</h1>
 												<h1>
 													<a href="showallorders" class="btn mt-10"
-														style="color: red;font-size: large;width:20;border: 2px solid black;">Show
-														All Orders</a>
+														style="color: red;font-size: large;border: 2px solid black;">Show
+														All  Orders &nbsp;</a>
 														
 												</h1><h1>
 												
 													<a href="showallusers" class="btn mt-10"
-														style="color: red;font-size:large;width:20; border: 2px solid black;">Show
-														All Users</a>
+														style="color: red;font-size:large; border: 2px solid black;">Show
+														All   Users &nbsp; &nbsp;</a>
 												</h1>
+</div>
 
 
 											</div>

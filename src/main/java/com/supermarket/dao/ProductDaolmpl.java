@@ -19,7 +19,7 @@ public class ProductDaolmpl {
 		DBConnection connection = new DBConnection();
 		try {
 			con = connection.getConnection();
-			PreparedStatement ps = con.prepareStatement("select id,name,price,image,displayonhome,isactive from products");
+			PreparedStatement ps = con.prepareStatement("select p.id,p.name,p.price,p.image,p.displayonhome,p.isactive from products p,product_stock s where s.product_id=p.id and s.total_qty >0");
 			ResultSet rs = ps.executeQuery();
 			
 			while (rs.next()) {

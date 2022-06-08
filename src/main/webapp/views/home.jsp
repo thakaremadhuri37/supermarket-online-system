@@ -307,7 +307,7 @@
 												<div class="caption">
 													<h4>
 														<a id="productName" href="product/${product.id}">${product.name}</a>
-													</h4>
+													</h4><%-- <span  style="color: green">stock:${product.product_stock}</span> --%>
 													<div id="productPrice" class="price">₹
 														${product.price}</div>
 													<div class="product_option">
@@ -320,9 +320,11 @@
 																type="hidden"
 																value='{"id":${product.id}, "name":"${product.name}", "price":${product.price},"product_stock":"${product.product_stock}","imagename":"${product.imagename}"}'
 																name="productDetails" />
+																	
+																
 															<button type="submit"
 																value='{"id":${product.id}, "name":"${product.name}","product_stock":"${product.product_stock}", "price":${product.price}, "imagename":"${product.imagename}"}'
-																class="addtocart pull-right" >Add</button><span id="stock_msg" style="color: red"></span>
+																class="addtocart pull-right" onclick="demo(${product.product_stock})">Add</button><span id="stock_msg" style="color: red"></span>
 
 														</div>
 													</div>
